@@ -1,0 +1,1809 @@
+ *
+{
+	outline: none !important;
+	scroll-behavior: smooth; /* pour que les transitions avec les ancres soient fluides*/
+}
+
+body
+{
+	font-family: 'Poppins', sans-serif;
+	background: #36392F;
+}
+
+.logo
+{
+	width: 40px;
+}
+
+a
+{
+	color: #fff;
+}
+
+a:hover
+{
+	text-decoration: none;
+	color: #fff;
+}
+
+.lien_colore
+{
+	color: #fff;
+	background: #777E31;
+	padding: 7px 9px;
+	border-radius: 3px;
+	transition: 1s;
+}
+
+.lien_colore:hover
+{
+	color: #fff;
+	background: #465512;
+}
+
+
+.bouton_valid, a.bouton_valid
+{
+	font-size: 0.95em;
+ 	color: white; 
+	background-color:  #777E31;
+	border: none;
+	border-radius: 5px;
+	margin: 20px;
+	height: 45px;
+	width: 120px;
+	cursor: pointer;
+	box-shadow: 0px 0px 17px black;	
+	transition: all 1s;
+}
+
+a.bouton_valid
+{
+	padding: 12px 31px;
+}
+
+.bouton_valid:hover
+{
+	background-color: #465512;
+}
+
+
+/* A REVOIR ET A RANGER */
+
+
+.imgBx
+{
+	height: 300px;
+}
+
+.imgBx img
+{
+	height: 100%;
+	width: 450px;
+}
+
+.sec1
+{
+	padding: 50px 0;
+	background: #36392F;
+}
+
+.headerText.text-center
+{
+	color: #fff;
+}
+
+.headerText h2
+{
+	font-size: 2.5em;
+	margin-bottom:40px;
+	text-shadow: 3px 3px 5px black;
+	z-index: 20;
+}
+
+.placeBox
+{
+	position: relative;
+	max-width: 300px;
+	height: 400px;
+	margin: 0 auto;
+	background: #000;
+	margin-top: 30px;
+}
+
+.placeBox .imgBx
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+.placeBox .imgBx img
+{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.placeBox .content
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: baseline;
+	align-items: flex-end;
+	box-shadow: 0px 0px 17px black;	
+}
+
+.placeBox .content h3
+{
+	position: relative;
+	margin: 0;
+	padding: 10px;
+	background: rgba(0,0,0,0.95);
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	width: 100%;
+	text-align: center;
+}
+
+.placeBox .content h3 span
+{
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.btnD1
+{
+	color: #fff;
+	background: #D46C00;
+	border: none;
+	border-radius: 5px;
+	width: fit-content;
+	box-shadow: 0px 0px 17px black;
+	margin: 30px 0 30px 0;
+	padding: 10px 30px;
+	transition: all 1s;
+}
+
+
+.btnD1:hover
+{
+	background: #C83D00;
+	color: #fff;
+}
+
+.blog
+{
+	position: relative;
+	padding: 50px 0 100px 0;
+	background: #36392F;
+}
+
+
+
+p
+{
+	font-size: 0.9rem;
+}
+
+/*------BARRE DE RECHERCHE ------*/
+
+.search
+{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.text-box
+{
+	border-bottom: 1px solid #fff;
+	width: 20vw;
+}
+
+.text-box form
+{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.text-box button
+{
+	background: transparent;
+	color: #fff;
+	border: none;
+}
+
+input[type="search"]
+{
+	border: none;
+	width: 100%;
+	color: #fff;
+	background: transparent;
+}
+
+/*--------- NAVIGATION ----------*/
+
+nav a
+{
+	color: #747474;
+	transition: all 1s;
+}
+
+nav a:hover
+{
+	text-decoration: none;
+	color: #cecece;
+}
+
+.navbar
+{
+	background: transparent!important;
+	transition: 0.5s;
+}
+
+.navbar.scrolled
+{
+	background: #36392F!important;
+	transition: 0.5s;
+	border-bottom: 1px solid #fff;
+}
+
+.navbar-light .navbar-toggler
+{
+    border-color: rgba(0,0,0,0);
+}
+
+.navbar-light .navbar-toggler-icon
+{
+	background-image: url("../img/menu1.png");
+	font-size: 22px;
+	/*background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");*/
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:visited
+{
+    color: rgba(255,255,255,1);
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link
+{
+	color: red;
+	background: #fff;
+	text-decoration: underline;
+}
+
+
+.navbar-light .navbar-nav .nav-link
+{
+	color: rgba(255,255,255,0.8);
+	font-size: 0.9em;
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus
+{
+	color: rgba(255,255,255,1);
+}
+
+.navbar .btn_connexion
+{
+	position: relative;
+	top: 15%;
+	transform: translateY(-50%);
+	border: 2px solid #fff;
+	color: #D46C00;
+	border: 1.5px solid #D46C00;
+	background: none;
+	border-radius: 3px;
+	padding: 7px 7px;
+	font-size: 0.9em;
+	outline:none;
+	width: 190px;
+	font-weight: 500;
+	margin-top: 20px;
+	transition: all 1s;
+	margin-left: 15px;
+	margin-right: 15px;
+	box-shadow: 0px 0px 17px black;
+	transition: all 1s;
+}
+
+.navbar .btn_connexion:hover
+{
+	background: #D46C00;
+	color: #fff;
+}
+
+
+/*---------- HOME -----------*/
+
+.big_logo
+{
+	width: 120px;
+}
+
+#home .img_fond
+{
+	position: absolute;
+	right: 7%;
+	top: -10%;
+	transform: rotate(-125deg);
+	width: 27vw;
+}
+
+#home .img_fond2
+{
+	position: absolute;
+	left: 25%;
+	top: -4%;
+	transform: rotate(0deg);
+	width: 17vw;
+}
+
+#home .btnD3
+{
+	border-bottom: 1.5px solid #fff;
+	color: #fff;
+	padding: 10px 0;
+	font-size: 1.1em;
+	width: fit-content;
+	font-weight: 500;
+	transition: all 1.5s;
+}
+
+#home .recipe .text_descriptif
+{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 100%;
+}
+
+#home .event .text_descriptif
+{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 100%;
+}
+
+#home .recipe .text_descriptif p
+{
+	width: 80%;
+	line-height: 2vw;
+	margin: 0 0 60px 0px;
+	color: #fff;
+	font-weight: 100;
+	font-size: 0.8em;
+	text-align: left;
+	letter-spacing: 2px;
+	text-shadow: 3px 3px 5px black;
+	z-index: 3;
+}
+
+#home .event .text_descriptif p
+{
+	width: 80%;
+	line-height: 2vw;
+	margin: 0 0 60px 90px;
+	color: #fff;
+	font-weight: 100;
+	font-size: 0.8em;
+	text-align: right;
+	letter-spacing: 2px;
+	text-shadow: 3px 3px 5px black;
+	z-index: 3;
+}
+
+#home .btnD3:hover
+{
+	border-bottom: 1.5px solid #D46C00;
+}
+
+#home .event .btnD3
+{
+	margin-left: 40px;
+}
+
+ #home #scroll .event a
+{
+	text-shadow: 3px 3px 5px black;
+	margin-left: 40px;
+}
+
+#home .address .text_descriptif
+{
+	display:
+	 flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+}
+
+#home .address .text_descriptif p
+{
+	width: 80%;
+	line-height: 2vw;
+	margin: 0 90px 60px 20px;
+	color: #fff;
+	font-weight: 100;
+	font-size: 0.8em;
+	text-align: left;
+	letter-spacing: 2px;
+	text-shadow: 3px 3px 5px black;
+	z-index: 3;
+}
+
+#home .address .text_descriptif p:nth-child(2)
+{
+	text-shadow: none;
+}
+
+#home .address .row
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#address .blogpost .fit-content
+{
+	min-height: fit-content;
+	padding: 15px;
+    position: relative;
+}
+
+#home .address .text_descriptif p:first-child
+{
+	margin-bottom: 0;
+}
+
+#home .address .text_descriptif p:nth-child(2)
+{
+	margin: 40px 0px 90px 0;
+}
+
+#home .address .text_descriptif .lien_contact
+{
+	color: #fff;
+	font-weight: 550;
+	font-size: 1.3em;
+	padding: 13px 20px;
+	border-radius: 5px;
+	background: #D46C00;
+	box-shadow: 0px 0px 17px black;
+	transition: 1s;
+}
+
+#home .address .text_descriptif .lien_contact:hover
+{
+	background: #C83D00;
+}
+
+
+
+/* -------- IMAGE BOUTON ANIME : INCITER L'UTILISATEUR A CLIQUER SUR LES BOUTONS --------- */
+
+	.btn_recipe, .btn_event, .btn_address
+	{
+		width: 40px;
+		margin-left: 20px;
+		text-align: center;
+	}
+	
+	/*---- HOME : RECETTE ----*/
+
+	#btn_recipe
+	{
+		
+	    animation: btnrecipe 0.8s ease-in-out infinite alternate;
+	    width: 100%;
+
+	}
+
+	@keyframes btnrecipe
+	{
+	    from {transform: translateX(25px);}
+	    to   {transform: translateX(50px);}
+	}
+
+
+
+	/*---- HOME : event ----*/
+
+	#btn_event
+	{
+		
+	    animation: btnevent 0.8s ease-in-out infinite alternate;
+	    width: 100%;
+
+	}
+
+	@keyframes btnevent
+	{
+	    from {transform: translateX(30px);}
+	    to   {transform: translateX(5px);}
+	}
+	
+
+	/*---- HOME : ADRESSE ----*/
+
+	#btn_address
+	{
+		
+	    animation: btnaddress 0.8s ease-in-out infinite alternate;
+	    width: 100%;
+
+	}
+
+	@keyframes btnaddress
+	{
+	    from {transform: translateX(25px);}
+	    to   {transform: translateX(50px);}
+	}
+
+	/*---- RECIPE / EVENT / ADDRESS : BTNS ANIMES SUR PAGES INDEX ----*/
+
+	.btn_creation
+	{
+		animation: btncreation 0.8s ease-in-out infinite alternate;
+		width: 250px;
+		margin-left: 0;
+		text-align: center;
+	}
+
+	@keyframes btncreation
+	{
+	    from {transform: translateX(15px);}
+	    to   {transform: translateX(-15px);}
+	}
+
+
+/*---------- BANNER SPECIFIQUE AUX PAGES HOME  INDEX + SECONNECTER -----------*/
+
+#home .banner,
+#redirectionInscripCo .banner
+{
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 75vh;
+	background:url(../img/fond3.jpg) no-repeat center;
+	background-size: cover;
+	margin-bottom:0;
+}
+
+#home .banner::before,
+#redirectionInscripCo .banner::before
+{
+	content:'';
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(#000, transparent);
+	pointer-events: none;
+}
+
+#home .banner::after,
+#redirectionInscripCo .banner::after
+{
+	content:'';
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(360deg,#000, transparent);
+	pointer-events: none;
+}
+
+#home .height100p,
+#redirectionInscripCo .height100p
+{
+	height: 100vh;
+}
+
+#home .btn_connexion,
+#redirectionInscripCo .btn_connexion
+{
+	border: 2px solid #fff;
+	letter-spacing: 1.5px;
+	color: #D46C00;
+	border: 1.5px solid #D46C00;
+	background: none;
+	border-radius: 3px;
+	padding: 10px 10px;
+	font-size: 1em;
+	outline:none;
+	width: 190px;
+	font-weight: 500;
+	margin-top: 20px;
+	transition: all 1s;
+	margin-left: 15px;
+	margin-right: 15px;
+	transition: all 1s;
+}
+
+#home .btn_connexion:hover,
+#redirectionInscripCo .btn_connexion:hover
+{
+	background: #D46C00;
+	color: #fff;
+}
+
+
+
+/*---------- BANNER SPECIFIQUE AUX AUTRES PAGES -----------*/
+
+.banners
+{
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 70vh;
+	background:url(../img/fond-rond.png) no-repeat center;
+	background-size: cover;
+	margin-bottom:0;
+}
+
+.banners::before
+{
+	content:'';
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(#000, transparent);
+	pointer-events: none;
+}
+
+.heights100p
+{
+	height: 70vh;
+}
+
+.h100
+{
+	height:100%;
+}
+
+.contentBox
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 10;
+}
+
+.contentBox h1
+{
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 3.5rem;
+	font-family: 'Fascinate Inline', 'Montserrat', sans-serif;
+	margin-bottom: 40px;
+	letter-spacing: 3px;
+	text-shadow: 3px 3px 5px black;
+}
+
+.contentBox h2
+{
+	color: #fff;
+	font-size: 1.3rem;
+	margin-bottom: 40px;
+	text-shadow: 3px 3px 5px black;
+}
+
+.contentBox p
+{
+	color: #fff;
+	font-size: 1.3rem;
+	margin-bottom: 40px;
+	text-shadow: 3px 3px 5px black;
+}
+
+
+/*-----------EVENT INDEX-----------*/
+
+.container-area
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.team-area
+{
+	display: flex;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	margin: 20px 0 0 0;
+}
+
+.single-team
+{
+	width: 29%;
+	height: 400px;
+	padding: 24px;
+	position: relative;
+	margin: 20px 2.1666% 20px 2.1666%;
+	transition: 0.6s ease-out;
+	box-shadow: 0px 0px 17px black;
+}
+
+.single-team:hover
+{
+	transform: translateY(15px);
+}
+
+.single-team:hover::before
+{
+	opacity: 1;
+}
+
+.single-team:hover .team-text
+{
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.single-team::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to top, #111111, transparent);
+	z-index: 2;
+	transition: 0.5s;
+}
+
+.single-team img
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+}
+
+.single-team .team-text
+{
+	position: absolute;
+	width: 91%;
+	bottom: 5%;
+	z-index: 3;
+	color: #fff;
+	opacity: 0;
+	transform: translateY(30px); /* effet du texte qui apparaît en montant */
+	transition: 0.5s;
+}
+
+.team-text h2
+{
+	margin: 0;
+	font-size: 1.2em;
+	letter-spacing: 2px;
+}
+
+.para
+{
+	margin-top: 18px;
+}
+
+.team-text p
+{
+	letter-spacing: 1px;
+	font-size: 0.9em;
+	width: 100%;
+	height: 30px;
+	display: inline-block;
+	margin: 0 5px;
+	text-shadow: 3px 3px 5px black;
+	text-decoration: none;
+	
+}
+
+
+/*--------- PROFIL : My eventS --------*/
+
+#my_events .team-area .conteneurEvent
+{
+	width: 29%;
+	margin: 20px 2.1666% 20px 2.1666%;
+}
+
+#my_events .single-team
+{
+	width: 100%!important;
+	height: 350px;
+	margin: 0 0 0 0;
+}
+
+#my_events .boutons_valid_annul
+{
+	width: 100%;
+	margin-top: 10px;
+}
+
+#my_events .displayUpdateEvent,
+#my_events .displayDeleteEvent 
+{
+	background: #fff;
+	font-size: 0.9em;
+	font-weight: 600;
+	border: none;
+	border-radius: 3px;
+	width: 49.1%;
+	padding: 10px 0;
+}
+
+#my_events .iconesMS
+{
+	width: 30px;
+	vertical-align: middle;
+	
+}
+
+#my_events .single-team .team-text
+{
+	bottom: 10%;
+	opacity: 1;
+}
+
+#my_events .single-team:hover
+{
+	transform: translateY(0); /* annuler l'effet du bloc qui bouge au hover*/
+}
+
+
+
+
+/*------------ PAGES : UPDATE MES EVENTS / ADD EVENT / ADD RECIPE /ADD ADDRESS----------*/
+
+#addEvent,
+#updateEvent,
+#addRecipe,
+#updateRecipe,
+#addAddress,
+#updateAddress
+{
+	color: #fff;
+}
+
+#addEvent img,
+#updateEvent img,
+#addRecipe img,
+#updateRecipe img,
+#addAddress img,
+#updateAddress img
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+#addEvent form,
+#updateEvent form,
+#addRecipe form,
+#updateRecipe form,
+#addAddress form,
+#updateAddress form
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	padding-top: 100px;
+}
+
+#addEvent label,
+#updateEvent label,
+#addRecipe label,
+#updateRecipe label,
+#addAddress label,
+#updateAddress label
+{
+	width: 100%;
+}
+
+#addEvent form div, 
+#updateEvent form div, 
+#addRecipe form div, 
+#updateRecipe form div, 
+#addAddress form div,
+#updateAddress form div
+{
+	width:23vw;
+}
+
+#addEvent form input,
+#addEvent form textarea,
+#updateEvent form input,
+#updateEvent form textarea,
+#addRecipe form input,
+#addRecipe form textarea,
+#addRecipe form select,
+#addRecipe form option,
+#updateRecipe form input,
+#updateRecipe form textarea,
+#updateRecipe form select,
+#updateRecipe form option,
+#addAddress form input,
+#addAddress form textarea,
+#addAddress form select,
+#addAddress form option,
+#updateAddress form input,
+#updateAddress form textarea
+#updateAddress form select,
+#updateAddress form option
+
+{
+	height: 30px;
+	width: 100%;
+	font-size: 1em;
+	padding : 5px;
+	border-radius: 5px;
+	border: none; 
+	box-sizing: border-box;
+}
+
+#addEvent textarea[name='program'],
+#updateEvent textarea[name='program']
+{
+	min-height: 350px;
+}
+
+#addRecipe textarea[name='program'],
+#updateRecipe textarea[name='program']
+{
+	min-height: 200px;
+}
+
+
+#addRecipe form button,
+#updateRecipe form button
+{
+	width: 70%;
+	height: 40px;
+	border: none;
+	border-radius: 5px;
+	background: ;
+}
+
+
+#addEvent textarea[name='address'],
+#updateEvent textarea[name='address'],
+#addRecipe textarea[name='ingredient'],
+#updateRecipe textarea[name='ingredient'],
+#addAddress textarea[name='address'],
+#updateAddress textarea[name='address'],
+#addAddress textarea[name='description'],
+#updateAddress textarea[name='description']
+{
+	min-height: 85px;
+	width: 100%;
+}
+
+#addEvent #bouton_validation, 
+#updateEvent #bouton_validation, 
+#addRecette #bouton_validation,
+#updateRecipe #bouton_validation,
+#updateAddress #bouton_validation,
+#addAddress #bouton_validation,
+#updateAddress #bouton_validation
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 0 100px 0;
+}
+
+#addEvent #bouton_validation input, 
+#updateEvent #bouton_validation input, 
+#addRecipe #bouton_validation input,
+#updateRecipe #bouton_validation input,
+#updateAddress #bouton_validation input,
+#addAddress #bouton_validation input,
+#updateAddress #bouton_validation input
+{
+	margin: 0 20px 0 20px;
+}
+
+
+
+
+/*-------------- DELETE MES eventS ------------*/
+
+#my_events #deleteEvent
+{
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+#my_events .deleteEvent
+{
+	background: #D46C00;
+	width: 40%;
+	border-radius: 5px;
+	padding: 60px 20px;
+	box-shadow: 0px 0px 17px black;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	z-index: 5000;
+}
+
+#my_events #deleteEvent p
+{
+	font-size: 1.7em;
+	margin-top: 0;
+	color: #fff;
+	margin-bottom: 50px;
+	font-weight: 600;
+	text-align: center;
+}
+
+#my_events #deleteEvent .bouton_horizontal
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#my_events #deleteEvent .bouton_horizontal button
+{
+	border: 2px solid #fff;
+	border-radius: 50px;
+	background: #D46C00;
+	color: #fff;
+	font-size: 1.4em;
+	padding: 7px 15px;
+	margin-left: 20px;
+	margin-right: 20px;
+	transition-duration: 1s;
+}
+
+#my_events #deleteEvent .bouton_horizontal button:hover
+{
+	background-color : #C83D00;
+}
+
+
+
+/* ------ DETAIL EVENT ------*/
+
+#detail_event 
+{
+	color: #fff;
+}
+
+#detail_event h2
+{
+	font-size: 1em;
+	text-shadow: 3px 3px 5px black;
+}
+
+#detail_event article
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	text-align: justify;
+	margin-top: 3vw;
+}
+
+#detail_event #tutos_events div
+{
+	width:25vw;
+	display: flex;
+	flex-flow: column wrap;
+	/*justify-content: center;*/
+	align-items: center;
+	margin-bottom: 100px;
+}
+
+#detail_event img
+{
+	width: 100%;
+	border-radius : 5px 5px 0 0;
+}
+
+#detail_event table
+{
+	width: 100%;
+	background-color: #777E31;
+	border-radius : 0 0 5px 5px;
+}
+
+#detail_event td
+{
+	padding: 1vw;
+}
+
+.orange
+{ 
+	color: #D46C00;
+	background-color: white;
+	font-size: 1.2em;
+	font-weight: 800;
+	border: none;
+	border-radius: 5px;
+	padding: 1vw;
+	margin-bottom: 1vw;
+}
+
+#detail_event h2
+{
+	text-align: center;
+	font-size: 1.7em;
+	font-weight: 600;
+	margin-top: 3vw;
+	margin-bottom: 3vw;
+}
+
+#detail_event .bouton_valid
+{
+	background-color: #D46C00;
+	margin: 2vw 0 2vw 0;
+	width: 200px;
+}
+
+#detail_event .bouton_valid:hover
+{
+	background-color: #C83D00;
+}
+
+#detail_event form
+{
+	width: 100%;
+}
+
+#detail_event textarea
+{
+	width: 100%;
+	height: 70px;
+	border-radius: 5px;
+	border: none;
+}
+
+
+
+
+/*----------- ADRESSE INDEX -----------*/
+
+#address #filtres
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	width: 100%;
+	margin: 70px auto 20px auto;
+}
+
+#address #filtres.container
+{
+	padding: 0;
+	margin-bottom: 50px;
+}
+
+#address #filtres button
+{
+	font-size: 0.9em;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background-color: #777E31;
+	box-shadow: 0px 0px 17px black;
+ 	color: white; 
+ 	justify-content: center;
+	border: none;
+	border-radius: 5px;
+	height: 60px;
+	width: 18%;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+#address label
+{
+	color: #fff;
+}
+
+#address #filtres button:hover
+{
+	background: #465512;
+}
+
+#address button .pub
+{
+	margin-top: 5vw;
+	height: 100px;
+}
+
+#address #filtres .pub
+{
+	background: #D46C00;
+	width: 18%;
+	transition: all 1s;
+}
+
+#address #filtres .pub:hover
+{
+	background: #C83D00;
+	color: #fff;
+}
+
+.blogpost
+{
+	position: relative;
+	width: 100%;
+	margin-top: 30px;
+	background: #fff;
+	box-shadow: 0px 0px 17px black;
+}
+
+#address .blogpost .imgBx
+{
+	height: 350px;
+	overflow: hidden;
+}
+
+#address .blogpost .imgBx img
+{
+	width:100%;
+	height: 100%;
+	object-fit:cover;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: 1.5s;
+	transition: 1.5s;
+}
+
+#address .blogpost .imgBx img:hover
+{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#adress .blogpost .content
+{
+	padding: 15px 15px 152px 15px;
+	height: 580px;
+	position: relative;
+}
+
+#address .blogpost .content h3
+{
+	margin: 0;
+	padding: 0 0 20px;
+	font-weight: 600;
+	font-size: 1.5rem;
+}
+
+#address .blogpost .content .btnD1
+{
+	color: #fff;
+	width: 90%;
+	position: absolute;
+	left: 50%; /* à 50%/ du parent référent */
+  	transform: translate(-50%,0); /* décalage de 50% de sa propre taille */
+	bottom:0;
+}
+
+#recipesCreated
+{
+	padding: 50px 0;
+}
+
+/*--------- TABLEAU DE BORD : IMG PROFIL---------*/
+
+.photo_profil
+{
+	width : 17vw;
+	height: 17vw;
+	display: block;
+	overflow: hidden;
+	border-radius: 300px;
+	box-shadow: 0px 0px 17px black;
+	position: absolute;
+	left: 50%;
+	bottom: -10%;
+	transform: translate(-50%, -50%);
+}
+
+.photo_profil img
+{
+	width: 100%;
+}
+
+
+/*-----------PROFIL INDEX-----------*/
+
+#tableau_bord #contenu_profil
+{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-around;
+	/*margin-top: 70px;*/
+	margin-top: 220px;
+	padding-bottom: 100px;
+}
+
+#tableau_bord #menu_profil
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	/*margin-top : 100px;*/
+}
+
+#tableau_bord #menu_profil a
+{
+	height: 60px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	/*border-radius: 0 5px 5px 0;*/
+	border-radius: 5px;
+	border: none;
+	background: #777E31;
+	margin-bottom: 35px;
+	box-shadow: 0px 0px 17px black;
+	width: 30%;
+	transition: all 1s;
+	padding-right: 20px;
+}
+
+#tableau_bord #menu_profil a:hover
+{
+	background-color: #465512;
+	/*width: 100%;*/
+}
+
+#tableau_bord #menu_profil a:last-child
+{
+	background: #D46C00;
+}
+
+#tableau_bord #menu_profil a:last-child:hover
+{
+	background: #C83D00;
+}
+
+#tableau_bord #menu_profil a
+{
+	font-size: 1em;
+}
+
+#tableau_bord #menu_profil img
+{
+	width: 40px;
+}
+
+
+
+/*--------- PROFIL VIEW -------*/
+
+#profil #profilView
+{
+	width: 100%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	padding-top: 200px;
+	padding-bottom: 100px;
+}
+
+#profil h2
+{
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom:20px;
+}
+
+#profil .relative
+{
+	position: relative;
+}
+
+#profil .absolute
+{
+	position: absolute;
+}
+
+#profil .relative img
+{
+	width: 9vw;
+}
+
+#profil .relative img:first-child
+{
+	left: 80%;
+	top: -10%;
+}
+
+#profil .relative img:nth-child(2)
+{
+	right: 80%;
+	top: 80%;
+	transform: rotate(30deg);
+}
+
+#profil #presentation_profil
+{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 25vw;
+	border-radius: 5px;
+	height: 420px;
+	color: #2C2221;
+	font-weight: 600;
+	text-align: center;
+	background: url("../img/livre_profil2.jpg") no-repeat center;
+}
+
+#profil #presentation_profil p
+{
+	font-size: 1.1em;
+}
+
+
+#profil #bouton_validation
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+#profil #bouton_validation .btnD1
+{
+	background: #777E31;
+	box-shadow: 0px 0px 17px black;
+	width: 150px;
+	margin: 30px 10px 0 10px;
+	color: #fff;
+	transition: all 1s;
+}
+
+#profil #bouton_validation .btnD1:hover
+{
+	background: #465512;
+	color: #fff;
+}
+
+
+
+/*--------- PROFIL UPDATE -------*/
+
+#profilUpdate
+{
+	color: #fff;
+	padding-bottom: 100px;
+}
+
+#profilUpdate h2
+{
+	margin-top: 200px;
+	margin-bottom: 40px;
+}
+
+#profilUpdate .photo_profil
+{
+	margin-bottom: 30px;
+}
+
+
+#profilUpdate form
+{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#profilUpdate label
+{
+	font-size: 0.9em;
+	font-weight: 500;
+	color: #fff;
+}
+
+#profilUpdate .contener_img
+{
+	width : 17vw;
+	height: 17vw;
+	display: block;
+	overflow: hidden;
+	border-radius: 5px;
+	box-shadow: 0px 0px 17px black;
+	margin: 15px 0 15px 0;
+}
+
+#profilUpdate .contener_profil img
+{
+	height: 100%;
+}
+
+#profilUpdate .input, select, option
+{
+	height: 30px;
+	width: 350px;
+	font-size: 1em;
+	/*padding : 5px;*/
+	margin-bottom: 20px;
+	border-radius: 5px;
+	padding: .375rem .75rem;
+	border: none; 
+	box-sizing: border-box; 
+}
+
+#profilUpdate input[type='file']
+{
+	width: 100%;
+}
+
+#profilUpdate #bouton_validation
+{
+	padding-bottom: 70px;
+}
+
+#profilUpdate p:last-child
+{
+	margin-bottom: 0;
+}
+
+
+/*-------- CONNEXION / INSCRIPTION / SUITE INSCRIPTION / CONTACT ---------*/
+
+#connexion .banner,
+#inscription .banner,
+#suiteInscription .banner,
+#contact .banner,
+#contactMessage .banner
+
+{
+	position: relative;
+	top: 0;
+	width: 100%;
+	min-height: 100vh;
+	background:url(../img/fond3.jpg) no-repeat center;
+	background-size: cover;
+	margin-bottom:0;
+}
+
+#connexion .banner::before,
+#inscription .banner::before,
+#suiteInscription .banner::before,
+#contact .banner::before,
+#contactMessage .banner::before
+{
+	content:'';
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(#000, transparent);
+	pointer-events: none;
+}
+
+#connexion .height100p,
+#inscription .height100p,
+#suiteInscription .height100p,
+#contact .height100p,
+#contactMessage .height100p
+{
+	min-height: 75vh;
+}
+
+#connexion .banner::after,
+#inscription .banner::after,
+#suiteInscription .banner::after,
+#contact .banner::after,
+#contactMessage .banner::after
+{
+	content:'';
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(360deg,#000, transparent);
+	pointer-events: none;
+}
+
+.centrer_form
+{
+	display: flex;
+	flex-flow: column wrap;
+	min-height: 90vh;
+	justify-content: center;
+	align-items: center;
+}
+
+#connexion form,
+#inscription form,
+#contact form,
+#suiteInscription form
+{
+	z-index: 1000;
+	position: relative;
+	padding: 50px;
+}
+
+#connexion h1,
+#inscription h1,
+#contact h1,
+#suiteInscription h1
+{
+	font-family: 'Poppins', sans-serif;
+	text-transform: capitalize;
+	font-size: 2.5em;
+}
+
+#connexion .form-control,
+#inscription .form-control,
+#contact .form-control,
+#suiteInscription .form-control
+{
+	background: transparent;
+	border:none;
+	border-bottom: 1.5px solid rgba(255,255,255,0.2);
+	height: 40px;
+	width: 40vw;
+	background: rgba(0,0,0,0.6);
+	color: #fff;
+	font-size: 0.8em;
+	border-radius: 3px;
+}
+
+#connexion .form-control:focus,
+#connexion .form-control:hover,
+#inscription .form-control:focus,
+#inscription .form-control:hover,
+#contact .form-control:focus,
+#contact .form-control:hover,
+#suiteInscription .form-control:focus,
+#suiteInscription .form-control:hover
+{
+	border-bottom: 1.5px solid rgba(255,255,255,1);
+}
+
+#connexion label,
+#inscription label,
+#contact label,
+#suiteInscription label
+{
+	color: #fff;
+	font-size: 1.1em;
+	text-align: left;
+}
+
+#contact .textarea,
+#suiteInscription textarea
+{
+	min-height:100px;
+	border-radius: 3px;
+}
+
+#contactMessage a
+{
+	font-size: 0.9em;
+	letter-spacing: 2px;
+	background-color: #777E31;
+	box-shadow: 0px 0px 17px black;
+ 	color: white; 
+ 	justify-content: center;
+	border: none;
+	border-radius: 5px;
+	height: 40px;
+	padding: 10px 15px;
+	width: 100%;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+#contactMessage a:hover
+{
+	background: #465512;
+}
+
+
+
+
+/*--------------- FOOTER --------------*/
+
+footer
+{
+	background: #000;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 90px;
+}
+
+.sci
+{
+	margin:0;
+	padding:0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sci a
+{
+	color: #777;
+	font-size: 0.9em;
+	margin: 0 10px 0 10px;
+	transition: 0.5s;
+}
+
+.sci a:hover
+{
+	color: #fff;
+}
+
+p.cpryt
+{
+	text-align: center;
+	color: #fff;
+	margin: 0;
+}
+
+
+
+
+/*--------	AFFICHAGE REGEX JS ---------*/
+
+#contact p, #contact li,
+#inscription p, #inscription li,
+#suiteInscription p, #suiteInscription li,
+#connexion p, #connexion li,
+#profilUpdate p, #profilUpdate li
+{
+	color: #C83D00;
+	margin-bottom: 1vh;
+	text-shadow: 0px 0px 17px black;
+	font-size: 0.9em;
+	text-align: left;
+	font-weight: 570;
+}
+

@@ -1,0 +1,469 @@
+
+@media screen and (max-width: 991px)
+{
+	.navbar.clicked
+	{
+		background: #000 !important;
+	}
+
+	.navbar .btn_connexion
+	{
+	    margin-left: 7px;
+	}
+
+	.scroll
+	{
+		display: none;
+	}
+
+    .headerText h2
+	{
+		font-size: 1.7em;
+		margin-bottom:40px;
+	}
+
+
+	/*------BARRE DE RECHERCHE ------*/
+
+	.search
+	{
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.text-box
+	{
+		border-bottom: 1px solid #fff;
+		width: 90vw;
+	}
+
+	.text-box form
+	{
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+
+	.text-box button
+	{
+		background: transparent;
+		color: #fff;
+		border: none;
+	}
+
+	input[type="search"]
+	{
+		border: none;
+		width: 100%;
+		color: #fff;
+		background: transparent;
+	}
+
+
+
+
+	/*---- RECETTE / RENCONTRE / ADRESSE : BTNS ANIMES SUR PAGES INDEX ----*/
+	
+	.btn_creation
+	{
+		animation: none;
+		width: 250px;
+	}
+
+
+	/*------------- ACCUEIL ---------------*/
+
+
+	#home #returnHome .h100
+	{
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.contentBox h1
+	{
+		font-size: 2.6em;
+	}
+
+	.contentBox p
+	{
+		font-size: 1.2em;
+	}
+
+	#home .img_fond
+	{
+		position: absolute;
+		right: 7%;
+		top: -2%;
+		transform: rotate(-125deg);
+		width: 35vw;
+	}
+
+	#home .img_fond2
+	{
+		position: absolute;
+		left: 10%;
+		top: -3%;
+		transform: rotate(0deg);
+		width: 35vw;
+	}
+
+	#home .btnD3
+	{
+		font-size: 0.9em;
+		border-bottom: 1.5px solid #D46C00;
+	}
+
+
+		/*----- ACCUEIL : PARTIE RECETTE ----*/
+		
+		#home #recipe .text_descriptif
+		{
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		#home #recipe .text_descriptif p
+		{
+			width: 80%;
+			line-height: 4vh;
+			margin: 0 0 30px 0px;
+		}
+
+		#btn_recipe
+		{
+		    animation: none;
+		    width: 80%;
+		}
+
+
+		/*----- ACCUEIL : PARTIE RENCONTRE ----*/
+		
+		.team-area
+		{
+			
+			margin-right: 0;
+			margin-left: 0;
+			width: 100vw;
+			flex-flow: column wrap;
+			align-items: center;
+			margin: 20px 0 0 0;
+		}
+
+		.single-team
+		{
+			width: 80%;
+			height: 300px;
+			padding: 24px;
+			position: relative;
+			margin: 20px 2.1666% 20px 2.1666%;
+			transition: 0.6s ease-out;
+			box-shadow: 0px 0px 17px black;
+		}
+		
+		.single-team .team-text
+		{
+			bottom: 10%;
+			opacity: 1;
+		}
+
+		.single-team
+		{
+			transform: translateY(0); 
+		}
+
+		#home #event .text_descriptif
+		{
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		#home #event .text_descriptif p
+		{
+			width: 80%;
+			line-height: 4vh;
+			text-align: left;
+			margin: 0 0 60px 0;
+		}
+
+		#btn_event
+		{
+		    animation: none;
+		    width: 80%;
+		}
+
+		#home #event .btnD3
+		{
+		    margin-left: 0;
+		}
+
+		/*----- ACCUEIL : PARTIE ADRESSE ----*/
+		
+		#home #address .text_descriptif
+		{
+			width: 100%;
+			height: 100%;
+		}
+
+		#home #address .text_descriptif p
+		{
+			line-height: 4vh;
+			margin: 0 0px 60px 0px;
+		}
+
+		#home #address .btnD3
+		{
+			margin-left: 10%;
+		}
+
+		#btn_address
+		{
+		    animation: none;
+		    width: 100%;
+		}
+	
+
+	/*--------- PROFIL : MES RENCONTRES --------*/
+
+	#my_events .team-area .conteneurEvent
+	{
+		width: 100%;
+		margin: 20px 2.1666% 20px 2.1666%;
+	}
+
+	.single-team
+	{
+		width: 100%!important;
+		height: 350px;
+		margin: 0 0 0 0;
+	}
+
+	#my_events .boutons_valid_annul
+	{
+		width: 100%;
+		margin-top: 10px;
+	}
+
+	#my_events .afficheUpdateEvent, #my_events .afficheDeleteEvent 
+	{
+		background: #fff;
+		font-size: 0.9em;
+		font-weight: 600;
+		border: none;
+		border-radius: 3px;
+		width: 49.1%;
+		padding: 10px 0;
+	}
+
+
+
+
+
+
+	/*-------------- DELETE MES RENCONTRES ------------*/
+
+	#my_events .deleteEvent
+	{
+		width: 90%;
+		padding: 40px 20px;
+	}
+
+	#my_events #deleteEvent p
+	{
+		font-size: 1.1em;
+		margin-bottom: 20px;
+		font-weight: 500;
+	}
+
+	#my_events #deleteRenc .bouton_horizontal button
+	{
+		border: 1px solid #fff;
+		font-size: 1.1em;
+		padding: 5px 10px;
+	}
+
+
+
+	/*-------------- ADRESSE --------------*/
+	
+	#address #filtres.container
+	{
+		display: none;
+	}
+
+	#address .blogpost .content .btnD1
+	{
+		position: relative;
+	}
+
+	#address select
+	{
+		width: 100%;
+	}
+
+
+
+	/*--------- TABLEAU DE BORD : IMG PROFIL---------*/
+
+	.photo_profil
+	{
+		width : 35vw;
+		height: 35vw;
+		bottom: 12%;
+
+	}
+
+	.photo_profil img
+	{
+		width: 100%;
+	}
+	
+
+	/*--------- TABLEAU DE BORD : PROFIL INDEX ---------*/
+	
+	#tableau_bord #contenu_profil
+	{
+	    margin-top: 100px;
+	}
+	    
+	#tableau_bord #menu_profil
+	{
+	    flex-flow: column wrap;
+	    width: 100%;
+	}
+
+	#tableau_bord #menu_profil a
+	{
+		height: 60px;
+		width: 100%;
+	}
+
+	
+
+	/*--------- PROFIL VIEW -------*/
+	
+	#profil #profilView
+	{
+	    padding-top: 100px;
+	}
+
+	#profil #presentation_profil
+	{
+	    width: 90%;
+	    border-radius: 5px;
+	    height: 420px;
+	    color: #2C2221;
+	}
+
+	#profil .relative img
+	{
+		width: 25vw;
+	}
+
+	#profil .relative img:first-child
+	{
+		left: 70%;
+	}
+
+	#profil .relative img:nth-child(2)
+	{
+		right: 70%;
+		top: 85%;
+	}
+
+
+
+	/*--------- PROFIL UPDATE -------*/
+	
+	#profilUpdate h2
+	{
+	    margin-top: 100px;
+	    margin-bottom: 20px;
+	}
+
+	/*------------ PAGES : UPDATE MES RENCONTRES / ADD RENCONTRE / ADD RECETTE /ADD ADRESSE----------*/
+	
+	#updateEvent form, #my_recipes form, #addEvent form, #addRecipe form, #addAddress form
+	{
+	    display: flex;
+	    flex-flow: column wrap;
+	    justify-content: space-evenly;
+	    padding-top: 100px;
+	}
+
+	#updateEvent form div, #my_recipes form div, #addEvent form div, #addRecipe form div, #addAddress form div
+	{
+	    width: 100%;
+	}
+		
+
+	/*-------- CONNEXION / INSCRIPTION / SUITE INSCRIPTION / CONTACT ---------*/
+
+	#connexion form, #inscription form, #contact form, #suiteInscription form
+	{
+	    z-index: 1000;
+	    position: relative;
+	    padding: 50px 0;
+	}
+
+	#connexion form, #inscription form, #contact form, #suiteInscription form
+	{
+		width: 90vw;
+	}
+
+	#connexion .form-control, #inscription .form-control, #contact .form-control, #suiteInscription .form-control
+	{
+		height: 40px;
+		width: 90vw;
+		
+	}
+
+	#connexion label, #inscription label, #contact label, #suiteInscription label
+	{
+		font-size: 1em;
+	}
+
+
+
+	/*--------------- FOOTER --------------*/
+
+	footer
+	{
+		min-height: 120px;
+	}
+
+	.sci
+	{
+		flex-flow: column wrap;
+	}
+
+	.sci a
+	{
+		color: #777;
+		font-size: 0.9em;
+		margin: 0 10px 0 10px;
+		transition: 0.5s;
+	}
+
+	.sci a:hover
+	{
+		color: #fff;
+	}
+
+	p.cpryt
+	{
+		text-align: center;
+		color: #fff;
+		margin: 0;
+	}
