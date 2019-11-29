@@ -4,7 +4,7 @@
 	  		<div class="container h100">
 	    		<div class="contentBox h100">
 	    			<div>
-	    				<h1>Mes recettes haelthy</h1>
+	    				<h1>Mes recettes healthy</h1>
 	    				<h2>Créez, modifiez et supprimez vos recettes saines et gourmandes</h2>
 	    			</div>
 	    		</div>

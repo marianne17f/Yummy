@@ -858,7 +858,7 @@ nav a:hover
 }
 
 #my_events .displayUpdateEvent,
-#my_events .displayDeleteEvent 
+#my_events .displayDeleteEvent
 {
 	background: #fff;
 	font-size: 0.9em;
@@ -1124,6 +1124,25 @@ nav a:hover
 	margin-top: 3vw;
 }
 
+#detail_event .btn_action
+{
+	flex-flow: row wrap!important;
+	justify-content: space-evenly;
+	text-align: justify;
+	margin-bottom: 20px!important;
+}
+
+#detail_event button
+{
+	border: none;
+}
+
+#detail_event .iconesMS
+{
+	width: 30px;
+	vertical-align: middle;
+}
+
 #detail_event #tutos_events div
 {
 	width:25vw;
@@ -1197,6 +1216,7 @@ nav a:hover
 	border-radius: 5px;
 	border: none;
 }
+
 
 
 

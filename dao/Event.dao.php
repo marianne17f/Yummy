@@ -12,6 +12,10 @@ class DaoEvent
 		$event->getId();
 	}
 
+
+
+
+
 	public function read($id) 
 	{
 		$eventData = DB::select('SELECT * FROM event WHERE id = ? AND archive = 0', array($id));
@@ -29,6 +33,10 @@ class DaoEvent
 		}
 	}
 
+
+
+
+	//read and display all events
 	public function readAll()
 	{
 		$eventData = DB::select('SELECT * FROM event WHERE archive = 0 ORDER BY id DESC');
@@ -43,6 +51,7 @@ class DaoEvent
 			}
 			return $events;
 		}
+		
 		else
 		{
 			return null;
@@ -50,6 +59,9 @@ class DaoEvent
 		
 	}
 
+
+
+	// read events created by the connected user
 	public function readByFkUser($fk_user)
 	{
 		$eventData = DB::select('SELECT * FROM event WHERE archive = 0 AND fk_user = ? ORDER BY id DESC',array($fk_user));
@@ -71,7 +83,11 @@ class DaoEvent
 		
 	}
 
-	/* Select party's number by event */
+
+
+
+
+	// Select party's number by event
 	public function partyByEvent($id)
 	{
 		$party = DB::select('SELECT  user.id, photo, firstname, lastname
@@ -80,16 +96,27 @@ class DaoEvent
 			WHERE fk_event = ?',array($id));
 	}
 	
+
+
+
+	// update a event
 	public function update($event)
 	{
 		DB::select('UPDATE event SET name = ?, image = ?, address = ?, availability = ?, program = ?, cost = ?, dater = ?, timer = ? WHERE id = ?', array($event->getName(),$event->getImage(),$event->getAddress(),$event->getAvailability(),$event->getProgram(),$event->getCost(),$event->getDater(),$event->getTimer(), $event->getId()));
 	}
 
 	
+
+
+
 	public function archive($id)
 	{
 		DB::select('UPDATE event SET archive = 1 WHERE id = ?', array($id));
 	}
+
+
+
+
 
 	public function delete($id)
 	{

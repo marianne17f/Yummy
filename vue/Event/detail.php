@@ -17,6 +17,29 @@
 
 
 	<section id="tutos_events">
+
+		<?php
+			
+			// display "update" and "delete" buttons only if the event'creator is the connected user
+			if(isset($_SESSION['id']) && ($_SESSION['id']) == $event->getFk_user() && isset($event))
+			{
+
+		?>
+			<article>
+			<div></div>
+			<div class="btn_action">
+				<a href="<?php echo WEBROOT ?>Event/pageUpdateEvent/<?php echo $event->getId()?>">
+					<button>Modifier<img class="icone iconesMS" src="<?php echo WEBROOT ?>img/modifier.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
+				</a>
+					<button>Supprimer<img class="icone iconesMS" src="<?php echo WEBROOT?>img/delete.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
+			</div>
+			<div></div>
+		</article>
+
+
+		<?php
+			}
+		?>
 		
 		<?php
 
@@ -24,6 +47,7 @@
 			{
 		?>
 
+		
 		<article>
 			<div>
 				<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage()?>" alt="photo de profil Yummy site de partage de recettes healthy et d'événements culinaires" title="événement culinaire">
@@ -48,19 +72,17 @@
 			<div>
 				<button class="orange">Il reste <?php echo $event->getAvailability()?> places</button>
 				<button class="btnD1">Je veux participer !</button>
-				<p>(nb de participants) participants :</p>
-				<p><?php echo WEBROOT.'img/'.$user->getPhoto() ?></p>
-				<p><?php echo WEBROOT.'img/'.$user->getFirstName() ?></p>
-				<p><?php echo WEBROOT.'img/'.$user->getLastName() ?></p>					
+								
 			</div>
 		</article>
-		
-		<?php
-			}
-		?>
 
 
 		
+		
+		
+		
+
+
 		<article>
 			<div></div>
 			<div>
@@ -77,6 +99,10 @@
 			
 
 		</article>
+
+		<?php
+			}
+		?>
 		
 
 	</section>

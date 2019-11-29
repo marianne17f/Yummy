@@ -132,11 +132,8 @@
 						 ?>
 				    </ul>
 			    
-		    	</div>
-
-				        
-				     	
-		    	</div>
+		    	</div>				     	
+		    </div>
 		</nav>
 	</header>
 
@@ -162,33 +159,49 @@
 			$_GET['p'] = "Home/index";
 		}
 
-		// Chargement du controleur
+		// Chargement du controller
+		//$tabController est le tableau contenant les noms des entités controller acceptée par le site
+		$tabController = array('Home', 'Address', 'Contact', 'Event', 'Recipe', 'User');
 		$param = explode("/",$_GET['p']);
-		$controller = $param[0];
-		if (isset($param[1]))
-		{
-			$action = $param[1];
-		}
-		else
-		{
-			$action = 'index';
-		}
-		require_once('controlleur/'.$controller.'.ctrl.php');
-		$controller = 'Ctrl'.$controller;
-		$controller = new $controller();
 
-		// Execution de l'action du controleur avec les paramètres supplementaires si existant
-		// Si action non présente dans le controleur, alors page 404
-		if (method_exists($controller,$action))
+		if(in_array($param[0], $tabController))
 		{
-			unset($param[0]);
-			unset($param[1]);
-			call_user_func_array(array($controller,$action), $param);
+			$controller = $param[0];
+			
+			if (isset($param[1]))
+			{
+				$action = $param[1];
+			}
+
+			else
+			{
+				$action = 'index';
+			}
+
+			require_once('controlleur/'.$controller.'.ctrl.php');
+			$controller = 'Ctrl'.$controller;
+			$controller = new $controller();
+			// Execution de l'action du controleur avec les paramètres supplementaires si existant
+			// Si action non présente dans le controleur, alors page 404
+			if (method_exists($controller,$action))
+			{
+				unset($param[0]);
+				unset($param[1]);
+				call_user_func_array(array($controller,$action), $param);
+			}
+
+			else
+			{
+				echo 'erreur 404';
+			}
 		}
 		else
 		{
 			echo 'erreur 404';
 		}
+
+	
+
 	 ?>
 
 

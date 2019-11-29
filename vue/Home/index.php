@@ -115,10 +115,10 @@
 					</div>
 				</div>
 			</div>
+
+
 			<div class="row">
 				<div class="team-area">
-
-
 
 				<?php 
 			
@@ -136,7 +136,6 @@
 									<h2><?php echo $event->getName() ?></h2>
 									<div class="para">
 										<p><?php echo $event->getAvailability() ?> participants</p>
-										
 										<p>Le <?php echo date("d/m/Y", strtotime($event->getDater()))?></p>
 										<p>À <?php echo date("H:i", strtotime($event->getTimer()))?></p>
 

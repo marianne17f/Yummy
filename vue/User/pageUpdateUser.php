@@ -43,7 +43,7 @@
 		</select></label>
 		
 		<label>Code postal + ville : <br>
-		<input type="text" name="adresse" placeholder="Entrez votre adresse" value="<?php  echo $user->getAddress(); ?>" class="input"></label>
+		<input type="text" name="address" placeholder="Entrez votre adresse" value="<?php  echo $user->getAddress(); ?>" class="input"></label>
 
 		<label>Niveau en cuisine : <br>
 			<select name="level_cook">
@@ -70,8 +70,8 @@
 		<input type="button" class="bouton_valid" value="Annuler" name="bnom" onClick="javascript:history.back();">
 	</div>
 
-	<p>Vous songez à nous quitter mais vous n'êtes pas sûr de votre choix ? <a href="<?php echo WEBROOT ?>/User/archive">Mettez votre profil en suspens</a>. Si vous changez d'avis, revenez vers nous.</p>
+	<p><a href="<?php echo WEBROOT ?>/User/archive">Mettez votre compte en suspens</a></p>
 			
-	<p><a href="<?php echo WEBROOT ?>/User/delete">Supprimez définitivement votre profil</a></p>
+	<p><a href="<?php echo WEBROOT ?>/User/delete">Supprimez définitivement votre compte</a></p>
 
 </main>

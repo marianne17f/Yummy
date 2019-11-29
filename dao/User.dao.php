@@ -34,13 +34,7 @@
 		}
 
 
-		// sending user changes to the DB
-		public function update($user)
-		{
-			
-			$toto = DB::select('UPDATE user SET firstname = ?, lastname = ?, email = ?, pass = ?, photo = ?, age = ?, sex = ?, address = ?, level_cook = ?, role = ? WHERE id = ?', array($user->getFirstName(),$user->getLastName(),$user->getEmail(),$user->getPass(), $user->getPhoto(),$user->getAge(),$user->getSex(),$user->getAddress(), $user->getlevel_cook(),$user->getRole(),$user->getId()));
 
-		}
 
 		// view user data
 		public function read($id)
@@ -68,6 +62,9 @@
 			}
 		}
 
+
+
+
 		// user login
 		public function readByEmail($email)
 		{
@@ -92,6 +89,21 @@
 				return null;
 			}
 		}
+
+
+
+
+		// sending user changes to the DB
+		public function update($user)
+		{
+			
+			$event = DB::select('UPDATE user SET firstname = ?, lastname = ?, email = ?, pass = ?, photo = ?, age = ?, sex = ?, address = ?, level_cook = ?, role = ? WHERE id = ?', array($user->getFirstName(),$user->getLastName(),$user->getEmail(),$user->getPass(), $user->getPhoto(),$user->getAge(),$user->getSex(),$user->getAddress(), $user->getlevel_cook(),$user->getRole(),$user->getId()));
+
+		}
+
+	
+
+	
 
 		// archive the user in the DB
 		public function archive($id)

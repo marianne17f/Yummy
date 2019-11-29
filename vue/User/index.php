@@ -5,7 +5,7 @@
 	  		<div class="container h100">
 	    		<div class="contentBox h100">
 	    			<div>
-	    				<h1>Tableau de bord de <br><?php echo $user->getFirstName().' '.$user->getLastName() ?></h1>
+	    				<h1>Tableau de bord de <br><?php echo htmlentities($user->getFirstName(), ENT_QUOTES).' '.htmlentities($user->getLastName(), ENT_QUOTES) ?></h1>
 	    			</div>
 	    		</div>
 	  		</div>

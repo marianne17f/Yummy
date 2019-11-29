@@ -82,7 +82,12 @@
 
 
 	
-
+	<?php 
+		if (isset($events))
+		{
+			foreach ($events as $key => $event)
+			{
+	?>
 
 	<div id="deleteEvent">
 		<div class="deleteEvent">
@@ -93,6 +98,11 @@
 			</div>
 		</div>
 	</div>
+	
+	<?php
+			}
+		}
+	 ?>
 
 
 </main>
