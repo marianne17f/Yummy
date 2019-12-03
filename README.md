@@ -1,2 +1,2 @@
 # Yummy
-Site de partage de recettes healthy de rencontres culinaires (MVC)
+Site de partage de recettes healthy et de rencontres culinaires (MVC)
