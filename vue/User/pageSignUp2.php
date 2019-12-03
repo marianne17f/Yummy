@@ -34,6 +34,8 @@
 							<div class="form-group">
 								<label>Code postal + ville :
 								<input type="text" name="address" placeholder="ex: 34200 Sète" class="form-control"></label>
+								<div class="info" id="infoAddress">
+								</div>
 							</div>	
 							
 							<div class="form-group">

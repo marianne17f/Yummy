@@ -142,10 +142,11 @@ function verif(inputToTest,reg,idInfo,message)
 
 
 // Récupération des inputs dans une variable correspondante
-if (document.querySelector("#formSignup") != null )
+if (document.querySelector("input[name='firstName']") != null)
 {
 	let prenom = document.querySelector("input[name='firstName']");
 	let nom = document.querySelector("input[name='lastName']");
+	
 	let email = document.querySelector("input[name='email']");
 	let pass1 = document.querySelector("input[name='pass1']");
 	let pass2 = document.querySelector("input[name='pass2']");
@@ -153,12 +154,14 @@ if (document.querySelector("#formSignup") != null )
 	// Déclaration des regex
 	let regPrenom = /^[A-Za-zÀ-ÖØ-öø-ÿ-\s]+$/;
 	let regNom = /^[A-Za-zÀ-ÖØ-öø-ÿ-\s]+$/;
+	
 	let regEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
 	let regPass1 = /^(?=.{6,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[&?:\/=+§^¤£@\#!*()"$]).*$/;
 
 	// Déclaration des messages
-	let messPrenom = "<p>Le prenom doit contenir uniquement des lettres</p>";
+	let messPrenom = "<p>Le prénom doit contenir uniquement des lettres</p>";
 	let messNom = "<p>Le nom doit contenir uniquement des lettres</p>";
+	
 	let messEmail = "<p>l'email n'est pas valide</p>";
 	let messPass1 = '<p>Le mot de passe doit avoir :</p> <ul><li>Au moins une majuscule</li><li>Au moins un chiffre</li><li>Au moins 6 caractères</li><li>Au moins un caractère spécial</li></ul>';
 
@@ -171,18 +174,22 @@ if (document.querySelector("#formSignup") != null )
 	{
 		verif(prenom,regPrenom,'#infoPrenom',messPrenom);
 	});
+
 	nom.addEventListener("input", function() 
 	{
 		verif(nom,regNom,'#infoNom',messNom);
 	});
+
 	email.addEventListener("input",function()
 	{
 		verif(email,regEmail,'#infoEmail',messEmail);
 	});
+
 	pass1.addEventListener("input",function()
 	{
 		verif(pass1,regPass1,'#infoPass1',messPass1);
 	});
+
 	pass2.addEventListener("input",verifPass);
 
 	// Declaration de la fonction paramétrée verif
@@ -206,6 +213,46 @@ if (document.querySelector("#formSignup") != null )
 	}
 }
 
+
+//-----------------VERIF FORM INPUT ADDRESS ---------------- //
+
+
+if (document.querySelector("input[name='address']") != null)
+{
+	let address = document.querySelector("input[name='address']");
+
+
+	// Déclaration des regex
+	let regAddress = /^[A-Za-z0-9À-ÖØ-öø-ÿ'-\s]+$/;
+	
+	// Déclaration des messages
+	let messAddress = '<p>L\'adresse ne peut contenir :</p><ul><li>Des lettres</li><li>Des chiffres</><li>Des espaces, tirets et apostrophes</li></ul>';
+	
+
+	// Ajout d'écouteur d'évènement au changement de la valeur de l'input
+	// le 1er paramètre de l'écouteur d'évènement est le type d'évènement (input)
+	/* le 2ème paramètre de l'écouteur d'évènement est une fonction anonyme qui fait
+	 appel à la fonction paramétrée verif
+	*/
+	
+	address.addEventListener("input",function()
+	{
+		verif(address,regAddress,'#infoAddress',messAddress);
+	});
+
+	
+
+	// Declaration de la fonction paramétrée verif
+	 /* la fonction vérif est composée de 4 paramètres :
+	 - inputToTest : le nom de la variable correspondant à l'input que l'on veut tester
+	 - reg : le regexp correspondant à l'input que l'on veut tester
+	 - idInfo : le nom de l'identifiant de la div où l'ont veut afficher le message
+	 - message : le message
+	 */
+	
+
+	
+}
 
 
 // ------------------ VERIF FORMULAIRE LOGIN ------------------ //

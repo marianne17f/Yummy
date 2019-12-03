@@ -5,13 +5,14 @@
 	class DaoUser 
 	{
 		//sign up : insert data's user in DB
-
 		public function create($user)
 		{
 	        DB::select('INSERT INTO user (firstname, lastname, email, pass) VALUES (?,?,?,?)', array($user->getFirstName(),$user->getLastName(),$user->getEmail(),$user->getPass()));
 
 	        $user->getId();
 	    }
+
+	    
 	//     public function generate($id,$token){
 	//         DB::select('UPDATE users SET token = ? WHERE id = ?', array($token,$id));
 	// }

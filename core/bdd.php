@@ -1,4 +1,5 @@
 <?php 
+// Defining constants
 	define('DB_HOST', 'localhost');
 	define('DB_NAME', 'yummydb');
 	define('DB_USER', 'yummyaccess');
@@ -8,25 +9,27 @@ class DB
 {
   private static $db;
   
-  // Méthode pour créer une connection à la BDD
+  
+  // Method to create a connection to the DB
   public static function connect()
   {
-        if(empty(self::$db))
-        {
-            self::$db = new PDO(
-            "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8", 
-            DB_USER, DB_PASS,
-            [
-              PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-              PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-              PDO::ATTR_EMULATE_PREPARES => false,
-            ]
-          );  
-        }
-        return self::$db;
-    }
+      if(empty(self::$db))
+      {
+          self::$db = new PDO(
+          "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8", 
+          DB_USER, DB_PASS,
+          [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false,
+          ]
+        );  
+      }
+      return self::$db;
+  }
 
- // Méthode pour exécuter une réquête SQL
+
+ // Method to execute a SQL request
   public static function select($sql, $cond=null)
   {
     $result = false;
@@ -45,7 +48,9 @@ class DB
     return $result;
   }
 
-  // Méthode pour récupérer le dernier ID crée dans la BDD
+
+
+  // Method to recover the last ID created in the BDD
   public static function lastId()
   {
     return self::connect()->lastInsertId();

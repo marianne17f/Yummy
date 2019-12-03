@@ -184,8 +184,6 @@ a.bouton_valid
 	background: #36392F;
 }
 
-
-
 p
 {
 	font-size: 0.9rem;
@@ -510,7 +508,7 @@ nav a:hover
 		text-align: center;
 	}
 	
-	/*---- HOME : RECETTE ----*/
+	/*---- HOME : RECIPE ----*/
 
 	#btn_recipe
 	{
@@ -528,7 +526,7 @@ nav a:hover
 
 
 
-	/*---- HOME : event ----*/
+	/*---- HOME : EVENT ----*/
 
 	#btn_event
 	{
@@ -545,7 +543,7 @@ nav a:hover
 	}
 	
 
-	/*---- HOME : ADRESSE ----*/
+	/*---- HOME : ADDRESS ----*/
 
 	#btn_address
 	{
@@ -836,7 +834,7 @@ nav a:hover
 }
 
 
-/*--------- PROFIL : My eventS --------*/
+/*--------- PROFIL : My events --------*/
 
 #my_events .team-area .conteneurEvent
 {
@@ -1042,7 +1040,7 @@ nav a:hover
 
 
 
-/*-------------- DELETE MES eventS ------------*/
+/*-------------- DELETE My events ------------*/
 
 #my_events #deleteEvent
 {
@@ -1585,11 +1583,16 @@ nav a:hover
 	height: 30px;
 	width: 350px;
 	font-size: 1em;
-	/*padding : 5px;*/
-	margin-bottom: 20px;
 	border-radius: 5px;
 	padding: .375rem .75rem;
 	border: none; 
+	box-sizing: border-box; 
+}
+
+#profilUpdate option
+{
+	width: 100px!important;
+	font-size: 0.8em;
 	box-sizing: border-box; 
 }
 
@@ -1709,7 +1712,7 @@ nav a:hover
 	width: 40vw;
 	background: rgba(0,0,0,0.6);
 	color: #fff;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	border-radius: 3px;
 }
 
@@ -1731,7 +1734,7 @@ nav a:hover
 #suiteInscription label
 {
 	color: #fff;
-	font-size: 1.1em;
+	font-size: 0.95em;
 	text-align: left;
 }
 

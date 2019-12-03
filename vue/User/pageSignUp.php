@@ -17,10 +17,10 @@
 								<div class="form-group">
 									<label>Prénom : <input class="form-control" type="text" name="firstName" required></label>
 									<div class="info" id="infoPrenom">
-										<?php // if (isset ($log1)) 
-										// {
-										// 	echo $log1;
-										// }
+										<?php if (isset ($log1)) 
+											{
+											 	echo $log1;
+											}
 										?>
 									</div>
 								</div>
@@ -29,9 +29,9 @@
 									<label>Nom : <input type="text" class="form-control" name="lastName" required></label>
 									<div class="info" id="infoNom">
 										<?php if (isset ($log2)) 
-										{
-											echo $log2;
-										}
+											{
+												echo $log2;
+											}
 										?>
 									</div>
 								</div>
@@ -39,10 +39,10 @@
 								<div class="form-group">
 									<label>Email : <input class="form-control" type="email" name="email" required></label>
 									<div class="info" id="infoEmail">
-									<?php if (isset ($log3)) 
-										{
-											echo $log3;
-										}
+										<?php if (isset ($log3)) 
+											{
+												echo $log3;
+											}
 										?>
 									</div>
 								</div>
@@ -51,9 +51,9 @@
 									<label>Mot de passe : <input class="form-control" type="password" name="pass1" required></label>
 									<div class="info" id="infoPass1">
 										<?php if (isset ($log4)) 
-										{
-											echo $log4;
-										}
+											{
+												echo $log4;
+											}
 										?>
 									</div>
 								</div>
@@ -62,9 +62,9 @@
 									<label>Confirmer le mot de passe : <input class="form-control" type="password" name="pass2" required></label>
 									<div class="info" id="infoPass2">
 										<?php if (isset ($log5)) 
-										{
-											echo $log5;
-										}
+											{
+												echo $log5;
+											}
 										?>
 									</div>
 								</div>

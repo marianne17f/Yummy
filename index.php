@@ -159,8 +159,8 @@
 			$_GET['p'] = "Home/index";
 		}
 
-		// Chargement du controller
-		//$tabController est le tableau contenant les noms des entités controller acceptée par le site
+		// Loading the controller
+		//$tabController is an array which contains the entities' names accepted by the website
 		$tabController = array('Home', 'Address', 'Contact', 'Event', 'Recipe', 'User');
 		$param = explode("/",$_GET['p']);
 
@@ -181,6 +181,7 @@
 			require_once('controlleur/'.$controller.'.ctrl.php');
 			$controller = 'Ctrl'.$controller;
 			$controller = new $controller();
+
 			// Execution de l'action du controleur avec les paramètres supplementaires si existant
 			// Si action non présente dans le controleur, alors page 404
 			if (method_exists($controller,$action))
@@ -195,6 +196,7 @@
 				echo 'erreur 404';
 			}
 		}
+		
 		else
 		{
 			echo 'erreur 404';
