@@ -1,9 +1,60 @@
-
 @media screen and (max-width: 991px)
 {
+	/* ---- ---- GENERAL ----------- */
+
+	/* cible tous les h1 de chaque page */
+	.contentBox h1
+	{
+		padding-top: 80px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* cible seulement le h1 "YUMMY" sur la page d'accueil */
+	#home h1
+	{
+		padding-top: 0;
+	}
+	
+	/* courtes phrases dans l'en-tête */
+	.contentBox h2
+	{
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h2
+	{
+		font-size: 1.7em;
+		margin-bottom:40px;
+	}
+
+	p
+	{
+		font-size: 1em;
+	}
+
+
+
+	.bouton_valid, a.bouton_valid
+	{
+		font-size: 1.1em;
+	}
+
+
+
+	/*--------- NAVIGATION ----------*/
+	
+	.navbar
+	{
+		padding-bottom: 20px;
+	}
+
 	.navbar.clicked
 	{
-		background: #000 !important;
+		/* background menu devient noir au clic sur le hamburger */
+		background: #000!important;
 	}
 
 	.navbar .btn_connexion
@@ -11,59 +62,70 @@
 	    margin-left: 7px;
 	}
 
-	.scroll
-	{
-		display: none;
-	}
-
-    .headerText h2
-	{
-		font-size: 1.7em;
-		margin-bottom:40px;
-	}
-
+	
 
 	/*------BARRE DE RECHERCHE ------*/
 
-	.search
-	{
-		width: 100%;
-		display: flex;
-		justify-content: flex-end;
-	}
-
-	.text-box
-	{
-		border-bottom: 1px solid #fff;
-		width: 90vw;
-	}
-
-	.text-box form
-	{
-		display: flex;
-		justify-content: flex-end;
-		width: 100%;
-	}
-
-	.text-box button
-	{
-		background: transparent;
-		color: #fff;
-		border: none;
-	}
-
 	input[type="search"]
 	{
-		border: none;
-		width: 100%;
-		color: #fff;
-		background: transparent;
+		padding: .375em 2em;
 	}
 
 
 
+	
+	/*---------- BANNER SPECIFIQUE AUTRES PAGES -----------*/
+	
+	.heights100p
+	{
+		height: 55vh;
+	}
 
-	/*---- RECETTE / RENCONTRE / ADRESSE : BTNS ANIMES SUR PAGES INDEX ----*/
+
+
+	
+	/*----------- DESIGN EVENT / RECIPE -----------*/
+
+	.team-area
+	{	
+		margin-right: 0;
+		margin-left: 0;
+		width: 100vw;
+		align-items: center;
+		margin: 20px 0 0 0;
+	}
+	
+	.single-team
+	{
+		transition: none;
+		display: flex;
+		flex-flow: column wrap;
+		padding: 24px;
+		height: 350px;
+		position: relative;
+		margin: 10px 5% 10px 5%;
+		transition: none;
+		margin-bottom: 20px;
+		transform: translateY(0); 
+	}
+
+	/* Annul effet transition sur les img recipe et event */
+	.single-team:hover
+	{
+		transform: translateY(0px);
+	}
+
+	.single-team .team-text
+	{
+		bottom: 10%;
+		opacity: 1;
+		/* annule effet texte qui monte au hover */
+		transform: translateY(0); 
+	}
+
+
+
+	/*---- RECIPE / EVENT/ ADDRESS : ANNULATION ANIMATIONS SUR PAGES INDEX ----*/
 	
 	.btn_creation
 	{
@@ -72,27 +134,10 @@
 	}
 
 
-	/*------------- ACCUEIL ---------------*/
 
-
-	#home #returnHome .h100
-	{
-		display: flex;
-		flex-flow: row wrap;
-		align-items: center;
-		justify-content: center;
-	}
+	/*------------- HOME ---------------*/
 	
-	.contentBox h1
-	{
-		font-size: 2.6em;
-	}
-
-	.contentBox p
-	{
-		font-size: 1.2em;
-	}
-
+	
 	#home .img_fond
 	{
 		position: absolute;
@@ -113,27 +158,29 @@
 
 	#home .btnD3
 	{
-		font-size: 0.9em;
 		border-bottom: 1.5px solid #D46C00;
+		transition: none;
 	}
 
 
-		/*----- ACCUEIL : PARTIE RECETTE ----*/
-		
-		#home #recipe .text_descriptif
-		{
-			display: flex;
-			flex-flow: column wrap;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 100%;
-		}
+	#home .recipe .text_descriptif,
+	#home .event .text_descriptif
+	{
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
 
-		#home #recipe .text_descriptif p
+
+		/*----- HOME : PART RECIPE ----*/
+
+		#home .recipe .text_descriptif p
 		{
-			width: 80%;
-			line-height: 4vh;
+			font-size: 0.9em;
+			line-height: 7vw;
 			margin: 0 0 30px 0px;
 		}
 
@@ -144,109 +191,100 @@
 		}
 
 
-		/*----- ACCUEIL : PARTIE RENCONTRE ----*/
-		
-		.team-area
-		{
-			
-			margin-right: 0;
-			margin-left: 0;
-			width: 100vw;
-			flex-flow: column wrap;
-			align-items: center;
-			margin: 20px 0 0 0;
-		}
 
-		.single-team
-		{
-			width: 80%;
-			height: 300px;
-			padding: 24px;
-			position: relative;
-			margin: 20px 2.1666% 20px 2.1666%;
-			transition: 0.6s ease-out;
-			box-shadow: 0px 0px 17px black;
-		}
-		
-		.single-team .team-text
-		{
-			bottom: 10%;
-			opacity: 1;
-		}
+		/*----- HOME : PART EVENT -----*/
 
-		.single-team
+		#home .event .text_descriptif
 		{
-			transform: translateY(0); 
-		}
-
-		#home #event .text_descriptif
-		{
-			display: flex;
-			flex-flow: column wrap;
-			justify-content: center;
-			align-items: center;
+			display: block;
 			width: 100%;
 			height: 100%;
 		}
-
-		#home #event .text_descriptif p
+		
+		
+		#home .event .text_descriptif p
 		{
 			width: 80%;
-			line-height: 4vh;
+			font-weight: 100;
 			text-align: left;
-			margin: 0 0 60px 0;
+			letter-spacing: 2px;
+			text-shadow: 3px 3px 5px black;
+			z-index: 3;
 		}
+
 
 		#btn_event
 		{
 		    animation: none;
-		    width: 80%;
+		    width: 100%;
 		}
 
-		#home #event .btnD3
-		{
-		    margin-left: 0;
-		}
-
-		/*----- ACCUEIL : PARTIE ADRESSE ----*/
 		
-		#home #address .text_descriptif
+
+		/*----- HOME : PART ADDRESS ----*/
+		
+		#home .address .text_descriptif
 		{
 			width: 100%;
 			height: 100%;
 		}
 
-		#home #address .text_descriptif p
+		#home .address .text_descriptif p
 		{
-			line-height: 4vh;
 			margin: 0 0px 60px 0px;
+			width: 80%;
 		}
 
-		#home #address .btnD3
-		{
-			margin-left: 10%;
-		}
 
 		#btn_address
 		{
 		    animation: none;
 		    width: 100%;
 		}
+
+		#home .address .text_descriptif p:nth-child(2) a
+		{
+			color: #fff;
+			font-weight: 550;
+			padding: 13px 20px;
+			border-radius: 5px;
+			background: #D46C00;
+			width: 100%;
+			box-shadow: 0px 0px 17px black;
+			transition: none;
+		}
+
+
+
+		/*----------- DESIGN ADDRESS -----------*/
+		
+		.blogpost
+		{
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.blogpost .imgBx
+		{
+			height: 250px;
+		}
+
+		/*--------- REDIRECTION DEMANDE D'INSCRIPTION --------*/
+		
+		#redirectionInscripCo .contentBox h1
+		{
+			padding-top: 0;
+		}
+
+
+
+
+	/*--------- PROFIL : EVENT --------*/
 	
-
-	/*--------- PROFIL : MES RENCONTRES --------*/
-
 	#my_events .team-area .conteneurEvent
 	{
 		width: 100%;
-		margin: 20px 2.1666% 20px 2.1666%;
-	}
-
-	.single-team
-	{
-		width: 100%!important;
-		height: 350px;
-		margin: 0 0 0 0;
+		margin: 20px 4% 20px 4%;
 	}
 
 	#my_events .boutons_valid_annul
@@ -255,7 +293,8 @@
 		margin-top: 10px;
 	}
 
-	#my_events .afficheUpdateEvent, #my_events .afficheDeleteEvent 
+	#my_events .afficheUpdateEvent,
+	#my_events .afficheDeleteEvent 
 	{
 		background: #fff;
 		font-size: 0.9em;
@@ -267,6 +306,54 @@
 	}
 
 
+
+	/*----- FENETRE DELETE MY EVENTS ----*/
+
+	#my_events #deleteEvent
+	{
+		width: 90%;
+	}
+
+
+
+	/* ------ DETAIL EVENT ------*/
+	
+	#detail_event #tutos_events
+	{
+		display: flex;
+		flex-flow: column wrap;
+		margin-top: 50px;
+	}
+
+	#detail_event .article
+	{
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-evenly;
+		text-align: justify;
+		width: 100%;
+		margin-top: 3vw;
+	}
+
+
+	#detail_event #tutos_events .btn_action
+	{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 50px;
+	}
+
+	#detail_event .afficheUpdateEvent,
+	#detail_event .afficheDeleteEvent 
+	{
+		background: #fff;
+		font-size: 0.9em;
+		font-weight: 600;
+		border: none;
+		border-radius: 3px;
+		width: 100%;
+	}
 
 
 
@@ -295,11 +382,16 @@
 
 
 
-	/*-------------- ADRESSE --------------*/
+	/*-------------- ADDRESS --------------*/
 	
-	#address #filtres.container
+	#address #filtre
 	{
-		display: none;
+		margin-bottom: 15px;
+	}
+
+	#address #filtre select
+	{
+		width: 100%;
 	}
 
 	#address .blogpost .content .btnD1
@@ -314,14 +406,14 @@
 
 
 
-	/*--------- TABLEAU DE BORD : IMG PROFIL---------*/
+
+	/*----- TABLEAU DE BORD : IMG PROFIL------*/
 
 	.photo_profil
 	{
 		width : 35vw;
 		height: 35vw;
 		bottom: 12%;
-
 	}
 
 	.photo_profil img
@@ -334,19 +426,12 @@
 	
 	#tableau_bord #contenu_profil
 	{
-	    margin-top: 100px;
-	}
-	    
-	#tableau_bord #menu_profil
-	{
-	    flex-flow: column wrap;
-	    width: 100%;
+	    margin-top: 120px;
 	}
 
 	#tableau_bord #menu_profil a
 	{
 		height: 60px;
-		width: 100%;
 	}
 
 	
@@ -394,15 +479,23 @@
 
 	/*------------ PAGES : UPDATE MES RENCONTRES / ADD RENCONTRE / ADD RECETTE /ADD ADRESSE----------*/
 	
-	#updateEvent form, #my_recipes form, #addEvent form, #addRecipe form, #addAddress form
+	#updateEvent form,
+	#my_recipes form,
+	#addEvent form,
+	#addRecipe form,
+	#addAddress form
 	{
 	    display: flex;
 	    flex-flow: column wrap;
 	    justify-content: space-evenly;
-	    padding-top: 100px;
+	    padding-top: 50px;
 	}
 
-	#updateEvent form div, #my_recipes form div, #addEvent form div, #addRecipe form div, #addAddress form div
+	#updateEvent form div,
+	#my_recipes form div,
+	#addEvent form div,
+	#addRecipe form div,
+	#addAddress form div
 	{
 	    width: 100%;
 	}
@@ -410,26 +503,81 @@
 
 	/*-------- CONNEXION / INSCRIPTION / SUITE INSCRIPTION / CONTACT ---------*/
 
-	#connexion form, #inscription form, #contact form, #suiteInscription form
+	#connexion form,
+	#inscription form,
+	#contact form,
+	#suiteInscription form
 	{
 	    z-index: 1000;
 	    position: relative;
 	    padding: 50px 0;
 	}
 
-	#connexion form, #inscription form, #contact form, #suiteInscription form
+	#connexion form,
+	#inscription form,
+	#contact form,
+	#suiteInscription form
 	{
 		width: 90vw;
 	}
 
-	#connexion .form-control, #inscription .form-control, #contact .form-control, #suiteInscription .form-control
+	#connexion .form-control,
+	#inscription .form-control,
+	#contact .form-control,
+	#suiteInscription .form-control
 	{
 		height: 40px;
-		width: 90vw;
-		
+		width: 90vw;	
 	}
 
-	#connexion label, #inscription label, #contact label, #suiteInscription label
+	#connexion label,
+	#inscription label,
+	#contact label,
+	#suiteInscription label
+	{
+		font-size: 1em;
+		margin-bottom: .90rem;
+	}
+
+	#connexion .form-control,
+	#inscription .form-control,
+	#contact .form-control,
+	#suiteInscription .form-control
+	{
+		font-size: 1em;
+		font-weight: 150;
+	}
+	
+
+
+	/*--------------- RGPD : PAGES LEGAL / POLICY / COOKIES --------------*/
+
+	#cookie,
+	#policy,
+	#legal
+	{
+		margin-top: 100px;
+		width: 85%;
+	}
+
+	#cookie h1,
+	#policy h1,
+	#legal h1
+	{
+		margin-bottom: 10vw;
+	}
+
+	#cookie h2,
+	#policy h2,
+	#legal h2
+	{
+		margin-top: 10vw;
+	}
+
+	#cookie p,
+	#policy p,
+	#policy li,
+	#legal p
 	{
 		font-size: 1em;
 	}
@@ -443,27 +591,39 @@
 		min-height: 120px;
 	}
 
-	.sci
+	footer .sci
 	{
 		flex-flow: column wrap;
 	}
 
-	.sci a
+	footer .sci a
 	{
-		color: #777;
-		font-size: 0.9em;
-		margin: 0 10px 0 10px;
-		transition: 0.5s;
+		transition: none;
 	}
 
-	.sci a:hover
+
+	/*--------------PAGE 404 ---------------*/
+	
+	#p404
 	{
-		color: #fff;
+		height: calc(100vh - 120px);
+	}
+	#p404 h1
+	{
+		margin: 2vw 0 12vw 0;
+		font-size: 1.9em;
 	}
 
-	p.cpryt
+	#p404 p
 	{
+		width: 80%;
 		text-align: center;
-		color: #fff;
-		margin: 0;
 	}
+
+	#p404 .btnD1
+	{
+		font-size: 1.2em!important;
+	}
+
+
+}

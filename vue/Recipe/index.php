@@ -5,8 +5,8 @@
 	  		<div class="container h100">
 	    		<div class="contentBox h100">
 	    			<div>
-	    				<h1>Nos recettes <br>équilibrées et gourmandes</h1>
-	    				<h2>Créez et partagez vos idées recettes healthy</h2>
+	    				<h1>Nos recettes healthy</h1>
+	    				<h2>Créez et partagez vos idées recettes healthy et gourmandes</h2>
 	    			</div>
 	    		</div>
 	  		</div>
@@ -17,7 +17,7 @@
 	<div class="blog recipe">
 		<div class="container">
 		
-			<div class="headerText text-center">
+			<div class="text-center">
 				<a href="<?php echo WEBROOT ?>Recipe/pageAddRecipe/" class="btn btnD1 btn_creation">Créer une nouvelle recette</a>		
 			</div>	
 				
@@ -44,7 +44,7 @@
 
 					<div class="single-team">
 						<a href="<?php echo WEBROOT ?>Recipe/detail/<?php echo $recipe->getId()?>">
-							<img src="<?php echo WEBROOT ?>img/<?php echo $recipe->getImage() ?>" alt="partage de recettes healthy gourmandes et équilibrées" title="recette healthy">
+							<img src="<?php echo WEBROOT ?>img/<?php echo $recipe->getImage() ?>" alt="partage de recettes healthy gourmandes et équilibrées <?php echo $recipe->getName() ?>" title="recette healthy <?php echo $recipe->getName() ?>">
 								<div class="team-text">
 									<h2><?php echo $recipe->getName() ?></h2>
 									<div class="para">

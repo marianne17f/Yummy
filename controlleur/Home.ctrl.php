@@ -20,12 +20,10 @@
 		}
 
 
-
 		public function cookies()
 		{
 			$this->render('Home','cookies');
 		}
-
 
 
 		public function legal()
@@ -34,11 +32,15 @@
 		}
 
 
-
-
 		public function policy()
 		{
 			$this->render('Home','policy');
+		}
+
+
+		public function p404()
+		{
+			$this->render('Home','p404');
 		}
 
 	}

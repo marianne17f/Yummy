@@ -1,10 +1,10 @@
-<main id="event">
+<main id="event-search">
 	<div class="conteneur-img">
 		<div class="jumbotron jumbotron-fluid heights100p banners">
 	  		<div class="container h100">
 	    		<div class="contentBox h100">
 	    			<div>
-	    				<h1>Nos rencontres culinaires</h1>
+	    				<h1>RESULTAT</h1>
 	    				<h2>Participez et rencontrez les Yummiers lors de rencontres culinaires</h2>
 	    			</div>
 	    		</div>
@@ -23,7 +23,7 @@
 			<div class="search">
 				<div class="text-box">
 					<form action="<?php echo WEBROOT ?>core/search.php" method="post">
-						<input type="search" name="search" placeholder="Rechercher" minlength="2" spellcheck="true" class="search">
+						<input type="search" name="search" placeholder="Rechercher" spellcheck="true" class="search">
 						<button><i class="fa fa-search"></i></button>
 					</form>
 				</div>
@@ -41,9 +41,14 @@
 
 					<div class="single-team">
 						<a href="<?php echo WEBROOT ?>Event/detail/<?php echo $event->getId()?>">
-		
-							<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage() ?>" alt="partage lors d'événements culinaires <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
-								
+
+
+							
+						<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage() ?>" alt="partage lors d'événements culinaires" title="événement culinaire">
+							
+
+
+
 							<div class="team-text">
 								<h2><?php echo $event->getName() ?></h2>
 								<div class="para">
@@ -67,17 +72,3 @@
 		</div>
 	</div>
 </main>
-
-
-
-
-
-
-
-
-	
-
-
-
-
-

@@ -49,7 +49,7 @@
 				$newUser = new User($this->input['firstName'],$this->input['lastName'], $this->input['email'],$this->input['pass1']);
 
 		       
-		        if (!preg_match("/^[a-zA-Z\s-]+$/", $this->input['firstName']))
+		        if (!preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ\-\s]+$/", $this->input['firstName']))
 		        {
 
 		            $badPoint++;
@@ -58,7 +58,7 @@
 
 		        } 
 
-		        if (!preg_match("/^[a-zA-Z\s-]+$/", $this->input['lastName']))
+		        if (!preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ\-\s]+$/", $this->input['lastName']))
 		        {
 
 		            $badPoint++;
@@ -110,8 +110,6 @@
 
 			        $this->DaoUser->create($newUser);
 
-			        $d['id'] = DB::lastId();
-
 			        $_SESSION['id'] = DB::lastId();
 			    }		      
 
@@ -128,8 +126,8 @@
 	        //if all regex are ok, drive the user back to the second page of signup
 	        else
 	        {
-	            $this->set($d);
-
+	            $_SESSION['id'] = DB::lastId();
+	            
 	            $this->render('User','pageSignUp2');
 	        }    
 	    }
@@ -143,8 +141,8 @@
 			$this->loadDao('User');
 
 			$dossier = ROOT.'img/';
-			$fichier = basename($this->files['photo']['name']);
-			move_uploaded_file($this->files['photo']['tmp_name'], $dossier . $fichier);	
+			$fichier = basename(strip_tags($this->files['photo']['name']));
+			move_uploaded_file(strip_tags($this->files['photo']['tmp_name']), $dossier . $fichier);	
 			
 
 			$user = $this->DaoUser->read($_SESSION['id']);
@@ -222,109 +220,13 @@
 		public function updateUser()
 		{
 			$this->loadDao('User');
-
-			$dossier = ROOT.'img/';
-			$fichier = basename($this->files['photo']['name']);
-			move_uploaded_file($this->files['photo']['tmp_name'], $dossier . $fichier);	
-				
-			$user = $this->DaoUser->read($_SESSION['id']);
-			
-			if (!empty($this->input['firstName']))
-			{
-				$user->setFirstName($this->input['firstName']);
-			}
-
-			if (!empty($this->input['lastName']))
-			{
-				$user->setLastName($this->input['lastName']);
-			}
-
-			if (!empty($this->input['email']))
-			{
-				$user->setEmail($this->input['email']);
-			}
-			
-			if (!empty($this->files['photo']['name']))
-			{
-				$user->setPhoto($this->files['photo']['name']);
-			}
-
-			if (!empty($this->input['age']))
-			{
-				$user->setAge($this->input['age']);
-			}
-
-			if (!empty($this->input['sex']))
-			{
-				$user->setSex($this->input['sex']);
-
-			}
-
-			if (!empty($this->input['address']))
-			{
-				$user->setAddress($this->input['address']);
-			}
-
-			if (!empty($this->input['level_cook']))
-			{
-				$user->setLevel_cook($this->input['level_cook']);
-			}
-
-			$badPoint = 0;
-
-			
-
-			if (!empty($_POST['pass1']) || !empty($_POST['pass2']) )
-			{
-				if (isset($_POST['pass1']) && isset($_POST['pass2']) && $_POST['pass1'] != "" && $_POST['pass2'] != "")
-				{
-					// Variable to keep the password in memory if it's valid 
-					$pass1 = $_POST['pass1'];
-					$pass2 = $_POST['pass2'];
-
-					// 1°. checking the regex
-					if (!preg_match('/^(?=.{6,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[&?:\/=+§^*¤£@\#!()"$]).*$/',$pass1))
-					{
-						// increment (add +1) of the validity variable
-						$badPoint++;
-					
-					}
-					// 2°. similar password verification
-					elseif ($pass1 != $pass2)
-					{
-						$badPoint++;
-					}
-					
-				}
-				// if the password is valid, I hash and update the password
-				if ($badPoint == 0)
-				{
-					$goodPass = password_hash($this->input['pass1'], PASSWORD_BCRYPT);	
-					$user->setPass($goodPass);
-				}
-			}
-			
-			$this->DaoUser->update($user);
-			$d['user'] = $user;
-
-			$this->set($d);				
-			$this->render('User','userView');
-		}
-
-
-
-
-
-		public function updateUser2()
-		{
-			$this->loadDao('User');
 			$badPoint = 0;
 
 			$dossier = ROOT.'img/';
 			$fichier = basename($this->files['photo']['name']);
 			move_uploaded_file($this->files['photo']['tmp_name'], $dossier . $fichier);	
 				
-			$user = $this->DaoUser->read($_SESSION['id']);
+			$user = $this->DaoUser->read($_SESSION['id']); 
 			
 			if (!empty($this->input['firstName']))
 			{
@@ -440,28 +342,29 @@
 				}
 			}
 
-			// if the pasword is valid, I change the password in the DB
+			// if the new data are valid, I change data in the DB
 			if($badPoint == 0)
 			{	
 				$this->DaoUser->update($user);
-				// var_dump($user); // yolanda arrive jusque là ms pas les autres users
+
 				$d['user'] = $user;
 
 				$this->set($d);					
 			}
 			
-				
+			// if new data don't match the RegEx, back to the pageUpdateUser
 			if($badPoint != 0)	
 			{
 				$this->set($d);
+				
 				$this->pageUpdateUser();
-       			// header('Location: '.WEBROOT.'User/pageUpdateUser');
 			}
 
+			// if new data match the RegEx, go to the UserView
 			else
 			{
 				$this->set($d);
-				// var_dump($d); // yolanda arrive jusque là ms pas les autres users
+			
 	           	$this->render('User','userView');
 			}			
 		}
@@ -475,15 +378,6 @@
 		{
 			$this->render('User','pageLogIn');
 		}
-
-
-
-
-
-		// public function modifProfil()
-		// {
-		// 	$this->render('User','updateProfil');
-		// }
 
 
 
@@ -569,7 +463,6 @@
 			{
 				$this->DaoUser->delete($_SESSION['id']);
 
-				// header('location:'.WEBROOT.'User/logOut');
 				$this->render('User','logOut');
 			}
 		}

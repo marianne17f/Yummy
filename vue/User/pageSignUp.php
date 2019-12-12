@@ -7,7 +7,7 @@
 
 						<form action="<?php echo WEBROOT ?>User/signUp" method="POST" id="formSignup">
 		
-							<h1 class="headerText text-center">Inscription</h1>
+							<h1 class="text-center">Inscription</h1>
 										<?php if (isset ($log)) 
 											{
 												echo $log;
@@ -15,7 +15,7 @@
 										?>
 								
 								<div class="form-group">
-									<label>Prénom : <input class="form-control" type="text" name="firstName" required></label>
+									<label>Prénom : <input class="form-control" type="text" name="firstName" required autofocus></label>
 									<div class="info" id="infoPrenom">
 										<?php if (isset ($log1)) 
 											{
@@ -70,7 +70,7 @@
 								</div>
 						</form>
 		
-						<div id="boutons_valid_annul">
+						<div id="text-center">
 							<input type="submit" class="bouton_valid" value="Valider" form="formSignup">	
 							<a href="<?php echo WEBROOT ?>Home/index" class="bouton_valid" >Annuler</a>
 						</div>

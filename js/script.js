@@ -5,8 +5,6 @@ if (document.querySelector(".displayDeleteEvent") != null )
 {
 	let btnDisplayDeleteEvent = document.querySelectorAll(".displayDeleteEvent");
 
-	console.log(btnDisplayDeleteEvent);
-
 	btnDisplayDeleteEvent.forEach(function(btn)
 	{
 		btn.addEventListener("click", DisplayDeleteEvent);
@@ -47,7 +45,7 @@ if (document.querySelectorAll(".cancelDeleteEvent") != null )
 /*------------ BARRE DE RECHERCHE -------------*/
 
 
-// let inputSearch = document.querySelector('form')[0]; /* [0] sélectionne le first-child du form */
+// let inputSearch = document.querySelector('.search'); 
 
 // inputSearch.addEventListener('input',sendSearch);
 
@@ -55,30 +53,30 @@ if (document.querySelectorAll(".cancelDeleteEvent") != null )
 // {
 // 	$.ajax(
 // 	{
-// 	    url: 'search.php',
+// 	    url: 'core/search.php',
 // 	    type: 'POST',
-// 	    data: $('form').serialize()
+// 	    data: $('search').serialize()
 // 	}).done(function(response)
 // 	{
 // 		let results = JSON.parse(response);
 		
 // 		console.log(results);
-// 		let section = document.createElement('section');
+// 		let div = document.createElement('div');
 		
 // 		results.forEach(function(result) {
-// 			let article = document.createElement('article');
+// 			let article = document.createElement('div');
 			
 // 			let lien = document.createElement('a');
-// 			lien.setAttribute('href','Produit/read/'+result.id);
-// 			lien.innerText = result.nom;
+// 			lien.setAttribute('href','Event/read/'+result.id);
+// 			lien.innerText = result.name;
 
-// 			let description = document.createElement('p');
-// 			description.innerText = result.description;
+// 			let name = document.createElement('h2');
+// 			name.innerText = result.name;
 
-// 			article.appendChild(lien);
-// 			article.appendChild(description);
+// 			div.appendChild(lien);
+// 			div.appendChild(a);
 
-// 			section.appendChild(article);
+// 			section.appendChild(div);
 // 		});
 // 		$('#result').html(section);
 // 	});

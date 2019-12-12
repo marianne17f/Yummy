@@ -5,13 +5,13 @@
 	  		<div class="container h100">
 	    		<div class="contentBox h100">
 	    			<div>
-	    				<h1>Paramètres de <br><?php echo $user->getFirstName().' '.$user->getLastName() ?></h1>
+	    				<h1>Paramètres de <br><?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName()) ?></h1>
 	    			</div>
 	    		</div>
 	  		</div>
 		</div>
 		<div class="photo_profil">
-			<img src="<?php echo WEBROOT.'img/'.$user->getPhoto() ?>" alt="ma photo de profil" title="ma photo de profil">
+			<img src="<?php echo WEBROOT.'img/'.strip_tags($user->getPhoto()) ?>" alt="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>" title="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>">
 		</div>
 	</div>
 			
@@ -31,11 +31,11 @@
 			
 			
 			<div>
-				<p><?php echo $user->getFirstName().' '.$user->getLastName() ?></p>
-				<p><?php echo date("d/m/Y", strtotime($user->getAge()))?> -
+				<p><?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName()) ?></p>
+				<p><?php echo strip_tags(date("d/m/Y", strtotime($user->getAge())))?> -
 			
 				<?php
-					switch($user->getSex())
+					switch(strip_tags($user->getSex()))
 					{
 						case "homme":
 							echo 'Homme</p>';
@@ -48,8 +48,8 @@
 							break;
 					}
 
-					echo '<p>'.$user->getAddress().'</p>';
-					switch($user->getLevel_cook())
+					echo '<p>'.strip_tags($user->getAddress()).'</p>';
+					switch(strip_tags($user->getLevel_cook()))
 					{
 						case 1:
 							echo '<p>Cuisine : Niveau débutant</p>';
@@ -63,12 +63,12 @@
 					}
 				?>
 				
-				<p><?php echo $user->getEmail() ?></p>
+				<p><?php echo strip_tags($user->getEmail()) ?></p>
 
 			</div>
 
 			<div id="bouton_validation">
-				<a href="<?php echo WEBROOT ?>User/pageUpdateUser"class="btn btnD1">Modifier</a>
+				<a href="<?php echo WEBROOT ?>User/pageUpdateUser" class="btn btnD2">Modifier</a>
 			</div>
 		</div>
 	

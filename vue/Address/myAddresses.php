@@ -15,7 +15,7 @@
 
 	<div id="addressesCreated">
  	
-		<div class="headerText text-center">
+		<div class="text-center">
 			<a href="<?php echo WEBROOT ?>Address/pageAddAddress/" class="btn btnD1 btn_creation">Créer une nouvelle bonne adresse</a>
 		</div>
 		
@@ -32,44 +32,134 @@
 
 			<div class="row">
 
+				<?php 
+						if (isset($addresses))
+						{
+							foreach ($addresses as $key => $address)
+						{
+					?>
+				<div class="col-sm-6">
+					<div class="blogpost">
+						<div class="imgBx">
+							<img src="<?php echo WEBROOT."img/".$address->getImage() ?>" alt="partage de bonnes adresses culinaires <?php echo $address->getName() ?>" title="adresse culinaire <?php echo $address->getName() ?>" class="img-fluid">
+						</div>
+						<div class="content">
+							<h3><?php echo $address->getName() ?></h3>
 
-		<?php 
-	
-			if (isset($addresses))
-			{
-				foreach ($addresses as $key => $address)
-				{
-		?>
+								<?php 
 
-			<div class="col-sm-6">
-				<div class="blogpost">
-					<div class="imgBx">
-						<img src="<?php echo WEBROOT."img/".$address->getImage() ?>" alt="partage de bonnes adresses culinaires" title="adresse culinaire" class="img-fluid">
+									if (!empty($address->getDescription()) )
+									{
+										echo '<p><B>Description : </B>'.$address->getDescription().'</p>';
+									}
+
+									else
+									{
+										echo '<p><B>Description : </B>Pas indiqué</p>';
+									}
+								?>
+
+
+								<?php 
+
+									if (!empty($address->getAddress()) )
+									{
+										echo '<p><B>Adresse : </B>'.$address->getAddress().'</p>';
+									}
+
+									else
+									{
+										echo '<p><B>Adresse : </B>Pas indiqué</p>';
+									}
+								?>
+
+
+
+								<?php 
+
+									$scheduleData = $address->getSchedul();
+									$schedule = explode('%', $scheduleData);
+
+									if (!empty($address->getSchedul()))
+									{
+
+										echo '<p><B>Horaires : </B><br>';
+
+										foreach( $schedule as $value )
+										{
+  											echo $value . '<br>';
+										}
+
+										echo '</p>';
+									}
+
+
+
+									else
+									{
+										echo '<p><B>Horaires : </B>Pas indiqué</p>';
+									}
+								?>
+
+
+								<?php 
+
+									if (!empty($address->getPhone()) )
+									{
+										echo '<p><B>Téléphone : </B>'.$address->getPhone().'</p>';
+									}
+
+									else
+									{
+										echo '<p><B>Téléphone : </B>Pas indiqué</p>';
+									}
+								?>
+
+
+
+
+								<?php 
+
+									if (!empty($address->getEmail()) )
+									{
+										echo '<p><B>Email : </B>'.$address->getEmail().'</p>';
+									}
+
+									else
+									{
+										echo '<p><B>Email : </B>Pas indiqué</p>';
+									}
+								?>
+
+
+								<?php 
+
+									if (!empty($address->getWebSite()) )
+									{
+										echo '<a href="'.$address->getWebSite().'" class="lien_colore">Site Web</a>';
+									}
+								?>
+
+							<a href="<?php echo WEBROOT ?>Event/pageAddEvent/" class="btn btnD1">Créer une rencontre culinaire chez <br><?php echo $address->getName() ?></a>
+						</div>
 					</div>
-					<div class="fit-content">
-						<h3><?php echo $address->getName() ?></h3>
-						<p><strong>Description : </strong><?php echo $address->getDescription() ?></p>
-						<p><strong>Adresse : </strong><?php echo $address->getAddress() ?></p>
-						<p><strong>Horaires : <br></strong><?php echo $address->getSchedul() ?></p>
-						<p><strong>Coordonnées : </strong><?php echo $addresse->getPhone() ?><br><?php echo $address->getEmail() ?></p>
-						<a href="<?php echo $address->getWebSite() ?>" class="lien_colore margin-bottom">Site Web</a>
-						
-					</div>
-				</div>
-			</div>	
-				
-		<?php			
-				}
-			}
-		 ?>
+				</div>	
+				<?php 
+					}}
+				?>		
+			
 
+
+
+		
+
+			</div>
 		</div>
 	</div>
-</div>
 
  	
 
-	<div id="addAddress">
+	<div id="addAddress" class="container">
 
 
 		<div id="explicatif_bonneAdresse">
@@ -88,39 +178,42 @@
 				<h2>Enregistrement de votre activité professionnelle</h2>
 					<div>
 						<fieldset>
-							<legend>Ses coordonnées</legend>
-							<input type="text" name="" placeholder="Nom et prénom du gérant">
-							<input type="text" name="" placeholder="Nom de l'entreprise">
-							<input type="text" name="" placeholder="Adresse">
-							<input type="tel" name="" placeholder="Téléphone">
-							<input type="email" namep="" placeholder="Email de l'entreprise">
-						</fieldset>
-
-						<fieldset>
-							<legend>Sa domiciliation bancaire</legend>
-							<input type="text" placeholder="Nom du titulaire">
-							<input type="number" placeholder="Code banque">
-							<input type="number" placeholder="Code Guichet">
-							<input type="number" placeholder="Numéro de compte">
-							<input type="number" placeholder="Clé RIB">
+							<legend>Coordonnées</legend>
+							<input type="text" name="director" placeholder="Nom et prénom du gérant">
+							<input type="text" name="company" placeholder="Nom de l'entreprise">
+							<input type="text" name="address" placeholder="Adresse">
+							<input type="tel" name="phone" placeholder="Téléphone">
+							<input type="email" name="email" placeholder="Email de l'entreprise">
 						</fieldset>
 					</div>
-
-					<label class="legend">Date de prélèvement mensuel :
+					<div>
+						<fieldset>
+							<legend>Domiciliation bancaire</legend>
+							<input type="text" name="cbowner" placeholder="Nom du titulaire">
+							<input type="number" name="bankcode" placeholder="Code banque">
+							<input type="number" name="sortcode" placeholder="Code Guichet">
+							<input type="number" name="accountnumber" placeholder="Numéro de compte">
+							<input type="number" name="ribkey" placeholder="Clé RIB">
+						</fieldset>
+					</div>
+						
+					<fieldset>
+						<legend>Date de prélèvement mensuel</legend>
 						<select name="date_prelev">
 							<option value="" selected disabled="disabled">Choisir</option>
 							<option value="1">5 du mois</option>
 							<option value="2">10 du mois</option>
 							<option value="3">15 du mois</option>
 						</select>
-					</label>
+					</fieldset>
+					
 					
 					<div id="bouton_validation">
 						<input type="submit" class="bouton_valid" value="Enregistrer" form="formAddress">	
 					</div>
 			</form>
 
-		</div>  <!--  /explicatif_bonneAdresse -->
+		</div> 
 
 
 

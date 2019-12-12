@@ -1,16 +1,5 @@
 <?php
 
-// $name = strip_tags($this->input['name']);
-// $image = strip_tags($this->input['image']);
-// $address = strip_tags($this->input['address']);
-// $availability = strip_tags($this->input['availability']);
-// $program = strip_tags($this->input['program']);
-// $cost = strip_tags($this->input['cost']);
-// $dater = strip_tags($this->input['dater']);
-// $timer = strip_tags($this->input['timer']);
-// $fkuser = strip_tags($this->input['fkuser']);
-// $eventId = strip($this->input['eventId']);
-
 
 class CtrlEvent extends Controller
 {
@@ -72,30 +61,26 @@ class CtrlEvent extends Controller
 
 
 
-	// public function detail($id)
-	// {
-	// 	$this->loadDao('Event');
-
-	// 	$d['event'] = $this->DaoEvent->read($id);
-		
-	// 	$this->set($d);
-	// 	$this->render('Event','detail',$id);
-	// }
-
-
-
 	public function detail($id)
 	{
 		$this->loadDao('Event');
 		$this->loadDao('User');
 
 		$d['event'] = $this->DaoEvent->read($id);
+		$d['user'] = $this->DaoUser->read($id);
 		$d['party'] = $this->DaoEvent->partyByEvent($id);
 		
 		$this->set($d);
 
 		$this->render('Event','detail',$id);
 	}
+
+
+	public function result()
+	{
+		$this->render('Event','result');
+	}
+
 
 
 
@@ -126,9 +111,9 @@ class CtrlEvent extends Controller
 				$event->setName($this->input['name']);
 			}
 
-		if (!empty($this->input['image']))
+		if (!empty($this->files['image']['name']))
 			{
-				$event->setImage($this->input['image']);
+				$event->setImage($this->files['image']['name']);
 			}
 
 		if (!empty($this->input['address']))

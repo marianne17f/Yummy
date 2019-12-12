@@ -13,9 +13,9 @@
 	</div>
 
 
-	<div class="container">
+	<div class="container form">
 
-		 <form action="<?php echo WEBROOT ?>Event/updateEvent/" method="POST" enctype="multipart/form-data" id="formEvent">
+		<form action="<?php echo WEBROOT ?>Event/updateEvent/" method="POST" enctype="multipart/form-data" id="formEvent">
 		 	
 		 	<div>
 			 	<label>Nom l'événement :
@@ -24,7 +24,7 @@
 				
 				<label>Photo illustrant l'événement culinaire :
 				<div class = "contener_img">
-					<img src="<?php echo WEBROOT ?>/img/<?php echo $event->getImage(); ?>" alt="partage lors d'événements culinaires" title="événement culinaire">
+					<img src="<?php echo WEBROOT ?>/img/<?php echo $event->getImage(); ?>" alt="partage lors d'événements culinaires <?php echo $event->getName(); ?>" title="événement culinaire <?php echo $event->getName(); ?>">
 				</div>
 				<input type="file" name="image"></label>
 			</div>
@@ -59,9 +59,9 @@
 
 
 		
-		 </form>
+		</form>
 
-		 <div id="bouton_validation">
+		<div id="text-center">
 			<input type="submit" class="bouton_valid" value="Valider" form="formEvent">	
 
 			<input type="button" class="bouton_valid" value="Annuler" name="bnom" onClick="javascript:history.back();">

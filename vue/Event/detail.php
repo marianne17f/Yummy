@@ -1,6 +1,3 @@
-
-
-
 <main id="detail_event">
 
 	<div class="conteneur-img">
@@ -16,7 +13,7 @@
 	</div>
 
 
-	<section id="tutos_events">
+	<div id="tutos_events">
 
 		<?php
 			
@@ -25,16 +22,13 @@
 			{
 
 		?>
-			<article>
-			<div></div>
+		<div class="article">
 			<div class="btn_action">
-				<a href="<?php echo WEBROOT ?>Event/pageUpdateEvent/<?php echo $event->getId()?>">
-					<button>Modifier<img class="icone iconesMS" src="<?php echo WEBROOT ?>img/modifier.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
+				<a href="<?php echo WEBROOT ?>Event/pageUpdateEvent/<?php echo $event->getId()?>" class="displayUpdateEvent">Modifier<img class="icone iconesMS" src="<?php echo WEBROOT ?>img/modifier.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire">
 				</a>
-					<button>Supprimer<img class="icone iconesMS" src="<?php echo WEBROOT?>img/delete.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
+					<button class="displayDeleteEvent">Supprimer<img class="icone iconesMS" src="<?php echo WEBROOT?>img/delete.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
 			</div>
-			<div></div>
-		</article>
+		</div>
 
 
 		<?php
@@ -48,16 +42,16 @@
 		?>
 
 		
-		<article>
-			<div>
-				<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage()?>" alt="photo de profil Yummy site de partage de recettes healthy et d'événements culinaires" title="événement culinaire">
+		<div class="article">
+			<div class="btn_action">
+				<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage()?>" alt="Yummy site de partage de recettes healthy et d'événements culinaires <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
 				<table>
 					<tr>
 						<td><?php echo date("d/m/Y", strtotime($event->getDater()))?></td>
 						<td><?php echo date("H:i", strtotime($event->getTimer()))?></td>
 					</tr>
 					<tr>
-						<td colspan="2"><?php echo $event->getAddress()?><button>Voir sur une carte</button></td>
+						<td colspan="2"><?php echo $event->getAddress()?></td>
 					</tr>
 					<tr>
 						<td colspan="2"><?php echo $event->getCost()?> €</td>
@@ -65,16 +59,30 @@
 				</table>
 			</div>
 
-			<div>
-				<p><B>Programme :</B></p>
+			<div class="btn_action">
+				<p class="program">Programme :</p>
 				<p><?php echo $event->getProgram()?></p>
 			</div>
-			<div>
-				<button class="orange">Il reste <?php echo $event->getAvailability()?> places</button>
+			<div class="btn_action">
+				<p class="orange">Il reste <?php echo $event->getAvailability()?> places</p>
 				<button class="btnD1">Je veux participer !</button>
-								
+				
+				<p>Participants :</p>
+				<?php
+					if (isset($party))
+					{
+						foreach ($party as $key => $user)
+						{
+				?>
+
+				<p><?php echo $user->getPhoto().' '.$user->getFirstname().''.$user->getLastname() ?></p>
+
+				<?php	
+						}
+					}
+				 ?>
 			</div>
-		</article>
+		</div>
 
 
 		
@@ -83,28 +91,42 @@
 		
 
 
-		<article>
-			<div></div>
-			<div>
+		<div class="article">
+			
+			<div class="btn_action">
 				<h2>Commentaires</h2>
 				<form>
 					<textarea name="commentaire" placeholder="Laissez un commentaire"></textarea>
 					<input type="submit" class="bouton_valid" value="Afficher">	
 				</form>
-
-				
-
 			</div>
-			<div></div>
-			
-
-		</article>
+		</div>
 
 		<?php
 			}
 		?>
+
+
+
+
+		<?php 
+			if (isset($event))
+			{
+		?>
+
+	<div id="deleteEvent">
+		<p>Valider la suppression ?</p>
+		<div class="bouton_horizontal">
+			<a href="<?php echo WEBROOT ?>/Event/archive/<?php echo $event->getId();?>" class="validDeleteEvent">OUI</a>
+			<button class="cancelDeleteEvent">NON</button>
+		</div>
+	</div>
+	
+	<?php
+		}
+	 ?>
 		
 
-	</section>
+	</div>
 
 </main>

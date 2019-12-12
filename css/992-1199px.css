@@ -1,0 +1,99 @@
+@media all and (min-width: 992px) and (max-width: 1199px)
+{
+	/* ---- ---- GENERAL ----------- */
+	
+	/* cible tous les h1 de chaque page */
+	.contentBox h1
+	{
+		font-size: 2.4em;
+	}
+
+	/* cible seulement le h1 "YUMMY" sur la page d'accueil */
+	#home h1
+	{
+		font-size: 2.2em;
+	}
+	
+	/* courtes phrases dans l'en-tête */
+	.contentBox h2
+	{
+		font-size: 1.1em;
+	}
+	
+
+
+	/*--------- NAVIGATION ----------*/
+
+	.navbar-light .navbar-nav .nav-link
+	{
+		font-size: 0.8em;
+	}
+
+
+	/* Bouton "déconnexion" dans le menu */
+	.navbar .btn_connexion
+	{
+		font-size: 0.8em;
+	}
+
+
+
+	/*----- HOME ----*/
+
+	#home .btnD3
+	{
+		font-size: 0.9em;
+	}
+
+
+	/*--------- TABLEAU DE BORD : IMG PROFIL---------*/
+
+	.photo_profil
+	{
+		width : 17vw;
+		height: 17vw;
+		top: 70%;
+	}
+
+
+
+	/*--------- USER->USER VIEW -------*/
+
+	#profil .relative img
+	{
+		width: 120px;
+	}
+
+	#profil .relative img:first-child
+	{
+		left: 80%;
+		top: -10%;
+	}
+
+	#profil .relative img:nth-child(2)
+	{
+		right: 80%;
+		top: 80%;
+	}
+	
+
+
+	
+
+	/*------------ PAGES : UPDATE + ADD EVENT / 
+	ADD + UPDATE RECIPE /ADD + UPDATE ADDRESS----------*/
+
+	#addEvent label,
+	#updateEvent label,
+	#addRecipe label,
+	#updateRecipe label,
+	#addAddress label,
+	#updateAddress label
+	{
+		font-size: 0.85em;
+	}
+
+	
+}
+
+

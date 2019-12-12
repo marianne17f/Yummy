@@ -1,0 +1,181 @@
+
+@media screen and (max-width: 767px)
+{
+	/* ---- ---- GENERAL ----------- */
+	/* grand logo sur la page d'accueil + page redirectioninscripco */
+	.big_logo
+	{
+		width: 100px;
+	}
+
+	/* cible tous les h1 de chaque page */
+	.contentBox h1
+	{
+		font-size: 2em;
+	}
+	
+	/* cible seulement le h1 "YUMMY" sur la page d'accueil */
+	#home h1
+	{
+		font-size: 2.2em;
+	}
+
+	/* courtes phrases dans l'en-tête */
+	.contentBox h2
+	{
+		font-size: 1.1em;
+	}
+	
+	/* boutons "créer event", "créer recipe",
+ 	créer address" "Je veux participer" ,"retour vers l'accueil" */
+	.btnD1
+	{
+		font-size: 1.2em;
+	}
+
+
+
+	/*--------- NAVIGATION ----------*/
+
+	.navbar-light .navbar-nav .nav-link
+	{
+		font-size: 1em;
+	}
+
+	/* Bouton "déconnexion" dans le menu */
+	.navbar .btn_connexion
+	{
+		font-size: 1em;
+	}
+
+
+
+	/*------BARRE DE RECHERCHE ------*/
+
+	.search
+	{
+		justify-content: flex-end;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.text-box
+	{
+		width: 90vw;
+	}
+
+	.text-box form
+	{
+		width: 100%;
+	}
+
+
+
+	/*----- HOME ----*/
+	
+	/* liens qui bougent */
+	#home .btnD3
+	{
+		font-size: 1em;
+	}
+
+
+
+		/*----- HOME : PART RECIPE ----*/
+
+		#home .recipe .text_descriptif p
+		{
+			font-size: 0.9em;
+			line-height: 7vw;
+		}
+
+		
+		/*----- HOME : PART EVENT -----*/
+
+		#home .event .text_descriptif p
+		{
+			font-size: 0.9em;
+			line-height: 7vw;
+			margin: 30px 0 30px 40px;
+		}
+
+
+		/*----- HOME : PART ADDRESS ----*/
+
+		#home .address .text_descriptif p
+		{
+			line-height: 7vw;
+			font-size: 0.9em;
+		}
+
+
+		#home .address .text_descriptif p:nth-child(2) a
+		{
+			font-size: 0.95em;
+		}
+
+		#home .address .btnD3
+		{
+			margin-left: 10%;
+		}
+
+
+
+
+
+	/*----------- DESIGN EVENT / RECIPE -----------*/
+	
+	/* bloc qui contient img et txt de l'event et de la recipe */
+	.single-team
+	{
+		width: 100%!important;
+		box-shadow: 0px 0px 17px black;
+	}
+
+
+	/*----------- DESIGN ADDRESS -----------*/
+		
+	.blogpost
+	{
+		width: 97%;
+	}
+
+
+
+	/*--------- TABLEAU DE BORD : IMG PROFIL---------*/
+
+	.photo_profil
+	{
+		width : 25vw;
+		height: 25vw;
+		top: 55%;
+	}
+
+	
+	/*--------- USER->USER VIEW -------*/
+
+	#profil .relative img
+	{
+		width: 90px;
+	}
+
+
+	/*--------- TABLEAU DE BORD : PROFIL INDEX ---------*/
+	
+	#tableau_bord #menu_profil
+	{
+		flex-flow: column wrap;
+	    width: 100%;
+	}
+
+	#tableau_bord #menu_profil a
+	{
+		width: 100%;
+	}
+
+
+
+
+
+	
+}

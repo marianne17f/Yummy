@@ -8,8 +8,8 @@
 							<img src="<?php echo WEBROOT ?>img/yummylike.png" class="big_logo" alt="Yummy site de partage de recettes healthy et de moments culinaires conviviaux"></a>
 							<h1>YUMMY !</h1>	
 						</div>
-	    				<p>Afin de pouvoir créer et partager vos idées recettes et des moments conviviaux avec d'autres Yummiers, inscrivez-vous !</p>
-	    				<p>Vous avez déjà un compte ? Connectez-vous !</p>
+	    				<h2>Afin de pouvoir créer et partager vos idées recettes et des moments conviviaux avec d'autres Yummiers, inscrivez-vous !</p>
+	    				<p>Vous avez déjà un compte ? Connectez-vous !</h2>
 
 						<div>
 							<a href="<?php echo WEBROOT?>User/pageLogIn" class="btn btnD2 btn_connexion">Se connecter</a>

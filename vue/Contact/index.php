@@ -7,7 +7,7 @@
 
 						<form action="<?php echo WEBROOT ?>Contact/email" method="POST">
 		
-							<h1 class="headerText text-center">Contact</h1>
+							<h1 class="text-center">Contact</h1>
 								
 								<div class="form-group">
 									<label>Nom / Société * :<input class="form-control" type="text" name="nom" autofocus required></label>
@@ -22,7 +22,7 @@
 									<textarea name="message" class="form-control textarea" required></textarea></label>
 								</div>
 
-								<div class="form-group text-center">
+								<div class="text-center">
 									<input type="submit" class="bouton_valid" value="ENVOYER">
 								</div>
 

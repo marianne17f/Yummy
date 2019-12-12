@@ -90,7 +90,7 @@ class DaoEvent
 	// Select party's number by event
 	public function partyByEvent($id)
 	{
-		$party = DB::select('SELECT  user.id, photo, firstname, lastname
+		$party = DB::select('SELECT user.id, photo, firstname, lastname
 			FROM event_participation
 			INNER JOIN user ON fk_user = user.id
 			WHERE fk_event = ?',array($id));

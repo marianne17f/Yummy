@@ -12,19 +12,6 @@
 	        $user->getId();
 	    }
 
-	    
-	//     public function generate($id,$token){
-	//         DB::select('UPDATE users SET token = ? WHERE id = ?', array($token,$id));
-	// }
-	//     public function readConfirm($id,$token){
-	//         $userData = DB::select('SELECT role,token FROM users WHERE id = ?', array($id));
-	//         $tokenData = $userData[0]['token'];
-	        
-	//         return $tokenData;
-	//     }
-	//     public function valide($id){
-	//         $userData = DB::select('UPDATE users SET role = 1 WHERE id = ?', array($id));
-	    // }
 
 
 		// the rest of sign up
@@ -96,10 +83,8 @@
 
 		// sending user changes to the DB
 		public function update($user)
-		{
-			
-			$event = DB::select('UPDATE user SET firstname = ?, lastname = ?, email = ?, pass = ?, photo = ?, age = ?, sex = ?, address = ?, level_cook = ?, role = ? WHERE id = ?', array($user->getFirstName(),$user->getLastName(),$user->getEmail(),$user->getPass(), $user->getPhoto(),$user->getAge(),$user->getSex(),$user->getAddress(), $user->getlevel_cook(),$user->getRole(),$user->getId()));
-
+		{		
+			DB::select('UPDATE user SET firstname = ?, lastname = ?, email = ?, pass = ?, photo = ?, age = ?, sex = ?, address = ?, level_cook = ?, role = ? WHERE id = ?', array($user->getFirstName(),$user->getLastName(),$user->getEmail(),$user->getPass(), $user->getPhoto(),$user->getAge(),$user->getSex(),$user->getAddress(), $user->getlevel_cook(),$user->getRole(),$user->getId()));
 		}
 
 	

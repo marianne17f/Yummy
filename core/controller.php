@@ -59,15 +59,3 @@ class Controller
 
  ?>
 
-
-
- 	<!-- // Méthode pour charger une vue
-	function render($controller, $filename)
-	{
-		extract($this->vars);
-		ob_start();
-		// $Controller = substr(get_class($this),4);
-		require('vue/'.$controller.'/'.$filename.'.php');
-		$content = ob_get_clean();
-		echo $content;
-	} -->

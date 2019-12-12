@@ -1,0 +1,234 @@
+
+@media all and (min-width: 768px) and (max-width: 991px)
+{
+	/* ---- ---- GENERAL ----------- */
+	
+	/* grand logo sur la page d'accueil + page redirectioninscripco */
+	.big_logo
+	{
+		width: 140px;
+	}
+
+	/* cible tous les h1 de chaque page */
+	.contentBox h1
+	{
+		font-size: 2.3em;
+	}
+	
+	/* cible seulement le h1 "YUMMY" sur la page d'accueil */
+	#home h1
+	{
+		font-size: 3em;
+	}
+
+	/* courtes phrases dans l'en-tête */
+	.contentBox h2
+	{
+		font-size: 1.4em;
+	}
+	
+	/* boutons "créer event", "créer recipe",
+ 	créer address" "Je veux participer" ,"retour vers l'accueil" */
+	.btnD1
+	{
+		font-size: 1em;
+	}
+
+
+
+	/*--------- NAVIGATION ----------*/
+
+	.navbar-light .navbar-nav .nav-link
+	{
+		font-size: 1.2em;
+	}
+
+	/* Bouton "déconnexion" dans le menu */
+	.navbar .btn_connexion
+	{
+		font-size: 1.2em;
+	}
+
+
+
+	/*------BARRE DE RECHERCHE ------*/
+
+	.text-box
+	{
+		width: 50%;
+	}
+
+
+
+	/*----- HOME ----*/
+	
+	/* liens qui bougent */
+	#home .btnD3
+	{
+		font-size: 1.3em;
+	}
+
+
+	/*----- HOME : PART RECIPE ----*/
+
+	#home .recipe .text_descriptif p
+	{
+		width: 90%;
+		font-size: 1.1em;
+		line-height: 4vw;
+	}
+
+	
+	/*----- HOME : PART EVENT -----*/
+	
+	#home .event .text_descriptif p
+	{
+		font-size: 1.1em;
+		line-height: 4vw;
+		margin: 0 0 30px 40px;
+	}
+
+
+
+	/*----- HOME : PART ADDRESS ----*/
+		
+	#home .address .text_descriptif p
+	{
+		line-height: 4vw;
+		font-size: 1.1em;
+		width: 90%;
+	}
+
+	#home .address .text_descriptif p:nth-child(2) a
+	{
+		font-size: 1.1em;
+	}
+
+	
+	/* liens qui bougent */
+	#home .address .btnD3
+	{
+		margin-left: 30px;
+	}
+	
+
+	
+	/*----------- DESIGN EVENT / RECIPE -----------*/
+	
+	/* bloc qui contient img et txt de l'event et de la recipe */
+	.single-team
+	{
+		width: 40%!important;
+		margin: 30px 5% 30px 5%;
+	}
+
+	
+
+	/* ------ DETAIL EVENT ------*/
+
+	#detail_event #tutos_events
+	{
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	
+
+	/*----------- DESIGN ADDRESS -----------*/
+
+
+	.blogpost
+	{
+		width: 90vw;
+	}
+	
+
+	#address #filtre
+	{
+		width: 50%;
+	}
+
+
+
+	/*------------ PAGES : UPDATE + ADD EVENT / 
+	ADD + UPDATE RECIPE /ADD + UPDATE ADDRESS----------*/
+	
+	#addEvent .form,
+	#updateEvent .form,
+	#addRecipe .form,
+	#updateRecipe .form,
+	#addAddress .form,
+	#updateAddress .form
+	{
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+
+
+	#addEvent form,
+	#updateEvent form,
+	#addRecipe form,
+	#updateRecipe form,
+	#addAddress form,
+	#updateAddress form
+	{
+		width: 60%;
+	}
+
+	#addEvent label,
+	#updateEvent label,
+	#addRecipe label,
+	#updateRecipe label,
+	#addAddress label,
+	#updateAddress label
+	{
+		margin-top: 10px;
+		font-size: 0.85em;
+	}
+
+
+
+
+	/*--------- TABLEAU DE BORD : PROFIL INDEX ---------*/
+	
+	#tableau_bord #contenu_profil
+	{
+		display: flex;
+		flex-flow: wrap wrap; 
+	}
+
+	#tableau_bord #menu_profil
+	{
+	    width: 100%;
+	}
+
+	#tableau_bord #menu_profil a
+	{
+		width: 40%;
+	}
+
+
+
+
+	/*--------- TABLEAU DE BORD : IMG PROFIL---------*/
+
+	.photo_profil
+	{
+		width : 17vw;
+		height: 17vw;
+		top: 55%;
+	}
+
+	/*--------- USER->USER VIEW -------*/
+
+	#profil .relative img
+	{
+		width: 110px;
+	}
+
+
+}

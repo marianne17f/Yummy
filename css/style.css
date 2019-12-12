@@ -1,4 +1,7 @@
- *
+
+/* -------------- GENERAL ---------------- */
+
+*
 {
 	outline: none !important;
 	scroll-behavior: smooth; /* pour que les transitions avec les ancres soient fluides*/
@@ -10,12 +13,20 @@ body
 	background: #36392F;
 }
 
+
+/* mini logo dans la nav */
 .logo
 {
 	width: 40px;
 }
 
-a
+/* grand logo sur la page d'accueil + page redirectioninscripco */
+.big_logo
+{
+	width: 120px;
+}
+
+a, h2
 {
 	color: #fff;
 }
@@ -26,22 +37,62 @@ a:hover
 	color: #fff;
 }
 
-.lien_colore
+h2
 {
-	color: #fff;
-	background: #777E31;
-	padding: 7px 9px;
+	font-size: 2.5em;
+	margin-bottom:40px;
+	text-shadow: 3px 3px 5px black;
+	z-index: 20;
+}
+
+p
+{
+	font-size: 0.9em;
+}
+
+
+/* Boutons "connexion", "inscription" et "déconnexion" */
+.btn_connexion
+{
+	border: 2px solid #D46C00;
+	color: #D46C00;
+	background: none;
 	border-radius: 3px;
-	transition: 1s;
+	outline:none;
+	width: 190px;
+	font-weight: 500;
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-right: 15px;
+	transition: all 1s;
 }
 
-.lien_colore:hover
+.btn_connexion:hover
 {
+	background: #D46C00;
 	color: #fff;
-	background: #465512;
+}
+
+/* Boutons "connexion" et "inscription" */
+#home .btn_connexion,
+#redirectionInscripCo .btn_connexion
+{
+	letter-spacing: 1.5px;
+	padding: 10px 10px;
+	font-size: 1em;
+	box-shadow: 0px 0px 17px black;
 }
 
 
+.blog
+{
+	position: relative;
+	padding: 50px 0 100px 0;
+}
+
+
+/* class utilisée sur tous les boutons de
+ validation ou d'annulation présents dans les formulaires */
 .bouton_valid, a.bouton_valid
 {
 	font-size: 0.95em;
@@ -68,95 +119,8 @@ a.bouton_valid
 }
 
 
-/* A REVOIR ET A RANGER */
-
-
-.imgBx
-{
-	height: 300px;
-}
-
-.imgBx img
-{
-	height: 100%;
-	width: 450px;
-}
-
-.sec1
-{
-	padding: 50px 0;
-	background: #36392F;
-}
-
-.headerText.text-center
-{
-	color: #fff;
-}
-
-.headerText h2
-{
-	font-size: 2.5em;
-	margin-bottom:40px;
-	text-shadow: 3px 3px 5px black;
-	z-index: 20;
-}
-
-.placeBox
-{
-	position: relative;
-	max-width: 300px;
-	height: 400px;
-	margin: 0 auto;
-	background: #000;
-	margin-top: 30px;
-}
-
-.placeBox .imgBx
-{
-	width: 100%;
-	height: 100%;
-	border-radius: 5px;
-}
-
-.placeBox .imgBx img
-{
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-}
-
-.placeBox .content
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: baseline;
-	align-items: flex-end;
-	box-shadow: 0px 0px 17px black;	
-}
-
-.placeBox .content h3
-{
-	position: relative;
-	margin: 0;
-	padding: 10px;
-	background: rgba(0,0,0,0.95);
-	color: #fff;
-	font-size: 20px;
-	font-weight: 600;
-	width: 100%;
-	text-align: center;
-}
-
-.placeBox .content h3 span
-{
-	font-size: 16px;
-	font-weight: 500;
-}
-
+/* boutons "créer event", "créer recipe",
+ créer address" "Je veux participer" ,"retour vers l'accueil" */
 .btnD1
 {
 	color: #fff;
@@ -164,6 +128,7 @@ a.bouton_valid
 	border: none;
 	border-radius: 5px;
 	width: fit-content;
+	height: fit-content;
 	box-shadow: 0px 0px 17px black;
 	margin: 30px 0 30px 0;
 	padding: 10px 30px;
@@ -177,17 +142,13 @@ a.bouton_valid
 	color: #fff;
 }
 
-.blog
+#text-center
 {
-	position: relative;
-	padding: 50px 0 100px 0;
-	background: #36392F;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
-p
-{
-	font-size: 0.9rem;
-}
+
 
 /*------BARRE DE RECHERCHE ------*/
 
@@ -220,10 +181,13 @@ p
 input[type="search"]
 {
 	border: none;
+	padding: .375em .75em;;
 	width: 100%;
 	color: #fff;
 	background: transparent;
 }
+
+
 
 /*--------- NAVIGATION ----------*/
 
@@ -252,35 +216,18 @@ nav a:hover
 	border-bottom: 1px solid #fff;
 }
 
+/* Bordure du hamburger mise en transparence */
 .navbar-light .navbar-toggler
 {
-    border-color: rgba(0,0,0,0);
+    border-color: transparent;
 }
 
+/* image hamburger et sa taille */
 .navbar-light .navbar-toggler-icon
 {
 	background-image: url("../img/menu1.png");
 	font-size: 22px;
-	/*background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");*/
 }
-
-.navbar-light .navbar-brand,
-.navbar-light .navbar-brand:hover,
-.navbar-light .navbar-brand:focus,
-.navbar-light .navbar-brand:visited
-{
-    color: rgba(255,255,255,1);
-    font-size: 1.1em;
-    font-weight: 400;
-}
-
-.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link
-{
-	color: red;
-	background: #fff;
-	text-decoration: underline;
-}
-
 
 .navbar-light .navbar-nav .nav-link
 {
@@ -296,54 +243,37 @@ nav a:hover
 	color: rgba(255,255,255,1);
 }
 
+/* Bouton "déconnexion" dans le menu */
 .navbar .btn_connexion
 {
 	position: relative;
 	top: 15%;
-	transform: translateY(-50%);
-	border: 2px solid #fff;
-	color: #D46C00;
-	border: 1.5px solid #D46C00;
-	background: none;
-	border-radius: 3px;
 	padding: 7px 7px;
 	font-size: 0.9em;
-	outline:none;
-	width: 190px;
-	font-weight: 500;
-	margin-top: 20px;
-	transition: all 1s;
-	margin-left: 15px;
-	margin-right: 15px;
-	box-shadow: 0px 0px 17px black;
-	transition: all 1s;
-}
-
-.navbar .btn_connexion:hover
-{
-	background: #D46C00;
-	color: #fff;
 }
 
 
-/*---------- HOME -----------*/
 
-.big_logo
-{
-	width: 120px;
-}
+/*---------- HOME -> INDEX -----------*/
 
+
+/* image de fond "branche" */
 #home .img_fond
 {
-	position: absolute;
+	/* class "blog" est le parent, 
+	mis en position relative ligne 47  */
+	position: absolute;  
 	right: 7%;
 	top: -10%;
 	transform: rotate(-125deg);
 	width: 27vw;
 }
 
+/* image de fond "grappe raisins" */
 #home .img_fond2
 {
+	/* class "blog" est le parent, 
+	mis en position relative ligne 47  */
 	position: absolute;
 	left: 25%;
 	top: -4%;
@@ -351,6 +281,8 @@ nav a:hover
 	width: 17vw;
 }
 
+
+/* liens qui bougent */
 #home .btnD3
 {
 	border-bottom: 1.5px solid #fff;
@@ -362,16 +294,12 @@ nav a:hover
 	transition: all 1.5s;
 }
 
-#home .recipe .text_descriptif
+#home .btnD3:hover
 {
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: center;
-	align-items: center;
-	width: 30%;
-	height: 100%;
+	border-bottom: 1.5px solid #D46C00;
 }
 
+#home .recipe .text_descriptif,
 #home .event .text_descriptif
 {
 	display: flex;
@@ -382,184 +310,193 @@ nav a:hover
 	height: 100%;
 }
 
-#home .recipe .text_descriptif p
-{
-	width: 80%;
-	line-height: 2vw;
-	margin: 0 0 60px 0px;
-	color: #fff;
-	font-weight: 100;
-	font-size: 0.8em;
-	text-align: left;
-	letter-spacing: 2px;
-	text-shadow: 3px 3px 5px black;
-	z-index: 3;
-}
 
-#home .event .text_descriptif p
-{
-	width: 80%;
-	line-height: 2vw;
-	margin: 0 0 60px 90px;
-	color: #fff;
-	font-weight: 100;
-	font-size: 0.8em;
-	text-align: right;
-	letter-spacing: 2px;
-	text-shadow: 3px 3px 5px black;
-	z-index: 3;
-}
+	/*----- HOME->INDEX : PART RECIPE ----*/
 
-#home .btnD3:hover
-{
-	border-bottom: 1.5px solid #D46C00;
-}
-
-#home .event .btnD3
-{
-	margin-left: 40px;
-}
-
- #home #scroll .event a
-{
-	text-shadow: 3px 3px 5px black;
-	margin-left: 40px;
-}
-
-#home .address .text_descriptif
-{
-	display:
-	 flex;
-	flex-flow: column wrap;
-	justify-content: center;
-	align-items: center;
-	width: 50%;
-	height: 100%;
-}
-
-#home .address .text_descriptif p
-{
-	width: 80%;
-	line-height: 2vw;
-	margin: 0 90px 60px 20px;
-	color: #fff;
-	font-weight: 100;
-	font-size: 0.8em;
-	text-align: left;
-	letter-spacing: 2px;
-	text-shadow: 3px 3px 5px black;
-	z-index: 3;
-}
-
-#home .address .text_descriptif p:nth-child(2)
-{
-	text-shadow: none;
-}
-
-#home .address .row
-{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-#address .blogpost .fit-content
-{
-	min-height: fit-content;
-	padding: 15px;
-    position: relative;
-}
-
-#home .address .text_descriptif p:first-child
-{
-	margin-bottom: 0;
-}
-
-#home .address .text_descriptif p:nth-child(2)
-{
-	margin: 40px 0px 90px 0;
-}
-
-#home .address .text_descriptif .lien_contact
-{
-	color: #fff;
-	font-weight: 550;
-	font-size: 1.3em;
-	padding: 13px 20px;
-	border-radius: 5px;
-	background: #D46C00;
-	box-shadow: 0px 0px 17px black;
-	transition: 1s;
-}
-
-#home .address .text_descriptif .lien_contact:hover
-{
-	background: #C83D00;
-}
-
-
-
-/* -------- IMAGE BOUTON ANIME : INCITER L'UTILISATEUR A CLIQUER SUR LES BOUTONS --------- */
-
-	.btn_recipe, .btn_event, .btn_address
+	#home .recipe .text_descriptif p
 	{
-		width: 40px;
-		margin-left: 20px;
-		text-align: center;
+		width: 80%;
+		line-height: 2vw;
+		margin: 0 0 60px 0px;
+		color: #fff;
+		font-weight: 100;
+		font-size: 0.8em;
+		text-align: left;
+		letter-spacing: 2px;
+		text-shadow: 3px 3px 5px black;
+		z-index: 3;
 	}
-	
-	/*---- HOME : RECIPE ----*/
 
-	#btn_recipe
+
+	/*----- HOME->INDEX : PART EVENT----*/
+
+	#home .event .text_descriptif p
 	{
+		width: 80%;
+		line-height: 2vw;
+		margin: 0 0 60px 90px;
+		color: #fff;
+		font-weight: 100;
+		font-size: 0.8em;
+		text-align: right;
+		letter-spacing: 2px;
+		text-shadow: 3px 3px 5px black;
+		z-index: 3;
+	}
+
+	#home .event .btnD3
+	{
+		margin-left: 40px;
+	}
+
+
+
+	/*----- HOME->INDEX : PART ADDRESS ----*/
+
+	#home .address .text_descriptif
+	{
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		height: 100%;
+	}
+
+	#home .address .text_descriptif p
+	{
+		width: 80%;
+		line-height: 2vw;
+		margin: 0 90px 60px 20px;
+		color: #fff;
+		font-weight: 100;
+		font-size: 0.8em;
+		text-align: left;
+		letter-spacing: 2px;
+		text-shadow: 3px 3px 5px black;
+		z-index: 3;
+	}
+
+	/* enlever le box-shadow du texte du bouton 
+	"Demande de renseignements" */
+	#home .address .text_descriptif p:nth-child(2)
+	{
+		text-shadow: none;
+	}
+
+	#home .address .text_descriptif p:nth-child(2) a
+	{
+		color: #fff;
+		font-weight: 550;
+		font-size: 1.3em;
+		padding: 13px 20px;
+		border-radius: 5px;
+		background: #D46C00;
+		box-shadow: 0px 0px 17px black;
+		transition: 1s;
+	}
+
+	#home .address .text_descriptif p:nth-child(2) a:hover
+	{
+		background: #C83D00;
+	}
+
+	/* centrer verticalement le texte */
+	#home .address .row
+	{
+		display: flex;
+		align-items: center;
+	}
+
+	#home .address .text_descriptif p:first-child
+	{
+		margin-bottom: 0;
+	}
+
+	#home .address .text_descriptif p:nth-child(2)
+	{
+		margin: 40px 0px 40px 0;
+	}
+
+
+
+	/* --------HOME :  IMAGE "fouchette et couteau" BOUTON ANIME  --------- */
+
+		.btn_recipe, .btn_event, .btn_address
+		{
+			width: 40px;
+			margin-left: 20px;
+			text-align: center;
+		}
 		
-	    animation: btnrecipe 0.8s ease-in-out infinite alternate;
-	    width: 100%;
+		/*---- HOME : RECIPE - bouton animé "voir toutes les recettes" ----*/
 
-	}
+		#btn_recipe
+		{	
+		    animation: btnrecipe 0.8s ease-in-out infinite alternate;
+		    width: 100%;
 
-	@keyframes btnrecipe
-	{
-	    from {transform: translateX(25px);}
-	    to   {transform: translateX(50px);}
-	}
+		}
+
+		@keyframes btnrecipe
+		{
+		    from
+		    {
+		    	transform: translateX(25px);
+		    }
+		    to   
+		    {
+		    	transform: translateX(50px);
+		    }
+		}
 
 
 
-	/*---- HOME : EVENT ----*/
+		/*---- HOME : EVENT bouton animé "voir toutes les rencontres" ----*/
 
-	#btn_event
-	{
+		#btn_event
+		{
+		    animation: btnevent 0.8s ease-in-out infinite alternate;
+		    width: 100%;
+		}
+
+		@keyframes btnevent
+		{
+		    from 
+		    {
+		    	transform: translateX(30px);
+		    }
+		    to   
+		    {
+		    	transform: translateX(5px);
+		    }
+		}
 		
-	    animation: btnevent 0.8s ease-in-out infinite alternate;
-	    width: 100%;
 
-	}
+		/*---- HOME : ADDRESS bouton animé "voir toutes les bonnes adresses" ----*/
 
-	@keyframes btnevent
-	{
-	    from {transform: translateX(30px);}
-	    to   {transform: translateX(5px);}
-	}
-	
+		#btn_address
+		{	
+		    animation: btnaddress 0.8s ease-in-out infinite alternate;
+		    width: 100%;
+		}
 
-	/*---- HOME : ADDRESS ----*/
+		@keyframes btnaddress
+		{
+		    from
+		    {
+		    	transform: translateX(25px);
+		    }
+		    to   
+		    {
+		    	transform: translateX(50px);
+		    }
+		}
 
-	#btn_address
-	{
-		
-	    animation: btnaddress 0.8s ease-in-out infinite alternate;
-	    width: 100%;
 
-	}
 
-	@keyframes btnaddress
-	{
-	    from {transform: translateX(25px);}
-	    to   {transform: translateX(50px);}
-	}
-
-	/*---- RECIPE / EVENT / ADDRESS : BTNS ANIMES SUR PAGES INDEX ----*/
+	/*---- BTNS ORANGE ANIMES SUR PAGES RECIPE->INDEX / 
+	EVENT->INDEX / ADDRESS->INDEX ----*/
 
 	.btn_creation
 	{
@@ -571,12 +508,19 @@ nav a:hover
 
 	@keyframes btncreation
 	{
-	    from {transform: translateX(15px);}
-	    to   {transform: translateX(-15px);}
+	    from
+	    {
+	    	transform: translateX(15px);
+	    }
+	    to   
+	    {
+	    	transform: translateX(-15px);
+	    }
 	}
 
 
-/*---------- BANNER SPECIFIQUE AUX PAGES HOME  INDEX + SECONNECTER -----------*/
+/*---------- BANNER SPECIFIQUE AUX PAGES HOME 
+ INDEX + REDIRECTIONINSCRIPCO -----------*/
 
 #home .banner,
 #redirectionInscripCo .banner
@@ -585,7 +529,7 @@ nav a:hover
 	top: 0;
 	width: 100%;
 	height: 75vh;
-	background:url(../img/fond3.jpg) no-repeat center;
+	background:url(../img/fond3.jpg) no-repeat center fixed;
 	background-size: cover;
 	margin-bottom:0;
 }
@@ -620,34 +564,6 @@ nav a:hover
 #redirectionInscripCo .height100p
 {
 	height: 100vh;
-}
-
-#home .btn_connexion,
-#redirectionInscripCo .btn_connexion
-{
-	border: 2px solid #fff;
-	letter-spacing: 1.5px;
-	color: #D46C00;
-	border: 1.5px solid #D46C00;
-	background: none;
-	border-radius: 3px;
-	padding: 10px 10px;
-	font-size: 1em;
-	outline:none;
-	width: 190px;
-	font-weight: 500;
-	margin-top: 20px;
-	transition: all 1s;
-	margin-left: 15px;
-	margin-right: 15px;
-	transition: all 1s;
-}
-
-#home .btn_connexion:hover,
-#redirectionInscripCo .btn_connexion:hover
-{
-	background: #D46C00;
-	color: #fff;
 }
 
 
@@ -701,8 +617,8 @@ nav a:hover
 {
 	color: #fff;
 	text-transform: uppercase;
-	font-size: 3.5rem;
-	font-family: 'Fascinate Inline', 'Montserrat', sans-serif;
+	font-size: 3.5em;
+	font-family: 'Fascinate Inline', 'Poppins', sans-serif;
 	margin-bottom: 40px;
 	letter-spacing: 3px;
 	text-shadow: 3px 3px 5px black;
@@ -711,21 +627,13 @@ nav a:hover
 .contentBox h2
 {
 	color: #fff;
-	font-size: 1.3rem;
-	margin-bottom: 40px;
-	text-shadow: 3px 3px 5px black;
-}
-
-.contentBox p
-{
-	color: #fff;
-	font-size: 1.3rem;
+	font-size: 1.3em;
 	margin-bottom: 40px;
 	text-shadow: 3px 3px 5px black;
 }
 
 
-/*-----------EVENT INDEX-----------*/
+/*----------- DESIGN EVENT / RECIPE -----------*/
 
 .container-area
 {
@@ -745,6 +653,7 @@ nav a:hover
 	margin: 20px 0 0 0;
 }
 
+/* bloc qui contient img et txt de l'event et de la recipe */
 .single-team
 {
 	width: 29%;
@@ -756,6 +665,7 @@ nav a:hover
 	box-shadow: 0px 0px 17px black;
 }
 
+/* bloc bouge au hover */
 .single-team:hover
 {
 	transform: translateY(15px);
@@ -772,6 +682,7 @@ nav a:hover
 	transform: translateY(0);
 }
 
+/* ombrage sur img */
 .single-team::before
 {
 	content: '';
@@ -811,6 +722,7 @@ nav a:hover
 .team-text h2
 {
 	margin: 0;
+	width: 90%;
 	font-size: 1.2em;
 	letter-spacing: 2px;
 }
@@ -829,12 +741,131 @@ nav a:hover
 	display: inline-block;
 	margin: 0 5px;
 	text-shadow: 3px 3px 5px black;
-	text-decoration: none;
-	
+	text-decoration: none;	
 }
 
 
-/*--------- PROFIL : My events --------*/
+
+/*----------- DESIGN ADDRESS -----------*/
+
+.blogpost
+{
+	position: relative;
+	width: 100%;
+	margin-top: 30px;
+	background: #fff;
+	box-shadow: 0px 0px 17px black;
+}
+
+
+.blogpost .imgBx
+{
+	height: 350px;
+	overflow: hidden;
+}
+
+.blogpost .imgBx img
+{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: 1.5s;
+	transition: 1.5s;
+}
+
+.blogpost .imgBx img:hover
+{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.blogpost .content
+{
+	padding: 15px 20px 30px 20px;
+	height: fit-content;
+	position: relative;
+}
+
+.blogpost .content h3
+{
+	margin: 0;
+	padding: 0 0 20px;
+	font-weight: 600;
+	font-size: 1.5em;
+}
+
+.blogpost .content .btnD1
+{
+	width: 100%;
+}
+
+/* lien qui redirige vers les sites web des Bonnes Adresses */
+.lien_colore
+{
+	color: #fff;
+	font-size: 1em;
+	background: #777E31;
+	box-shadow: 0px 0px 17px black;
+	padding: 7px 9px;
+	border-radius: 3px;
+	transition: 1s;
+}
+
+.lien_colore:hover
+{
+	color: #fff;
+	background: #465512;
+}
+
+
+
+
+
+/*----------- ADDRESS : PAGE INDEX -----------*/
+
+#address #filtre
+{
+	margin-top: 30px;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+
+#address #filtre select,
+#address #filtre option
+{
+	height: 30px;
+	padding-left: 5px;
+	width: 350px;
+	border-radius: 5px;
+	border: none; 
+	box-sizing: border-box; 
+}
+
+#address #filtre label
+{
+	color: #fff;
+}
+
+#address #filtre select
+{
+	font-size: 1em;
+}
+
+#address #filtre option
+{
+	font-size: 0.8em;
+}
+
+#address .row
+{
+	margin-top: 20px;
+}
+
+
+
+
+
+/*--------- TABLEAU DE BORD : MY EVENTS --------*/
 
 #my_events .team-area .conteneurEvent
 {
@@ -849,14 +880,18 @@ nav a:hover
 	margin: 0 0 0 0;
 }
 
-#my_events .boutons_valid_annul
+/* div contenant les boutons "modif" et "suppr" */
+#my_events .boutons_action
 {
 	width: 100%;
 	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
 }
 
-#my_events .displayUpdateEvent,
-#my_events .displayDeleteEvent
+/* 1er bouton pour modifier event et 2d bouton pour supprimer event */
+.displayUpdateEvent,
+.displayDeleteEvent
 {
 	background: #fff;
 	font-size: 0.9em;
@@ -867,13 +902,22 @@ nav a:hover
 	padding: 10px 0;
 }
 
-#my_events .iconesMS
+a.displayUpdateEvent
+{
+	color : #000;
+	text-align: center;
+}
+
+/* icones crayon et poubelle */
+.iconesMS
 {
 	width: 30px;
+	margin-left: 5px;
 	vertical-align: middle;
 	
 }
 
+/* Afficher texte sur image event */
 #my_events .single-team .team-text
 {
 	bottom: 10%;
@@ -888,7 +932,8 @@ nav a:hover
 
 
 
-/*------------ PAGES : UPDATE MES EVENTS / ADD EVENT / ADD RECIPE /ADD ADDRESS----------*/
+/*------------ PAGES : UPDATE + ADD EVENT / 
+ADD + UPDATE RECIPE /ADD + UPDATE ADDRESS----------*/
 
 #addEvent,
 #updateEvent,
@@ -975,6 +1020,7 @@ nav a:hover
 	box-sizing: border-box;
 }
 
+
 #addEvent textarea[name='program'],
 #updateEvent textarea[name='program']
 {
@@ -1012,18 +1058,10 @@ nav a:hover
 	width: 100%;
 }
 
-#addEvent #bouton_validation, 
-#updateEvent #bouton_validation, 
-#addRecette #bouton_validation,
-#updateRecipe #bouton_validation,
-#updateAddress #bouton_validation,
-#addAddress #bouton_validation,
-#updateAddress #bouton_validation
+#bouton_validation
 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 30px 0 100px 0;
+	text-align: center;
+	margin: 40px 0 40px 0;
 }
 
 #addEvent #bouton_validation input, 
@@ -1040,17 +1078,13 @@ nav a:hover
 
 
 
-/*-------------- DELETE My events ------------*/
+/*-------------- FENETRE DELETE MY EVENTS ------------*/
 
-#my_events #deleteEvent
+#deleteEvent
 {
 	display: none;
 	justify-content: center;
 	align-items: center;
-}
-
-#my_events .deleteEvent
-{
 	background: #D46C00;
 	width: 40%;
 	border-radius: 5px;
@@ -1063,7 +1097,7 @@ nav a:hover
 	z-index: 5000;
 }
 
-#my_events #deleteEvent p
+#deleteEvent p
 {
 	font-size: 1.7em;
 	margin-top: 0;
@@ -1073,14 +1107,15 @@ nav a:hover
 	text-align: center;
 }
 
-#my_events #deleteEvent .bouton_horizontal
+#deleteEvent .bouton_horizontal
 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-#my_events #deleteEvent .bouton_horizontal button
+#deleteEvent .bouton_horizontal .cancelDeleteEvent,
+#deleteEvent .bouton_horizontal .validDeleteEvent
 {
 	border: 2px solid #fff;
 	border-radius: 50px;
@@ -1093,7 +1128,8 @@ nav a:hover
 	transition-duration: 1s;
 }
 
-#my_events #deleteEvent .bouton_horizontal button:hover
+#deleteEvent .bouton_horizontal .cancelDeleteEvent:hover,
+#deleteEvent .bouton_horizontal .validDeleteEvent:hover
 {
 	background-color : #C83D00;
 }
@@ -1107,13 +1143,7 @@ nav a:hover
 	color: #fff;
 }
 
-#detail_event h2
-{
-	font-size: 1em;
-	text-shadow: 3px 3px 5px black;
-}
-
-#detail_event article
+#detail_event .article
 {
 	display: flex;
 	flex-flow: row wrap;
@@ -1121,6 +1151,17 @@ nav a:hover
 	text-align: justify;
 	margin-top: 3vw;
 }
+
+#detail_event #tutos_events .btn_action
+{
+	width:25vw;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: flex-start;
+	margin-bottom: 100px;
+}
+
 
 #detail_event .btn_action
 {
@@ -1130,26 +1171,12 @@ nav a:hover
 	margin-bottom: 20px!important;
 }
 
-#detail_event button
-{
-	border: none;
-}
-
 #detail_event .iconesMS
 {
 	width: 30px;
 	vertical-align: middle;
 }
 
-#detail_event #tutos_events div
-{
-	width:25vw;
-	display: flex;
-	flex-flow: column wrap;
-	/*justify-content: center;*/
-	align-items: center;
-	margin-bottom: 100px;
-}
 
 #detail_event img
 {
@@ -1169,18 +1196,22 @@ nav a:hover
 	padding: 1vw;
 }
 
-.orange
-{ 
-	color: #D46C00;
-	background-color: white;
+#detail_event .program
+{
 	font-size: 1.2em;
-	font-weight: 800;
-	border: none;
-	border-radius: 5px;
-	padding: 1vw;
-	margin-bottom: 1vw;
 }
 
+/* bouton indiquant le nombrede places restantes */
+.orange
+{ 
+	color: #C83D00;
+	font-size: 1.5em;
+	font-weight: 800;
+	margin-bottom: 10px;
+	text-shadow: 3px 3px 5px black;
+}
+
+/* h2 'commentaires' */
 #detail_event h2
 {
 	text-align: center;
@@ -1188,18 +1219,18 @@ nav a:hover
 	font-weight: 600;
 	margin-top: 3vw;
 	margin-bottom: 3vw;
+	text-shadow: 3px 3px 5px black;
 }
 
 #detail_event .bouton_valid
 {
-	background-color: #D46C00;
+	background-color: #777E31;
 	margin: 2vw 0 2vw 0;
-	width: 200px;
 }
 
 #detail_event .bouton_valid:hover
 {
-	background-color: #C83D00;
+	background-color: #465512;
 }
 
 #detail_event form
@@ -1211,152 +1242,66 @@ nav a:hover
 {
 	width: 100%;
 	height: 70px;
+	padding-left: 5px;
 	border-radius: 5px;
 	border: none;
 }
 
 
 
+/*--------- TABLEAU DE BORD : MY ADDRESSES --------*/
 
-
-/*----------- ADRESSE INDEX -----------*/
-
-#address #filtres
+#myAddresses #addAddress
 {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	width: 100%;
-	margin: 70px auto 20px auto;
-}
-
-#address #filtres.container
-{
-	padding: 0;
 	margin-bottom: 50px;
 }
 
-#address #filtres button
+#myAddresses #text
 {
-	font-size: 0.9em;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	background-color: #777E31;
-	box-shadow: 0px 0px 17px black;
- 	color: white; 
- 	justify-content: center;
-	border: none;
-	border-radius: 5px;
-	height: 60px;
-	width: 18%;
-	cursor: pointer;
-	transition: all 1s;
+	margin-top: 50px;
 }
 
-#address label
+#myAddresses h2
 {
-	color: #fff;
+	text-align: center;
+	margin-bottom: 0;
 }
 
-#address #filtres button:hover
+#myAddresses fieldset
 {
-	background: #465512;
+	margin-top: 20px;
 }
 
-#address button .pub
+#myAddresses legend
 {
-	margin-top: 5vw;
-	height: 100px;
+	font-size: 1.2em;
 }
 
-#address #filtres .pub
+#myAddresses #addAddress input
 {
-	background: #D46C00;
-	width: 18%;
-	transition: all 1s;
+	margin-bottom: 15px;
 }
 
-#address #filtres .pub:hover
+#myAddresses #addAddress form input[type='submit']
 {
-	background: #C83D00;
-	color: #fff;
-}
-
-.blogpost
-{
-	position: relative;
-	width: 100%;
-	margin-top: 30px;
-	background: #fff;
-	box-shadow: 0px 0px 17px black;
-}
-
-#address .blogpost .imgBx
-{
-	height: 350px;
-	overflow: hidden;
-}
-
-#address .blogpost .imgBx img
-{
-	width:100%;
-	height: 100%;
-	object-fit:cover;
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: 1.5s;
-	transition: 1.5s;
-}
-
-#address .blogpost .imgBx img:hover
-{
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
-}
-
-#adress .blogpost .content
-{
-	padding: 15px 15px 152px 15px;
-	height: 580px;
-	position: relative;
-}
-
-#address .blogpost .content h3
-{
-	margin: 0;
-	padding: 0 0 20px;
-	font-weight: 600;
-	font-size: 1.5rem;
-}
-
-#address .blogpost .content .btnD1
-{
-	color: #fff;
-	width: 90%;
-	position: absolute;
-	left: 50%; /* à 50%/ du parent référent */
-  	transform: translate(-50%,0); /* décalage de 50% de sa propre taille */
-	bottom:0;
-}
-
-#recipesCreated
-{
-	padding: 50px 0;
+	width: 140px;
+	height: 50px;
+	font-size: 1.1em;
 }
 
 /*--------- TABLEAU DE BORD : IMG PROFIL---------*/
 
 .photo_profil
 {
-	width : 17vw;
-	height: 17vw;
+	width : 15vw;
+	height: 15vw;
 	display: block;
 	overflow: hidden;
 	border-radius: 300px;
 	box-shadow: 0px 0px 17px black;
 	position: absolute;
 	left: 50%;
-	bottom: -10%;
+	bottom: 0%;
 	transform: translate(-50%, -50%);
 }
 
@@ -1366,7 +1311,7 @@ nav a:hover
 }
 
 
-/*-----------PROFIL INDEX-----------*/
+/*-----------  USER INDEX (= PAGE TABLEAU DE BORD) -----------*/
 
 #tableau_bord #contenu_profil
 {
@@ -1385,7 +1330,6 @@ nav a:hover
 	justify-content: space-around;
 	align-items: center;
 	width: 100%;
-	/*margin-top : 100px;*/
 }
 
 #tableau_bord #menu_profil a
@@ -1394,7 +1338,6 @@ nav a:hover
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	/*border-radius: 0 5px 5px 0;*/
 	border-radius: 5px;
 	border: none;
 	background: #777E31;
@@ -1408,7 +1351,6 @@ nav a:hover
 #tableau_bord #menu_profil a:hover
 {
 	background-color: #465512;
-	/*width: 100%;*/
 }
 
 #tableau_bord #menu_profil a:last-child
@@ -1433,7 +1375,7 @@ nav a:hover
 
 
 
-/*--------- PROFIL VIEW -------*/
+/*--------- USER->USER VIEW -------*/
 
 #profil #profilView
 {
@@ -1449,7 +1391,7 @@ nav a:hover
 #profil h2
 {
 	text-align: center;
-	font-size: 2.5rem;
+	font-size: 2.5em;
 	margin-bottom:20px;
 }
 
@@ -1470,13 +1412,13 @@ nav a:hover
 
 #profil .relative img:first-child
 {
-	left: 80%;
+	left: 70%;
 	top: -10%;
 }
 
 #profil .relative img:nth-child(2)
 {
-	right: 80%;
+	right: 70%;
 	top: 80%;
 	transform: rotate(30deg);
 }
@@ -1487,7 +1429,7 @@ nav a:hover
 	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
-	width: 25vw;
+	width: 40vw;
 	border-radius: 5px;
 	height: 420px;
 	color: #2C2221;
@@ -1507,9 +1449,11 @@ nav a:hover
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	margin: 0px 0 0px 0;
+
 }
 
-#profil #bouton_validation .btnD1
+#profil #bouton_validation .btnD2
 {
 	background: #777E31;
 	box-shadow: 0px 0px 17px black;
@@ -1519,11 +1463,12 @@ nav a:hover
 	transition: all 1s;
 }
 
-#profil #bouton_validation .btnD1:hover
+#profil #bouton_validation .btnD2:hover
 {
 	background: #465512;
 	color: #fff;
 }
+
 
 
 
@@ -1546,7 +1491,6 @@ nav a:hover
 	margin-bottom: 30px;
 }
 
-
 #profilUpdate form
 {
 	display: flex;
@@ -1559,7 +1503,6 @@ nav a:hover
 {
 	font-size: 0.9em;
 	font-weight: 500;
-	color: #fff;
 }
 
 #profilUpdate .contener_img
@@ -1578,13 +1521,15 @@ nav a:hover
 	height: 100%;
 }
 
-#profilUpdate .input, select, option
+#profilUpdate .input,
+#profilUpdate select,
+#profilUpdate option
 {
 	height: 30px;
 	width: 350px;
 	font-size: 1em;
 	border-radius: 5px;
-	padding: .375rem .75rem;
+	padding: .375em .75em;
 	border: none; 
 	box-sizing: border-box; 
 }
@@ -1613,19 +1558,18 @@ nav a:hover
 
 
 /*-------- CONNEXION / INSCRIPTION / SUITE INSCRIPTION / CONTACT ---------*/
-
+/* Mise en page de l'image de fond et des formulaires */
 #connexion .banner,
 #inscription .banner,
 #suiteInscription .banner,
 #contact .banner,
 #contactMessage .banner
-
 {
 	position: relative;
 	top: 0;
 	width: 100%;
-	min-height: 100vh;
-	background:url(../img/fond3.jpg) no-repeat center;
+	min-height: 85vh;
+	background:url(../img/fond3.jpg) no-repeat center fixed;
 	background-size: cover;
 	margin-bottom:0;
 }
@@ -1671,6 +1615,7 @@ nav a:hover
 	pointer-events: none;
 }
 
+/* le form prend minimum 90vh de la hauteur du screen */
 .centrer_form
 {
 	display: flex;
@@ -1745,7 +1690,14 @@ nav a:hover
 	border-radius: 3px;
 }
 
-#contactMessage a
+#contactMessage p
+{
+	color: #fff;
+	font-size: 1.2em;
+	margin-bottom: 30px;
+}
+
+#contactMessage a 
 {
 	font-size: 0.9em;
 	letter-spacing: 2px;
@@ -1768,6 +1720,71 @@ nav a:hover
 }
 
 
+/*--------------- RGPD : PAGES LEGAL / POLICY / COOKIES --------------*/
+
+#cookie,
+#policy,
+#legal
+{
+	margin-top: 150px;
+	margin-bottom: 60px;
+	width: 50vw;
+	margin-left: auto;
+	margin-right: auto;
+	color: #fff;
+	text-shadow: 3px 3px 5px black;
+}
+
+#cookie h1,
+#policy h1,
+#legal h1
+{
+	font-size: 2em;
+	margin-bottom: 3vw;
+	text-align: center;
+}
+
+#cookie h2,
+#policy h2,
+#legal h2
+{
+	margin-top: 4vw;
+	font-size: 1.4em;
+}
+
+#cookie h3,
+#policy h3,
+#legal h3
+{
+	margin: 3vw 0 1vw 0;
+	font-size: 1.1em;
+}
+
+#legal h4
+{
+	font-size: 0.95em;
+}
+
+#cookie p,
+#policy p,
+#policy li,
+#legal p
+{
+	font-size: 0.8em;
+}
+
+#cookie a,
+#policy a,
+#legal a
+{
+	text-decoration: underline;
+}
+
+#legal span
+{
+	font-size: 1em;
+}
+
 
 
 /*--------------- FOOTER --------------*/
@@ -1782,7 +1799,8 @@ footer
 	height: 90px;
 }
 
-.sci
+/* div contenant les 3 liens RGPD */
+footer .sci
 {
 	margin:0;
 	padding:0;
@@ -1791,7 +1809,7 @@ footer
 	align-items: center;
 }
 
-.sci a
+footer .sci a
 {
 	color: #777;
 	font-size: 0.9em;
@@ -1799,19 +1817,47 @@ footer
 	transition: 0.5s;
 }
 
-.sci a:hover
+footer .sci a:hover
 {
 	color: #fff;
 }
 
-p.cpryt
+footer p
 {
 	text-align: center;
 	color: #fff;
 	margin: 0;
 }
 
+/*--------------PAGE 404 ---------------*/
 
+/* aligner horizontalement et verticalement le contenu de la page 404 */
+#p404
+{
+	color: #fff;
+	text-shadow: 3px 3px 5px black;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 90px);
+}
+
+#p404 h1
+{
+	margin: 2vw 0 3vw 0;
+}
+
+#p404 p
+{
+	font-size: 1.2em;
+	margin-bottom: 2vw;
+}
+
+#p404 a
+{
+	text-shadow: 0 0 0 ;
+}
 
 
 /*--------	AFFICHAGE REGEX JS ---------*/
@@ -1824,7 +1870,7 @@ p.cpryt
 {
 	color: #C83D00;
 	margin-bottom: 1vh;
-	text-shadow: 0px 0px 17px black;
+	text-shadow: 30px 30px 30px black;
 	font-size: 0.9em;
 	text-align: left;
 	font-weight: 570;

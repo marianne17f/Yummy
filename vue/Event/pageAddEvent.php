@@ -14,7 +14,7 @@
 		</div>
 
 
-		<div class="container">
+		<div class="container form">
 	
 
 			 <form action="<?php echo WEBROOT ?>Event/addEvent" method="POST" enctype="multipart/form-data" id="formEvent">

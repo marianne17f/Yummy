@@ -74,13 +74,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="stylesheet" href="<?php echo WEBROOT ?>css/style.css">
 	<link rel="stylesheet" href="<?php echo WEBROOT ?>css/360-991px.css">
+	<link rel="stylesheet" href="<?php echo WEBROOT ?>css/360-767px.css">
+	<link rel="stylesheet" href="<?php echo WEBROOT ?>css/768-991px.css">
+	<link rel="stylesheet" href="<?php echo WEBROOT ?>css/992-1199px.css">
 	<title>YUMMY ! Rencontres culinaires et partage de recettes healthy</title>
 	<meta name="description" content="YUMMY ! Partage de recettes gourmandes et de moments culinaires axés sur le thème de la cuisine healthy">
 
@@ -193,13 +195,13 @@
 
 			else
 			{
-				echo 'erreur 404';
+				header('Location: '.WEBROOT.'Home/p404');
 			}
 		}
 		
 		else
 		{
-			echo 'erreur 404';
+			header('Location: '.WEBROOT.'Home/p404');
 		}
 
 	
@@ -215,11 +217,37 @@
 			<a href="<?php echo WEBROOT ?>Home/policy">Données personnelles</a>
 			<a href="<?php echo WEBROOT ?>Home/cookies">Gérer mes cookies</a>
 		</div>
-		<p class="cpryt">Copyright © 2019 YUMMY !</p>	
+		<p>Copyright © 2019 YUMMY !</p>	
 	</footer>
 
+	
 
-
+	
+	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+		
+	<script>
+		window.cookieconsent.initialise({
+		  "palette":
+		  {
+		    "popup":
+		    {
+		      "background": "#777E31"
+		    },
+		    "button":
+		    {
+		      "background": "#C83D00"
+		    }
+		  },
+		  "theme": "classic",
+		  "content":
+		  {
+		    "message": "Ce site utilise les cookies pour vous assurer une meilleure expérience sur notre site web",
+		    "dismiss": "J'accepte",
+		    "link": "En savoir plus",
+		    "href": "<?php echo WEBROOT ?>Home/cookies"
+		  }
+		});
+	</script>
 	
 	<script src="<?php echo WEBROOT ?>js/script.js"></script>
 	
@@ -231,9 +259,17 @@
 
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  	<script>
+   		AOS.init();
+  	</script>
 	
 	<script>
 		$(document).scroll(function()
@@ -250,8 +286,9 @@
 		});
 	</script>
 
+
 	
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
 	
 
 	 

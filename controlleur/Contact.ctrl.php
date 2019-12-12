@@ -12,75 +12,77 @@ class CtrlContact extends Controller
   {
 
 
-     $tab = '';
 
+    $tab = '';
+
+    /*boucle pour stocker tous les inputs du formulaire 'contact'
+    dans une variable $tab + protection de ces inputs */
      foreach($_POST as $key => $value)
      {
-       $tab .= '<p>'.strip_tags($value).'</p>';
+       $tab .= '<p>'.strip_tags($value).'</p> ';
      }
-
-
-
-
+      
+      // SMTP est un serveur qui permet l'envoi des mails : ici smtp free
       $SMTP = 'smtp.free.fr';
-      $FROM = '';
+      $MAIL_FROM = '';
 
+      // ini_set change la valeur 'SMTP' par le contenu stocké dans $SMTP
       ini_set('SMTP', $SMTP);
-      ini_set('sendmail_from', $FROM);
+      ini_set('sendmail_from', $MAIL_FROM);
 
 
-      //Destinataire
+      //stockage Destinataire das une variable
       $to = 'marianne17fabre@gmail.com';
 
-     // utf8_decode   permet de décoder les caractères spéciaux
-      $subject = utf8_decode("Contact YUMMY");
+      // stockage objet du mail dans une variable
+      $subject = 'Contact YUMMY';
 
-      // message
+      // stockage message dans une variable
       $message = '
       <html>
-        <head>
+       <head>
             <title>Contact</title>
                 <style>
 
                    body
                    {
-                      margin: 0;
-                      color: #000;
+                       margin: 0;
                    }
 
-                   main
-                   {
-                      text-align:left;
-                      margin-left: 4vw;
-                   }
+                 main
+                 {
+                        text-align:left;
+                        margin-left: 4vw
+                 }
 
-                   h1
-                   {
-                      font-size: 1.3em;
-                   }
+                 h1
+                 {
+                    font-size: 1.3em;
+                 }
 
 
-                   p
-                   {
-                      font-size: 1.1em;
-                   }
+                 p
+                 {
+                        font-size: 1.1em;
+                 }
 
                 </style>
-        </head>
+       </head>
 
-        <body>
+       <body>
 
 
-          <main>
-             <h1>Contact YUMMY !</h1>
+         <main>
+             <h1>Contact</h1>
 
 
 
                '.$tab.'
 
 
-          </main>
-        </body>
+
+           </main>
+       </body>
       </html>
       ';
 
@@ -90,21 +92,21 @@ class CtrlContact extends Controller
 
       // En-têtes additionnels
       $headers[] = 'To: <marianne17fabre@gmail.com>';
-      $headers[] = 'From: ';
+      $headers[] = 'From: '.$_POST["email"].'';
       $headers[] = 'Reply-To: '.$_POST["email"].'';
 
 
-      // Envoi
-    if(mail($to, $subject, $message, implode("\r\n", $headers)))
-    {
-      $this->render('Contact','contactMessage','m=0');
-    }
-    else
-    {
-      $this->render('Contact','contactMessage','m=1');
-    }
-    
-  
+      // Envoi ---- implode() rassemble les éléments d'un tableau en une chaîne
+     if(mail($to, $subject, $message, implode("\r\n", $headers)))
+     {
+      // déf d'un 3e paramètre, m=0 si le mail a bien été envoyé
+       $this->render('Contact','contactMessage','m=0');
+     }
+     else
+     {
+      // déf d'un 3e paramètre, m=1 si le mail n'a pas été envoyé
+       $this->render('Contact','contactMessage','m=1');
+     }
   }
 
 

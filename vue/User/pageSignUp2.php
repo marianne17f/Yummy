@@ -9,7 +9,7 @@
 
 						<form action="<?php echo WEBROOT ?>User/addInfoUser" method="POST" enctype="multipart/form-data">
 
-							<h1 class="headerText text-center">Terminer l'inscription</h1>
+							<h1 class="text-center">Terminer l'inscription</h1>
 
 							<div class="form-group">
 								<label>Ajouter une photo :
@@ -49,7 +49,7 @@
 							</div>	
 							
 							<p>Vous pourrez remplir les  champs plus tard.<br>Cliquez sur "Valider" pour confirmer l'inscription.</p>
-							<div id="bouton_validation">
+							<div id="text-center">
 								<input class="bouton_valid" type="submit" value="Valider">
 							</div>
 

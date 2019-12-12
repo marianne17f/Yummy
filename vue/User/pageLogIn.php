@@ -7,7 +7,7 @@
 	    			<div class="centrer_form">
 		    			<form action="<?php echo WEBROOT ?>User/login" method="POST" id="formLogin">
 			
-							<h1 class="headerText text-center">Connexion</h1>
+							<h1 class="text-center">Connexion</h1>
 								
 								<div class="form-group">
 									<label>Email : <br><input class="form-control" type="email" name="email" autofocus required></label>

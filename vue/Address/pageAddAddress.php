@@ -13,7 +13,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container form">
 
 		<form action="<?php echo WEBROOT ?>Address/addAddress" method="POST" enctype="multipart/form-data" id="formAddress">
 	

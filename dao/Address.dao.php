@@ -37,7 +37,7 @@ class DaoAddress
 		{
 			foreach($addressData as $key => $address)
 			{
-				$addresses[$key] = new Address($adresse['name'],$adresse['image'],$adresse['description'],$adresse['address'],$adresse['schedul'],$adresse['phone'],$adresse['email'],$adresse['website'],$adresse['category'],$adresse['offer_yummy'],$adresse['fk_user']);
+				$addresses[$key] = new Address($address['name'],$address['image'],$address['description'],$address['address'],$address['schedul'],$address['phone'],$address['email'],$address['website'],$address['category'],$address['offer_yummy'],$address['fk_user']);
 				$addresses[$key]->setId($address['id']);
 			}
 				return $addresses;
@@ -57,7 +57,7 @@ class DaoAddress
 		{
 			foreach($addressData as $key => $address)
 			{
-				$addresses[$key] = new Address($address['name'],$address['image'],$address['description'],$address['address'],$address['schedul'],$address['phone'],$address['email'],$addresse['website'],$adresse['category'],$adresse['offre'],$adresse['fk_user']);
+				$addresses[$key] = new Address($address['name'],$address['image'],$address['description'],$address['address'],$address['schedul'],$address['phone'],$address['email'],$address['website'],$address['category'],$address['offer_yummy'],$address['fk_user']);
 				
 				$addresses[$key]->setId($address['id']);
 			}
@@ -74,7 +74,7 @@ class DaoAddress
 	{
 		DB::select('UPDATE address SET name = ?, image = ?, description = ?, address = ?, schedul = ?, phone = ?, email = ?, website = ?, category = ?, offer_yummy = ? WHERE id = ?', array($address->getName(),$address->getImage(),$address->getDescription(),$address->getAddress(),$address->getSchedul(),$address->getPhone(),$address->getEmail(),$address->getWebSite(),$address->getCategory(),$address->getOffer_yummy(),$address->getFk_user()));
 
-		$adresse->getId();
+		$address->getId();
 	}
 
 

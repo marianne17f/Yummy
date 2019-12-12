@@ -4,21 +4,21 @@
 	  		<div class="container h100">
 	    		<div class="contentBox h100">
 	    			<div>
-	    				<h1>Paramètres de <br><?php echo $user->getFirstName().' '.$user->getLastName() ?></h1>
+	    				<h1>Paramètres de <br><?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName()) ?></h1>
 	    			</div>
 	    		</div>
 	  		</div>
 		</div>
 		<div class="photo_profil">
-			<img src="<?php echo WEBROOT.'img/'.$user->getPhoto() ?>">
+			<img src="<?php echo WEBROOT.'img/'.strip_tags($user->getPhoto()) ?>" alt="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>" title="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>">
 		</div>
 	</div>
 
-	<div class="headerText text-center">		
+	<div class="text-center">		
 		<h2>Modification du profil</h2>
 	</div>
 		
-	<form action="<?php echo WEBROOT ?>User/updateUser2" method="POST" enctype="multipart/form-data" id="formProfil">
+	<form action="<?php echo WEBROOT ?>User/updateUser" method="POST" enctype="multipart/form-data" id="formProfil">
 			
 	
 		<div class="form-group">
@@ -29,7 +29,7 @@
 		
 		<div class="form-group">
 			<label>Prénom : <br>
-				<input type="text" name="firstName" value="<?php echo htmlspecialchars($user->getFirstName()); ?>" class="input">
+				<input type="text" name="firstName" value="<?php echo strip_tags($user->getFirstName()); ?>" class="input">
 			</label>
 			<div class="info" id="infoPrenom">
 				<?php if (isset ($log1)) 
@@ -42,7 +42,7 @@
 		
 		<div class="form-group">
 			<label>Nom : <br>
-				<input type="text" name="lastName" value="<?php echo $user->getLastName(); ?>" class="input">
+				<input type="text" name="lastName" value="<?php echo strip_tags($user->getLastName()); ?>" class="input">
 			</label>
 			<div class="info" id="infoNom">
 				<?php if (isset ($log2)) 
@@ -55,7 +55,7 @@
 		
 		<div class="form-group">
 			<label>Date de naissance :<br>
-				<input type="date" name="age" value="<?php  echo $user->getAge(); ?>" class="input">
+				<input type="date" name="age" value="<?php  echo strip_tags($user->getAge()); ?>" class="input">
 			</label>
 		</div>
 		
@@ -72,7 +72,7 @@
 		
 		<div class="form-group">
 			<label>Code postal + ville : <br>
-				<input type="text" name="address" placeholder="Entrez votre adresse" value="<?php  echo $user->getAddress(); ?>" class="input">
+				<input type="text" name="address" placeholder="Entrez votre adresse" value="<?php  echo strip_tags($user->getAddress()); ?>" class="input">
 			</label>
 			<div class="info" id="infoAddress">
 				<?php if (isset ($log6)) 
@@ -97,7 +97,7 @@
 		
 		<div class="form-group">
 			<label>Email :<br>
-				<input type="email" name="email" value="<?php  echo $user->getEmail(); ?>" class="input">
+				<input type="email" name="email" value="<?php  echo strip_tags($user->getEmail()); ?>" class="input">
 			</label>
 			<div class="info" id="infoEmail">
 				<?php if (isset ($log3)) 

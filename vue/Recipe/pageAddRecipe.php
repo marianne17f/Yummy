@@ -12,7 +12,7 @@
 		</div>
 	</div>
 	
-	<div class="container">
+	<div class="container form">
 
 		 <form action="<?php echo WEBROOT ?>Recipe/addRecipe" method="POST" enctype="multipart/form-data" id="formRecipe">
 		 	
@@ -24,12 +24,12 @@
 				<input type="file" name="image"></label>
 				
 				<label>Temps de préparation:
-				<input type="varchar" name="preparation_time" placeholder="ex : 15min ou 1h10"></label>
+				<input type="text" name="preparation_time" placeholder="ex : 15min ou 1h10"></label>
 
 				<label>Temps de cuisson:
-				<input type="varchar" name="cooking_time" placeholder="ex : 15min ou 1h10"></label>
+				<input type="text" name="cooking_time" placeholder="ex : 15min ou 1h10"></label>
 				
-				<label>nombre de personnes :
+				<label>Nombre de personnes :
 				<input type="number" name="party" min="1"></label>
 				
 				<label>Niveau de difficulté :
