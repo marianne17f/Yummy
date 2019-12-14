@@ -17,7 +17,7 @@
 		<div class="container">
 
 			<div class="text-center">
-				<a href="<?php echo WEBROOT ?>Address/pageAddAddress" class="btn btnD1 btn_creation" data-aos="fade-up" data-aos-delay="450" data-aos-duration="1000" data-aos-once="true">Créer une nouvelle bonne adresse</a>		
+				<a href="<?php echo WEBROOT ?>Address/pageAddAddress" class="btn btnD1 btn_creation" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-once="true">Créer une nouvelle bonne adresse</a>		
 			</div>	
 
 			
@@ -70,7 +70,7 @@
 				<div class="col-sm-6" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000" data-aos-once="true">
 					<div class="blogpost">
 						<div class="imgBx">
-							<img src="<?php echo WEBROOT."img/".$address->getImage() ?>" alt="partage de bonnes adresses culinaires <?php echo $address->getName() ?>" title="adresse culinaire <?php echo $address->getName() ?>" class="img-fluid">
+							<img src="<?php echo WEBROOT."img/address/".$address->getImage() ?>" alt="partage de bonnes adresses culinaires <?php echo $address->getName() ?>" title="adresse culinaire <?php echo $address->getName() ?>" class="img-fluid">
 						</div>
 						<div class="content">
 							<h3><?php echo $address->getName() ?></h3>

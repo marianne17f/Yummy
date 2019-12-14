@@ -3,6 +3,7 @@ abstract class AbstractEntity
 {
 	protected $id;
 	protected $archive;
+	protected $validation;
 
 	public function setId($id)
 	{
@@ -22,6 +23,19 @@ abstract class AbstractEntity
 	public function getArchive() 
 	{
 		return $this->archive;
+	}
+
+
+
+	// validate (and put online) recipe, event and address
+	public function getValidation()
+	{
+		return $this->validation;
+	}
+
+	public function setValidation($validation)
+	{
+		$this->fk_user = $validation;
 	}
 
 

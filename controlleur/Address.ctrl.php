@@ -37,7 +37,7 @@ class CtrlAddress extends Controller
 	{
 		$this->loadDao('address');
 
-		$dossier = ROOT.'img/';
+		$dossier = ROOT.'img/address';
 		$fichier = basename($this->files['image']['name']);
 		move_uploaded_file($this->files['image']['tmp_name'], $dossier . $fichier);	
 

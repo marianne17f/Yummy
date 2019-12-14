@@ -225,7 +225,7 @@ nav a:hover
 /* image hamburger et sa taille */
 .navbar-light .navbar-toggler-icon
 {
-	background-image: url("../img/menu1.png");
+	background-image: url("../img/img_site/menu1.png");
 	font-size: 22px;
 }
 
@@ -529,7 +529,7 @@ nav a:hover
 	top: 0;
 	width: 100%;
 	height: 75vh;
-	background:url(../img/fond3.jpg) no-repeat center fixed;
+	background:url(../img/img_site/fond3.jpg) no-repeat center fixed;
 	background-size: cover;
 	margin-bottom:0;
 }
@@ -576,7 +576,7 @@ nav a:hover
 	top: 0;
 	width: 100%;
 	height: 70vh;
-	background:url(../img/fond-rond.png) no-repeat center;
+	background:url(../img/img_site/fond-rond.png) no-repeat center;
 	background-size: cover;
 	margin-bottom:0;
 }
@@ -650,7 +650,7 @@ nav a:hover
 	margin-left: auto;
 	flex-flow: row wrap;
 	align-items: flex-start;
-	margin: 20px 0 0 0;
+	margin: 20px 0 80px 0;
 }
 
 /* bloc qui contient img et txt de l'event et de la recipe */
@@ -1157,18 +1157,17 @@ ADD + UPDATE RECIPE /ADD + UPDATE ADDRESS----------*/
 	width:25vw;
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: center;
-	align-items: flex-start;
+	justify-content: flex-start;
+	align-items: center;
 	margin-bottom: 100px;
 }
 
-
-#detail_event .btn_action
+#detail_event #tutos_events .btn_action2
 {
-	flex-flow: row wrap!important;
-	justify-content: space-evenly;
-	text-align: justify;
-	margin-bottom: 20px!important;
+	width:25vw;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }
 
 #detail_event .iconesMS
@@ -1318,7 +1317,6 @@ ADD + UPDATE RECIPE /ADD + UPDATE ADDRESS----------*/
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: space-around;
-	/*margin-top: 70px;*/
 	margin-top: 220px;
 	padding-bottom: 100px;
 }
@@ -1435,7 +1433,7 @@ ADD + UPDATE RECIPE /ADD + UPDATE ADDRESS----------*/
 	color: #2C2221;
 	font-weight: 600;
 	text-align: center;
-	background: url("../img/livre_profil2.jpg") no-repeat center;
+	background: url("../img/img_site/livre_profil2.jpg") no-repeat center;
 }
 
 #profil #presentation_profil p
@@ -1569,7 +1567,7 @@ ADD + UPDATE RECIPE /ADD + UPDATE ADDRESS----------*/
 	top: 0;
 	width: 100%;
 	min-height: 85vh;
-	background:url(../img/fond3.jpg) no-repeat center fixed;
+	background:url(../img/img_site/fond3.jpg) no-repeat center fixed;
 	background-size: cover;
 	margin-bottom:0;
 }

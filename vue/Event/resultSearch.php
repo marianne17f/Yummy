@@ -44,7 +44,7 @@
 
 
 							
-						<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage() ?>" alt="partage lors d'événements culinaires" title="événement culinaire">
+						<img src="<?php echo WEBROOT ?>img/event/<?php echo $event->getImage() ?>" alt="partage lors d'événements culinaires" title="événement culinaire">
 							
 
 

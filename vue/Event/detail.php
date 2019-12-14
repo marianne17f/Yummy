@@ -23,10 +23,10 @@
 
 		?>
 		<div class="article">
-			<div class="btn_action">
-				<a href="<?php echo WEBROOT ?>Event/pageUpdateEvent/<?php echo $event->getId()?>" class="displayUpdateEvent">Modifier<img class="icone iconesMS" src="<?php echo WEBROOT ?>img/modifier.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire">
+			<div class="btn_action2">
+				<a href="<?php echo WEBROOT ?>Event/pageUpdateEvent/<?php echo $event->getId()?>" class="displayUpdateEvent">Modifier<img class="icone iconesMS" src="<?php echo WEBROOT ?>img/img_site/modifier.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire">
 				</a>
-					<button class="displayDeleteEvent">Supprimer<img class="icone iconesMS" src="<?php echo WEBROOT?>img/delete.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
+					<button class="displayDeleteEvent">Supprimer<img class="icone iconesMS" src="<?php echo WEBROOT?>img/img_site/delete.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
 			</div>
 		</div>
 
@@ -44,7 +44,7 @@
 		
 		<div class="article">
 			<div class="btn_action">
-				<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage()?>" alt="Yummy site de partage de recettes healthy et d'événements culinaires <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
+				<img src="<?php echo WEBROOT ?>img/event/<?php echo $event->getImage()?>" alt="Yummy site de partage d'événements culinaires <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
 				<table>
 					<tr>
 						<td><?php echo date("d/m/Y", strtotime($event->getDater()))?></td>
@@ -84,23 +84,47 @@
 			</div>
 		</div>
 
-
-		
-		
-		
-		
-
-
-		<div class="article">
-			
+		<div class="article">	
 			<div class="btn_action">
 				<h2>Commentaires</h2>
-				<form>
-					<textarea name="commentaire" placeholder="Laissez un commentaire"></textarea>
-					<input type="submit" class="bouton_valid" value="Afficher">	
-				</form>
+					<form action="<?php echo WEBROOT ?>Event/comment" method="POST">
+						
+						
+						<textarea name="comment" placeholder="Laissez un commentaire"></textarea>
+				
+							<input type="text" name="fk_user" value="<?php echo $_SESSION['id']?>">
+							
+							<input type="text" name="fk_event" value="<?php echo $event->getId()?>">
+
+							<input type="time" name="horodate">
+
+						<?php
+							if(isset($_SESSION['id']) &&isset($event))
+							{
+						?>
+						<input type="submit" class="bouton_valid" value="Afficher">	
+						<?php
+							}
+						?>
+
+						
+
+					</form>
 			</div>
 		</div>
+		
+
+		<?php 
+			if (isset($comment))
+			{
+		?>
+
+
+
+		<?php
+			}
+		?>
+
 
 		<?php
 			}
@@ -114,17 +138,17 @@
 			{
 		?>
 
-	<div id="deleteEvent">
-		<p>Valider la suppression ?</p>
-		<div class="bouton_horizontal">
-			<a href="<?php echo WEBROOT ?>/Event/archive/<?php echo $event->getId();?>" class="validDeleteEvent">OUI</a>
-			<button class="cancelDeleteEvent">NON</button>
+		<div id="deleteEvent">
+			<p>Valider la suppression ?</p>
+			<div class="bouton_horizontal">
+				<a href="<?php echo WEBROOT ?>/Event/archive/<?php echo $event->getId();?>" class="validDeleteEvent">OUI</a>
+				<button class="cancelDeleteEvent">NON</button>
+			</div>
 		</div>
-	</div>
-	
-	<?php
-		}
-	 ?>
+		
+		<?php
+			}
+		 ?>
 		
 
 	</div>

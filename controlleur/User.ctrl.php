@@ -38,7 +38,7 @@
 		    {
 		        $d['user'] = $this->DaoUser->readByEmail($this->input['email']);
 
-		        $d['log'] = "<p>".$this->input['email']." déjà inscrit";
+		        $d['log'] = "<p>".$this->input['email']." déjà inscrit</p>";
 
 		        $this->set($d);
 		        $this->render('User','pageSignUp');
@@ -140,7 +140,7 @@
 		{
 			$this->loadDao('User');
 
-			$dossier = ROOT.'img/';
+			$dossier = ROOT.'img/profile/';
 			$fichier = basename(strip_tags($this->files['photo']['name']));
 			move_uploaded_file(strip_tags($this->files['photo']['tmp_name']), $dossier . $fichier);	
 			
@@ -222,7 +222,7 @@
 			$this->loadDao('User');
 			$badPoint = 0;
 
-			$dossier = ROOT.'img/';
+			$dossier = ROOT.'img/profile/';
 			$fichier = basename($this->files['photo']['name']);
 			move_uploaded_file($this->files['photo']['tmp_name'], $dossier . $fichier);	
 				
@@ -447,8 +447,7 @@
 			{
 				$this->DaoUser->archive($_SESSION['id']);
 
-				// header('location:'.WEBROOT.'User/logOut');
-				$this->render('User','logOut');
+				header('location:'.WEBROOT.'User/logOut');
 			}
 		}
 
@@ -477,7 +476,7 @@
 			$this->set($d);
 
 			$this->loadDao('Event');
-			$d['events'] = $this->DaoEvent->readAll();
+			$d['events'] = $this->DaoEvent->readAllUnvalidated();
 			$this->set($d);
 
 			$this->loadDao('Address');

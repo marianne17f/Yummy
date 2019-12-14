@@ -10,7 +10,7 @@
 	  		</div>
 		</div>
 		<div class="photo_profil">
-			<img src="<?php echo WEBROOT.'img/'.strip_tags($user->getPhoto()) ?>" alt="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>" title="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>">
+			<img src="<?php echo WEBROOT.'img/profile/'.strip_tags($user->getPhoto()) ?>" alt="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>" title="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>">
 		</div>
 	</div>
 

@@ -11,7 +11,7 @@
 	  		</div>
 		</div>
 		<div class="photo_profil">
-			<img src="<?php echo WEBROOT.'img/'.strip_tags($user->getPhoto()) ?>" alt="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>" title="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>">
+			<img src="<?php echo WEBROOT.'img/profile/'.strip_tags($user->getPhoto()) ?>" alt="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>" title="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>">
 		</div>
 	</div>
 
@@ -19,17 +19,17 @@
 		<div id="menu_profil" class="container">
 			
 			
-			<a href="<?php echo WEBROOT ?>Recipe/myRecipes"><span>Mes recettes</span><img src="<?php echo WEBROOT?>img/kitchen.png" alt="mes recettes créées" title="mes recettes créées"></a>
+			<a href="<?php echo WEBROOT ?>Recipe/myRecipes"><span>Mes recettes</span><img src="<?php echo WEBROOT?>img/img_site/kitchen.png" alt="mes recettes créées" title="mes recettes créées"></a>
 			
-			<a href="<?php echo WEBROOT ?>Event/myEvents">Mes rencontres culinaires<img src="<?php echo WEBROOT ?>img/evenement.png" alt="mes rencontres culinaires créées" title="mes rencontres culinaires créées"></a>
+			<a href="<?php echo WEBROOT ?>Event/myEvents">Mes rencontres culinaires<img src="<?php echo WEBROOT ?>img/img_site/evenement.png" alt="mes rencontres culinaires créées" title="mes rencontres culinaires créées"></a>
 
-			<a href="<?php echo WEBROOT ?>Address/myAddresses">Mes Bonnes Adresses<img src="<?php echo WEBROOT ?>img/pub.png" alt="mes adresses culinaires créées" title="mes adresses culinaires créées"></a>
+			<a href="<?php echo WEBROOT ?>Address/myAddresses">Mes Bonnes Adresses<img src="<?php echo WEBROOT ?>img/img_site/pub.png" alt="mes adresses culinaires créées" title="mes adresses culinaires créées"></a>
 
-			<a href="">Recettes favorites<img class="icone" src="<?php echo WEBROOT ?>img/coeur.png" alt="mes recettes favorites" title="mes recettes favorites"></a>
+			<a href="">Recettes favorites<img class="icone" src="<?php echo WEBROOT ?>img/img_site/coeur.png" alt="mes recettes favorites" title="mes recettes favorites"></a>
 			
-			<a href="">Mon agenda<img src="<?php echo WEBROOT ?>img/agenda.png" alt="mes participations à des événements" title="mes participations à des événements"></a>
+			<a href="">Mon agenda<img src="<?php echo WEBROOT ?>img/img_site/agenda.png" alt="mes participations à des événements" title="mes participations à des événements"></a>
 			
-			<a href="<?php echo WEBROOT ?>User/userView">Paramètres du profil<img src="<?php echo WEBROOT ?>img/outils.png" alt="accès à mes paramètres profil" title="accès à mes paramètres profil"></a>
+			<a href="<?php echo WEBROOT ?>User/userView">Paramètres du profil<img src="<?php echo WEBROOT ?>img/img_site/outils.png" alt="accès à mes paramètres profil" title="accès à mes paramètres profil"></a>
 			
 
 			<?php 
@@ -39,7 +39,7 @@
 				{
 			?>
 			
-				<a href="<?php echo WEBROOT ?>User/administrateur">Administrateur<img src="<?php echo WEBROOT ?>img/compose.png" alt="admin"></a>	
+				<a href="<?php echo WEBROOT ?>User/administrateur">Administrateur<img src="<?php echo WEBROOT ?>img/img_site/compose.png" alt="admin"></a>	
 
 			<?php		
 				}

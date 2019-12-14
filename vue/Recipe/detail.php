@@ -9,7 +9,7 @@
 			{
 				echo '<article>';
 				echo '<h1>'.$recipe->getName().'</h1>';
-				echo '<img src="'.WEBROOT.'img/'.$recipe->getImage().'" alt="partage de recettes healthy gourmandes et équilibrées" title="recette healthy">';
+				echo '<img src="'.WEBROOT.'img/recipe/'.$recipe->getImage().'" alt="partage de recettes healthy gourmandes et équilibrées" title="recette healthy">';
 				echo '<p>'.$recipe->getCooking_time().'</p>';
 				echo '<p>'.$recipe->getPreparation_time().'</p>';
 				echo '<p>'.$recipe->getNb_people().'</p>';

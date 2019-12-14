@@ -76,7 +76,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="stylesheet" href="<?php echo WEBROOT ?>css/style.css">
 	<link rel="stylesheet" href="<?php echo WEBROOT ?>css/360-991px.css">
@@ -95,7 +94,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 			<div class="container">
-				<a class="navbar-brand" href="<?php echo WEBROOT ?>Home/index"><img class="logo" src="<?php echo WEBROOT ?>img/yummylike.png" alt="partage de recettes healthy et événements culinaires" title="retour en haut de page"></a>
+				<a class="navbar-brand" href="<?php echo WEBROOT ?>Home/index"><img class="logo" src="<?php echo WEBROOT ?>img/img_site/yummylike.png" alt="partage de recettes healthy et événements culinaires" title="retour en haut de page"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    		<span class="navbar-toggler-icon"></span>
 		  		</button>
@@ -201,7 +200,8 @@
 		
 		else
 		{
-			header('Location: '.WEBROOT.'Home/p404');
+			// redirige vers p404 si action inconnue
+			header('Location: '.WEBROOT.'Home/index');
 		}
 
 	

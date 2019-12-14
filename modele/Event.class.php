@@ -13,7 +13,6 @@ class Event extends AbstractEntity
 	private $dater;
 	private $timer;
 	private $fk_user;
-	
 
 	
 	public function __construct($name, $image, $address, $availability, $program, $cost, $dater, $timer, $fk_user)

@@ -5,7 +5,7 @@
 	    		<div class="contentBox h100">
 	    			<div>	
 		    			<div>
-							<a href="#returnHome"><img src="<?php echo WEBROOT ?>img/yummylike.png" class="big_logo" alt="logo Yummy site de partage entre passionnés de cuisine healthy" title="rencontres culinaires et recettes healthy" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-once="true"></a>
+							<a href="#returnHome"><img src="<?php echo WEBROOT ?>img/img_site/yummylike.png" class="big_logo" alt="logo Yummy site de partage entre passionnés de cuisine healthy" title="rencontres culinaires et recettes healthy" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-once="true"></a>
 							<h1 data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000" data-aos-once="true">YUMMY !</h1>	
 						</div>
 
@@ -49,7 +49,7 @@
 				 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla assumenda, maiores, est quis libero modi dolorem at tempore nesciunt. Consectetur minus explicabo reprehenderit unde eaque quibusdam nemo alias sunt, rerum.</p>
 
 					 	<div id="btn_recipe">
-							<a href="<?php echo WEBROOT ?>Recipe/index" class="btnD3">Voir toutes les recettes<img src="<?php echo WEBROOT ?>img/lien-animated.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" title="recettes healthy" class="btn_recipe"></a>
+							<a href="<?php echo WEBROOT ?>Recipe/index" class="btnD3">Voir toutes les recettes<img src="<?php echo WEBROOT ?>img/img_site/lien-animated.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" title="recettes healthy" class="btn_recipe"></a>
 						</div>
 					</div>
 
@@ -67,7 +67,7 @@
 
 					<div class="single-team">
 						<a href="<?php echo WEBROOT ?>Recipe/detail/<?php echo $recipe->getId()?>">
-							<img src="<?php echo WEBROOT ?>img/<?php echo $recipe->getImage() ?>" alt="Rencontres culinaires et partage d'idées recettes healthy <?php echo $recipe->getName() ?>" title="idées recettes healthy <?php echo $recipe->getName() ?>">
+							<img src="<?php echo WEBROOT ?>img/img_site/<?php echo $recipe->getImage() ?>" alt="Rencontres culinaires et partage d'idées recettes healthy <?php echo $recipe->getName() ?>" title="idées recettes healthy <?php echo $recipe->getName() ?>">
 								<div class="team-text">
 									<h2><?php echo $recipe->getName() ?></h2>
 									<div class="para">
@@ -106,7 +106,7 @@
 			
 
 	<div class="blog event">
-		<img class="img_fond" src="<?php echo WEBROOT ?>img/delimiteur.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" title="rencontres culinaires">
+		<img class="img_fond" src="<?php echo WEBROOT ?>img/img_site/delimiteur.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" title="rencontres culinaires">
 		<div class="container">
 			<div class="row">
 				<div class="offset-sm-2 col-sm-8">
@@ -133,7 +133,7 @@
 						
 					<div class="single-team">
 						<a href="<?php echo WEBROOT ?>Event/detail/<?php echo $event->getId()?>">
-							<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage() ?>" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes <?php echo $event->getName() ?>" title="rencontres culinaires <?php echo $event->getName() ?>">
+							<img src="<?php echo WEBROOT ?>img/event/<?php echo $event->getImage() ?>" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes <?php echo $event->getName() ?>" title="rencontres culinaires <?php echo $event->getName() ?>">
 								<div class="team-text">
 									<h2><?php echo $event->getName() ?></h2>
 									<div class="para">
@@ -157,7 +157,7 @@
 				 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla assumenda, maiores, est quis libero modi dolorem at tempore nesciunt. Consectetur minus explicabo reprehenderit unde eaque quibusdam nemo alias sunt, rerum.</p>
 
 					 	<div id="btn_event">
-							<a href="<?php echo WEBROOT ?>Event/index" class="btnD3">Voir toutes les rencontres<img src="<?php echo WEBROOT ?>img/lien-animated.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" class="btn_event" title="rencontres culinaires"></a>
+							<a href="<?php echo WEBROOT ?>Event/index" class="btnD3">Voir toutes les rencontres<img src="<?php echo WEBROOT ?>img/img_site/lien-animated.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" class="btn_event" title="rencontres culinaires"></a>
 						</div>
 					</div>
 				</div>
@@ -169,7 +169,7 @@
 
 
 	<div class="blog address">
-		<img class="img_fond2" src="<?php echo WEBROOT ?>img/img_fond3.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" title="adresses culinaires">
+		<img class="img_fond2" src="<?php echo WEBROOT ?>img/img_site/img_fond3.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" title="adresses culinaires">
 		<div class="container">
 			<div class="row">
 				<div class="offset-sm-2 col-sm-8">
@@ -188,7 +188,7 @@
 			 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla assumenda, maiores, est quis libero modi dolorem at tempore nesciunt. Consectetur minus explicabo reprehenderit unde eaque quibusdam nemo alias sunt, rerum.</p>
 				 	
 				 	<div id="btn_address">
-						<a href="<?php echo WEBROOT ?>Address/index" class="btnD3">Voir toutes les bonnes adresses<img src="<?php echo WEBROOT ?>img/lien-animated.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" title="adresses culinaires" class="btn_address"></a>
+						<a href="<?php echo WEBROOT ?>Address/index" class="btnD3">Voir toutes les bonnes adresses<img src="<?php echo WEBROOT ?>img/img_site/lien-animated.png" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes" title="adresses culinaires" class="btn_address"></a>
 					</div>
 				</div>
 			
@@ -203,7 +203,7 @@
 				<div class="col-sm-6">
 					<div class="blogpost">
 						<div class="imgBx">
-							<img src="<?php echo WEBROOT."img/".$address->getImage() ?>" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes <?php echo $address->getName() ?>" title="adresses culinaires <?php echo $address->getName() ?>" class="img-fluid">
+							<img src="<?php echo WEBROOT."img/address/".$address->getImage() ?>" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes <?php echo $address->getName() ?>" title="adresses culinaires <?php echo $address->getName() ?>" class="img-fluid">
 						</div>
 						<div class="content">
 							<h3><?php echo $address->getName() ?></h3>

@@ -34,19 +34,20 @@
 		
 				
 			<div class="container-area">
+
 				<div class="team-area">
 
 
 				<?php 
-					if (isset($events))
+					if (isset($events1))
 					{
-						foreach ($events as $key => $event)
+						foreach ($events1 as $key => $event)
 						{
 				?>
 					<div class="conteneurEvent">
 						<div class="single-team">
 							<a href="<?php echo WEBROOT ?>Event/detail/<?php echo $event->getId()?>">
-							<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage() ?>" alt="partage de moments conviviaux avec <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
+							<img src="<?php echo WEBROOT ?>img/event/<?php echo $event->getImage() ?>" alt="partage de moments conviviaux avec <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
 								<div class="team-text">
 									<h2><?php echo $event->getName() ?></h2>
 									<div class="para">
@@ -62,9 +63,9 @@
 
 						<div class="boutons_action">
 							<a href="<?php echo WEBROOT ?>Event/pageUpdateEvent/<?php echo $event->getId()?>" class="displayUpdateEvent">
-								Modifier<img class="icone iconesMS" src="<?php echo WEBROOT ?>img/modifier.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire">
+								Modifier<img class="icone iconesMS" src="<?php echo WEBROOT ?>img/img_site/modifier.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire">
 							</a>
-								<button class="displayDeleteEvent">Supprimer<img class="icone iconesMS" src="<?php echo WEBROOT?>img/delete.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
+								<button class="displayDeleteEvent">Supprimer<img class="icone iconesMS" src="<?php echo WEBROOT?>img/img_site/delete.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
 						</div>
 					</div>	
 
@@ -75,17 +76,95 @@
 				 
 				</div>
 			</div>
+
+			
+			<h2 class="text-center">Rencontres culinaires en attente de validation</h2>
+
+			<div class="container-area">
+				<div class="team-area">
+
+					<?php 
+					if (isset($events0))
+					{
+						foreach ($events0 as $key => $event)
+						{
+				?>
+					<div class="conteneurEvent">
+						<div class="single-team">
+							<a href="<?php echo WEBROOT ?>Event/detail/<?php echo $event->getId()?>">
+							<img src="<?php echo WEBROOT ?>img/event/<?php echo $event->getImage() ?>" alt="partage de moments conviviaux avec <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
+								<div class="team-text">
+									<h2><?php echo $event->getName() ?></h2>
+									<div class="para">
+										<p><?php echo $event->getAvailability() ?> participants</p>
+
+										<p>Le <?php echo date("d/m/Y", strtotime($event->getDater()))?></p>
+										<p>À <?php echo date("H:i", strtotime($event->getTimer()))?></p>
+										
+									</div>
+								</div>	
+							</a>	
+						</div>
+
+						<div class="boutons_action">
+							<a href="<?php echo WEBROOT ?>Event/pageUpdateEvent/<?php echo $event->getId()?>" class="displayUpdateEvent">
+								Modifier<img class="icone iconesMS" src="<?php echo WEBROOT ?>img/img_site/modifier.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire">
+							</a>
+								<button class="displayDeleteEvent">Supprimer<img class="icone iconesMS" src="<?php echo WEBROOT?>img/img_site/delete.png" alt="partage de moments conviviaux lors d'événements culinaires" title="événement culinaire"></button>
+						</div>
+					</div>	
+
+				<?php
+						}
+					}
+					else
+					{
+						echo '<p>Aucune rencontre culinaire en attente de validation</p>';
+					}
+				 ?>
+				 
+				</div>
+			</div>
+
+
+
 		</div>
 
 	</div>
+	
 
+	
+
+		<?php 
+
+		// display window "deleteEvent" for created and unvalidated events)
+		if (isset($events0))
+		{
+			foreach ($events0 as $key => $event)
+			{
+	?>
+
+	<div id="deleteEvent">
+		<p>Valider la suppression ?</p>
+		<div class="bouton_horizontal">
+			<a href="<?php echo WEBROOT ?>/Event/archive/<?php echo $event->getId();?>" class="validDeleteEvent">OUI</a>
+			<button class="cancelDeleteEvent">NON</button>
+		</div>
+	</div>
+	
+	<?php
+			}
+		}
+	 ?>
 
 
 	
 	<?php 
-		if (isset($events))
+
+		// display window "deleteEvent" for created and validated events)
+		if (isset($events1))
 		{
-			foreach ($events as $key => $event)
+			foreach ($events1 as $key => $event)
 			{
 	?>
 

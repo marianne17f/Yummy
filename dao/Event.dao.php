@@ -1,6 +1,8 @@
 <?php 
 
 require_once('modele/Event.class.php');
+require_once('modele/User.class.php');
+require_once('modele/Comment.class.php');
 
 class DaoEvent
 {
@@ -39,7 +41,32 @@ class DaoEvent
 	//read and display all events
 	public function readAll()
 	{
-		$eventData = DB::select('SELECT * FROM event WHERE archive = 0 ORDER BY id DESC');
+		$eventData = DB::select('SELECT * FROM event WHERE archive = 0 AND validation = 1 ORDER BY id DESC');
+		
+		if (!empty($eventData))
+		{
+			foreach($eventData as $key => $event)
+			{
+				$events[$key] = new Event($event['name'],$event['image'],$event['address'],$event['availability'],$event['program'],$event['cost'],$event['dater'],$event['timer'],$event['fk_user']);
+				
+				$events[$key]->setId($event['id']);
+			}
+			return $events;
+		}
+		
+		else
+		{
+			return null;
+		}
+	}
+
+
+
+
+	//read all unvalidated events
+	public function readAllUnvalidated()
+	{
+		$eventData = DB::select('SELECT * FROM event WHERE archive = 0 AND validation = 0 ORDER BY id DESC');
 		
 		if (!empty($eventData))
 		{
@@ -60,21 +87,53 @@ class DaoEvent
 	}
 
 
-
-	// read events created by the connected user
-	public function readByFkUser($fk_user)
+	//valide (and put online) event
+	public function validation($id)
 	{
-		$eventData = DB::select('SELECT * FROM event WHERE archive = 0 AND fk_user = ? ORDER BY id DESC',array($fk_user));
+		DB::select('UPDATE event SET validation = 1 WHERE id = ?', array($id));
+		var_dump($id);
+	}
+
+
+
+
+	// read created and validated events by the connected user
+	public function readByFkUserValid($fk_user)
+	{
+		$eventData = DB::select('SELECT * FROM event WHERE archive = 0 AND validation = 1 AND fk_user = ? ORDER BY id DESC',array($fk_user));
 
 		if (!empty($eventData))
 		{
 			foreach($eventData as $key => $event)
 			{
-				$events[$key] = new Event($event['name'],$event['image'],$event['address'],$event['availability'],$event['program'],$event['cost'],$event['dater'],$event['timer'],$event['fk_user']);
+				$events0[$key] = new Event($event['name'],$event['image'],$event['address'],$event['availability'],$event['program'],$event['cost'],$event['dater'],$event['timer'],$event['fk_user']);
 				
-				$events[$key]->setId($event['id']);
+				$events0[$key]->setId($event['id']);
 			}
-			return $events;
+			return $events0;
+		}
+		else
+		{
+			return null;
+		}
+		
+	}
+
+
+	// read events created and unvalidated by the connected user
+	public function readByFkUserUnvalid($fk_user)
+	{
+		$eventData = DB::select('SELECT * FROM event WHERE archive = 0 AND validation = 0 AND fk_user = ? ORDER BY id DESC',array($fk_user));
+
+		if (!empty($eventData))
+		{
+			foreach($eventData as $key => $event)
+			{
+				$events1[$key] = new Event($event['name'],$event['image'],$event['address'],$event['availability'],$event['program'],$event['cost'],$event['dater'],$event['timer'],$event['fk_user']);
+				
+				$events1[$key]->setId($event['id']);
+			}
+			return $events1;
 		}
 		else
 		{
@@ -90,10 +149,50 @@ class DaoEvent
 	// Select party's number by event
 	public function partyByEvent($id)
 	{
-		$party = DB::select('SELECT user.id, photo, firstname, lastname
+		$parties = DB::select('SELECT user.id, photo, firstname, lastname
 			FROM event_participation
 			INNER JOIN user ON fk_user = user.id
 			WHERE fk_event = ?',array($id));
+
+		
+
+	}
+
+
+	// insert a comment in DB
+	public function comment()
+	{
+		// var_dump($comment);
+		DB::select('INSERT INTO event_comment(fk_user, fk_event, comment, horodate) VALUES (?,?,?,?)', array($comment->getFk_user(), $comment->getFk_event(), $comment->getComment(), $comment->getHorodate()));
+
+		$comment->getId();
+	}
+
+
+
+	// Select comments by event
+	public function commentByEvent($id)
+	{
+		$comments = DB::select('SELECT user.id, photo, firstname, lastname, comment, horodate
+			FROM event_comment
+			INNER JOIN user ON fk_user = user.id
+			WHERE fk_event = ?', array($id));
+
+
+		if (!empty($comments))
+		{
+			foreach($comments as $key => $comment)
+			{
+				$comments[$key] = new Comment($comment['fk_user'], $comment['fk_event'], $comment['comment'], $comment['horodate']);
+				
+				$comments[$key]->setId($comment['id']);
+			}
+			return $commments;
+		}
+		else
+		{
+			return null;
+		}
 	}
 	
 

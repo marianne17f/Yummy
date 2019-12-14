@@ -282,3 +282,7 @@ if (document.querySelector("#formLogin") != null )
 		verif(pass,regPass1,'#infoPass1',messPass1);
 	});
 }
+
+
+
+

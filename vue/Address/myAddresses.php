@@ -41,7 +41,7 @@
 				<div class="col-sm-6">
 					<div class="blogpost">
 						<div class="imgBx">
-							<img src="<?php echo WEBROOT."img/".$address->getImage() ?>" alt="partage de bonnes adresses culinaires <?php echo $address->getName() ?>" title="adresse culinaire <?php echo $address->getName() ?>" class="img-fluid">
+							<img src="<?php echo WEBROOT."img/address/".$address->getImage() ?>" alt="partage de bonnes adresses culinaires <?php echo $address->getName() ?>" title="adresse culinaire <?php echo $address->getName() ?>" class="img-fluid">
 						</div>
 						<div class="content">
 							<h3><?php echo $address->getName() ?></h3>

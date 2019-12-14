@@ -11,7 +11,7 @@
 	  		</div>
 		</div>
 		<div class="photo_profil">
-			<img src="<?php echo WEBROOT.'img/'.strip_tags($user->getPhoto()) ?>" alt="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>" title="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>">
+			<img src="<?php echo WEBROOT.'img/profile/'.strip_tags($user->getPhoto()) ?>" alt="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>" title="Photo de profil de <?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName())?>">
 		</div>
 	</div>
 			
@@ -25,8 +25,8 @@
 
 	
 		<div id="presentation_profil" class="relative">
-			<img src="<?php echo WEBROOT?>img/orange.png" class="absolute img1" alt="alimentation saine">
-			<img src="<?php echo WEBROOT?>img/onion-1.png" class="absolute img2" alt="alimentation saine">
+			<img src="<?php echo WEBROOT?>img/img_site/orange.png" class="absolute img1" alt="alimentation saine">
+			<img src="<?php echo WEBROOT?>img/img_site/onion-1.png" class="absolute img2" alt="alimentation saine">
 
 			
 			

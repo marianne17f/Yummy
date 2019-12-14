@@ -24,7 +24,7 @@
 				
 				<label>Photo illustrant l'événement culinaire :
 				<div class = "contener_img">
-					<img src="<?php echo WEBROOT ?>/img/<?php echo $event->getImage(); ?>" alt="partage lors d'événements culinaires <?php echo $event->getName(); ?>" title="événement culinaire <?php echo $event->getName(); ?>">
+					<img src="<?php echo WEBROOT ?>/img/event/<?php echo $event->getImage(); ?>" alt="partage lors d'événements culinaires <?php echo $event->getName(); ?>" title="événement culinaire <?php echo $event->getName(); ?>">
 				</div>
 				<input type="file" name="image"></label>
 			</div>

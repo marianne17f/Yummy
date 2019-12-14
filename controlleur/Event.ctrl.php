@@ -19,7 +19,8 @@ class CtrlEvent extends Controller
 	{
 		$this->loadDao('Event');
 
-		$d['events'] = $this->DaoEvent->readByFkUser($_SESSION['id']);
+		$d['events1'] = $this->DaoEvent->readByFkUserValid($_SESSION['id']);
+		$d['events0'] = $this->DaoEvent->readByFkUserUnvalid($_SESSION['id']);
 		$this->set($d);
 		
 		$this->render('Event','myEvents');
@@ -46,21 +47,31 @@ class CtrlEvent extends Controller
 	{
 		$this->loadDao('Event');
 
-		$dossier = ROOT.'img/';
+		$dossier = ROOT.'img/event/';
 		$fichier = basename($this->files['image']['name']);
 		move_uploaded_file($this->files['image']['tmp_name'], $dossier . $fichier);	
 
 		$event = new Event($this->input['name'], $fichier,$this->input['address'],$this->input['availability'],$this->input['program'],$this->input['cost'],$this->input['dater'],$this->input['timer'],$this->input['fk_user']);
 		
 		$this->DaoEvent->create($event);
-		// $_SESSION['id'] = DB::lastId();
 		$d['event'] = $event;
 		$this->set($d);
 		$this->myEvents($event);
 	}
 
 
+	// admin valides event and puts it online
+	public function validation($id)
+	{
+		$this->loadDao('Event');
 
+		$this->DaoEvent->validation($id);
+
+		header('Location:'.WEBROOT.'User/administrateur');
+	}
+
+
+	// display the event's details
 	public function detail($id)
 	{
 		$this->loadDao('Event');
@@ -75,8 +86,8 @@ class CtrlEvent extends Controller
 		$this->render('Event','detail',$id);
 	}
 
-
-	public function result()
+	// display the search bar's results
+	public function resultSearch()
 	{
 		$this->render('Event','result');
 	}
@@ -100,7 +111,7 @@ class CtrlEvent extends Controller
 	{
 		$this->loadDao('Event');
 
-		$dossier = ROOT.'img/';
+		$dossier = ROOT.'img/event/';
 		$fichier = basename($this->files['image']['name']);
 		move_uploaded_file($this->files['image']['tmp_name'], $dossier . $fichier);
 
@@ -159,13 +170,29 @@ class CtrlEvent extends Controller
 	}
 
 
+	//  create a comment
+	public function comment()
+	{
+		$this->loadDao('Event');
+
+		$comment = new Comment($this->input['fk_user'],$this->input['fk_event'],$this->input['comment'],$this->input['horodate']);
+
+		$this->DaoEvent->comment($comment);
+		var_dump($comment);
+	
+		$d['comment'] = $comment;
+		$this->set($d);
+
+		// $this->details();
+	}
+
+
 
 	public function archive($id)
 	{
 		$this->loadDao('Event');
 		$this->DaoEvent->archive($id);
 
-		// $this->saveUrl('Rencontre', 'mesRencontres');
 		$this->myEvents();
 	}
 
@@ -176,7 +203,6 @@ class CtrlEvent extends Controller
 		$this->loadDao('Event');
 		$this->DaoEvent->delete($id);
 
-		// $this->saveUrl('Rencontre', 'mesRencontres');
 		$this->myEvents();
 	}
 }

@@ -6,6 +6,6 @@
 
 	// echo json_encode($events);
 
-	header('Location: '.WEBROOT.'Event/result.php');
+	header('Location: '.WEBROOT.'Event/resultSearch');
 
  ?>

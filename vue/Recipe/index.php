@@ -44,7 +44,7 @@
 
 					<div class="single-team">
 						<a href="<?php echo WEBROOT ?>Recipe/detail/<?php echo $recipe->getId()?>">
-							<img src="<?php echo WEBROOT ?>img/<?php echo $recipe->getImage() ?>" alt="partage de recettes healthy gourmandes et équilibrées <?php echo $recipe->getName() ?>" title="recette healthy <?php echo $recipe->getName() ?>">
+							<img src="<?php echo WEBROOT ?>img/recipe/<?php echo $recipe->getImage() ?>" alt="partage de recettes healthy gourmandes et équilibrées <?php echo $recipe->getName() ?>" title="recette healthy <?php echo $recipe->getName() ?>">
 								<div class="team-text">
 									<h2><?php echo $recipe->getName() ?></h2>
 									<div class="para">

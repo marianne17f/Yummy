@@ -39,10 +39,8 @@
 						{
 				?>
 
-					<div class="single-team">
-						<a href="<?php echo WEBROOT ?>Event/detail/<?php echo $event->getId()?>">
-		
-							<img src="<?php echo WEBROOT ?>img/<?php echo $event->getImage() ?>" alt="partage lors d'événements culinaires <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
+						<a href="<?php echo WEBROOT ?>Event/detail/<?php echo $event->getId()?>" class="single-team">
+							<img src="<?php echo WEBROOT ?>img/event/<?php echo $event->getImage() ?>" alt="partage lors d'événements culinaires <?php echo $event->getName() ?>" title="événement culinaire <?php echo $event->getName() ?>">
 								
 							<div class="team-text">
 								<h2><?php echo $event->getName() ?></h2>
@@ -55,7 +53,6 @@
 								</div>
 							</div>	
 						</a>	
-					</div>
 
 				<?php	
 						}
