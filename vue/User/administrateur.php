@@ -47,10 +47,17 @@
 
 						</a>	
 					</div>
-					<p class="text-center"><a href="<?php echo WEBROOT ?>/Event/validation/<?php echo $event->getId()?>">Mettre en ligne</a></p>
+					<a href="<?php echo WEBROOT ?>/Event/validation/<?php echo $event->getId()?>">Mettre en ligne</a>
+
+					<a href="<?php echo WEBROOT ?>/Event/delete/<?php echo $event->getId()?>">Supprimer</a>
+
 
 				<?php	
 						}
+					}
+					else
+					{
+						echo "<p>Aucune rencontre culinaire en attente de validation</p>";
 					}
 				 ?>
 

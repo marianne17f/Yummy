@@ -1,34 +1,26 @@
 <?php 
+//------------------ DAO creation -------------------//
 
+
+	
+// load the model linked to the DAO
 require_once('modele/Address.class.php');
 
+// Declaration of the DAO object
 class DaoAddress
 {
-	
+	// Insert a new Address in the Data Base
+	// Dao method declaration with $address object as argument
 	public function create($address)
 	{
-		DB::select('INSERT INTO address (name,image,description,address,schedul,phone,email,website,category,offer_yummy, fk_user) VALUES (?,?,?,?,?,?,?,?,?,?,?)', array($adresse->getName(),$adresse->getImage(),$adresse->getDescription(),$adresse->getAddress(),$adresse->getSchedul(),$adresse->getPhone(),$adresse->getEmail(),$adresse->getWebSite(),$adresse->getCategory(),$adresse->getOffer_yummy(),$adresse->getFk_user()));
+		DB::select('INSERT INTO address (name,image,description,address,schedul,phone,email,website,category,offer_yummy, fk_user) VALUES (?,?,?,?,?,?,?,?,?,?,?)', array($address->getName(),$address->getImage(),$address->getDescription(),$address->getAddress(),$address->getSchedul(),$address->getPhone(),$address->getEmail(),$address->getWebSite(),$address->getCategory(),$address->getOffer_yummy(),$address->getFk_user()));
 
-		$radresse->getId();
+		$address->getId();
 	}
 
-	public function read($id)
-	{
-		$adresseData = DB::select('SELECT * FROM address WHERE id = ? AND archive = 0', array($id));
 
-		if (!empty($addressData))
-		{
-			$address = new Address($addressData[0]['name'],$addressData[0]['image'],$addressData[0]['description'],$addressData[0]['address'],$addressData[0]['schedul'],$addressData[0]['phone'],$addressData[0]['email'],$addressData[0]['website'],$addressData[0]['category'],$addressData[0]['offer_yummy'],$addressData[0]['fk_user']);
-			
-			$address->setId($addressData['id']);
-			return $address;
-		}
-		else
-		{
-			return null;
-		}
-	}
 
+	//Recovers all Events
 	public function readAll()
 	{
 		$addressData = DB::select('SELECT * FROM address WHERE archive = 0 ORDER BY id DESC');
@@ -37,9 +29,11 @@ class DaoAddress
 		{
 			foreach($addressData as $key => $address)
 			{
+				// A new object is instanced for each address with the recovered data and stored in a variable $addresses
 				$addresses[$key] = new Address($address['name'],$address['image'],$address['description'],$address['address'],$address['schedul'],$address['phone'],$address['email'],$address['website'],$address['category'],$address['offer_yummy'],$address['fk_user']);
 				$addresses[$key]->setId($address['id']);
 			}
+			// The variable and its contents are returned to the controller
 				return $addresses;
 		}
 		else
@@ -49,6 +43,9 @@ class DaoAddress
 		
 	}
 
+
+
+	// Recovers created addresses by the connected user
 	public function readByFkUser($fk_user)
 	{
 		$addressData = DB::select('SELECT * FROM address WHERE archive = 0 AND fk_user = ? ORDER BY id DESC',array($fk_user));
@@ -57,6 +54,7 @@ class DaoAddress
 		{
 			foreach($addressData as $key => $address)
 			{
+				// A new object is instanced for each address with the recovered data and stored in a variable $addresses
 				$addresses[$key] = new Address($address['name'],$address['image'],$address['description'],$address['address'],$address['schedul'],$address['phone'],$address['email'],$address['website'],$address['category'],$address['offer_yummy'],$address['fk_user']);
 				
 				$addresses[$key]->setId($address['id']);
@@ -70,6 +68,8 @@ class DaoAddress
 		
 	}
 
+
+	// Updates an Address
 	public function update($address)
 	{
 		DB::select('UPDATE address SET name = ?, image = ?, description = ?, address = ?, schedul = ?, phone = ?, email = ?, website = ?, category = ?, offer_yummy = ? WHERE id = ?', array($address->getName(),$address->getImage(),$address->getDescription(),$address->getAddress(),$address->getSchedul(),$address->getPhone(),$address->getEmail(),$address->getWebSite(),$address->getCategory(),$address->getOffer_yummy(),$address->getFk_user()));

@@ -30,7 +30,7 @@
 
 			
 			
-			<div>
+			<div class="noir">
 				<p><?php echo strip_tags($user->getFirstName()).' '.strip_tags($user->getLastName()) ?></p>
 				<p><?php echo strip_tags(date("d/m/Y", strtotime($user->getAge())))?> -
 			
@@ -38,7 +38,7 @@
 					switch(strip_tags($user->getSex()))
 					{
 						case "homme":
-							echo 'Homme</p>';
+							echo ' Homme</p>';
 							break;
 						case "femme":
 							echo ' Femme</p>';
@@ -49,6 +49,7 @@
 					}
 
 					echo '<p>'.strip_tags($user->getAddress()).'</p>';
+					
 					switch(strip_tags($user->getLevel_cook()))
 					{
 						case 1:
@@ -64,7 +65,6 @@
 				?>
 				
 				<p><?php echo strip_tags($user->getEmail()) ?></p>
-
 			</div>
 
 			<div id="bouton_validation">

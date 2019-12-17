@@ -1,8 +1,12 @@
 <?php
 
+//----------------- CLASS CREATION----------------//
+
+
+// Declaration of the User object with inheritance (copy / paste) from the abstract class AbstractEntity
 class User extends AbstractEntity
 {
-	// Déclaration des attributs
+	// Declaration of attributes
 	private $firstName;
 	private $lastName;
 	private $email;
@@ -14,8 +18,12 @@ class User extends AbstractEntity
 	private $level_cook;
 	private $role;
 
+
+
+	// Declaration of the constructor with its arguments which refer to the attributes
 	public function __construct($firstName, $lastName, $email, $pass)
 	{
+		// $this refers to the object instance (new Object ())
 		$this->firstName = $firstName;
 		$this->lastName = $lastName;
 		$this->email = $email;
@@ -25,18 +33,20 @@ class User extends AbstractEntity
 
 
 
-    // Getter permet de retourner la valeur de l'attribut
+
+	// Getter allows to read an attribute
+	// Declaration of the getter for the firstName
 	public function getFirstName()
 	{
 		return $this->firstName;
 	}
 
-    // Setter permet de modifier un attribut
+    // Setter allows to write an attribute
+	// Declaration of the setter for the firstName
 	public function setFirstName($firstName)
 	{
 		$this->firstName = $firstName;
 	}
-
 
 
 
@@ -49,7 +59,6 @@ class User extends AbstractEntity
 	{
 		$this->lastName = $lastName;
 	}
-
 
 
 

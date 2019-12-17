@@ -1,6 +1,31 @@
 
+// ------------------ WINDOW COOKIES ------------------//
+window.cookieconsent.initialise(
+{
+	"palette":
+	{
+		"popup":
+		{
+			"background": "#777E31"
+		},
+			"button":
+		{
+			"background": "#C83D00"
+		}
+	},
+	"theme": "classic",
+	"content":
+	{
+		"message": "Ce site utilise les cookies pour vous assurer une meilleure expérience sur notre site web",
+		"dismiss": "J'accepte",
+		"link": "En savoir plus",
+		"href": "<?php echo WEBROOT ?>Home/cookies"
+	}
+});
 
-// -------- AFFICHAGE FENETRE DELETE RENCONTRES CULINAIRES ---------- //
+
+
+// -------- DISPLAY WINDOW "DELETE CULINARY EVENT" ---------- //
 if (document.querySelector(".displayDeleteEvent") != null )
 {
 	let btnDisplayDeleteEvent = document.querySelectorAll(".displayDeleteEvent");
@@ -19,12 +44,10 @@ if (document.querySelector(".displayDeleteEvent") != null )
 }
 
 
-// --------- FERMER FENETRE DELETE RENCONTRES CULINAIRES --------- //
+// --------- CLOSE WINDOW "DELETE CULINARY EVENT" --------- //
 if (document.querySelectorAll(".cancelDeleteEvent") != null )
 {
 	let btnCancelDeleteEvent = document.querySelectorAll(".cancelDeleteEvent");
-
-	console.log(btnCancelDeleteEvent);
 
 	btnCancelDeleteEvent.forEach(function(btn)
 	{
@@ -42,51 +65,11 @@ if (document.querySelectorAll(".cancelDeleteEvent") != null )
 
 
 
-/*------------ BARRE DE RECHERCHE -------------*/
-
-
-// let inputSearch = document.querySelector('.search'); 
-
-// inputSearch.addEventListener('input',sendSearch);
-
-// function sendSearch()
-// {
-// 	$.ajax(
-// 	{
-// 	    url: 'core/search.php',
-// 	    type: 'POST',
-// 	    data: $('search').serialize()
-// 	}).done(function(response)
-// 	{
-// 		let results = JSON.parse(response);
-		
-// 		console.log(results);
-// 		let div = document.createElement('div');
-		
-// 		results.forEach(function(result) {
-// 			let article = document.createElement('div');
-			
-// 			let lien = document.createElement('a');
-// 			lien.setAttribute('href','Event/read/'+result.id);
-// 			lien.innerText = result.name;
-
-// 			let name = document.createElement('h2');
-// 			name.innerText = result.name;
-
-// 			div.appendChild(lien);
-// 			div.appendChild(a);
-
-// 			section.appendChild(div);
-// 		});
-// 		$('#result').html(section);
-// 	});
-// }
-
-
-
 
 /*------------ URL -------------*/
 
+/* remplace l'url  dans le navigateur par raport à
+ l'action demandée sans avoir à recherger la page*/
 function changeUrl(url)
 {
 
@@ -102,10 +85,15 @@ function changeUrl(url)
 
 
 
-
 // ------------------ VERIF FORMULAIRE INSCRIPTION ------------------ //
 
-
+// Declaration de la fonction paramétrée verif
+	 /* la fonction vérif est composée de 4 paramètres :
+	 - inputToTest : le nom de la variable correspondant à l'input que l'on veut tester
+	 - reg : le regexp correspondant à l'input que l'on veut tester
+	 - idInfo : le nom de l'identifiant de la div où l'ont veut afficher le message
+	 - message : le message
+	 */
 function verif(inputToTest,reg,idInfo,message)
 	{
 		// stockage dans la variable info de la div où l'ont veut afficher le message
@@ -153,7 +141,7 @@ if (document.querySelector("input[name='firstName']") != null)
 	let regPrenom = /^[A-Za-zÀ-ÖØ-öø-ÿ-\s]+$/;
 	let regNom = /^[A-Za-zÀ-ÖØ-öø-ÿ-\s]+$/;
 	
-	let regEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
+	let regEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-zA-Z]{2,6}$/;
 	let regPass1 = /^(?=.{6,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[&?:\/=+§^¤£@\#!*()"$]).*$/;
 
 	// Déclaration des messages
@@ -190,13 +178,6 @@ if (document.querySelector("input[name='firstName']") != null)
 
 	pass2.addEventListener("input",verifPass);
 
-	// Declaration de la fonction paramétrée verif
-	 /* la fonction vérif est composée de 4 paramètres :
-	 - inputToTest : le nom de la variable correspondant à l'input que l'on veut tester
-	 - reg : le regexp correspondant à l'input que l'on veut tester
-	 - idInfo : le nom de l'identifiant de la div où l'ont veut afficher le message
-	 - message : le message
-	 */
 	
 
 	function verifPass() {
@@ -237,18 +218,6 @@ if (document.querySelector("input[name='address']") != null)
 	{
 		verif(address,regAddress,'#infoAddress',messAddress);
 	});
-
-	
-
-	// Declaration de la fonction paramétrée verif
-	 /* la fonction vérif est composée de 4 paramètres :
-	 - inputToTest : le nom de la variable correspondant à l'input que l'on veut tester
-	 - reg : le regexp correspondant à l'input que l'on veut tester
-	 - idInfo : le nom de l'identifiant de la div où l'ont veut afficher le message
-	 - message : le message
-	 */
-	
-
 	
 }
 
@@ -261,7 +230,7 @@ if (document.querySelector("#formLogin") != null )
 	let pass = document.querySelector("input[name='pass']");
 	
 	// Déclaration des regex
-	let regEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
+	let regEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-zA-Z]{2,6}$/;
 	let regPass1 = /^(?=.{6,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[&?:\/=+§^¤£@\#!*()"$]).*$/;
 
 	// Déclaration des messages

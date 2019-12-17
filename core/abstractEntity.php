@@ -5,6 +5,8 @@ abstract class AbstractEntity
 	protected $archive;
 	protected $validation;
 
+
+	
 	public function setId($id)
 	{
 		$this->id = $id;
@@ -15,6 +17,8 @@ abstract class AbstractEntity
 		return $this->id;
 	}
 
+
+	// Archives elements (stored in the DB but not displayed in the web site)
 	public function setArchive($archive)
 	{
 		$this->archive =$archive;
@@ -27,7 +31,7 @@ abstract class AbstractEntity
 
 
 
-	// validate (and put online) recipe, event and address
+	// (Admin) Validates (and puts online) recipe, event and address
 	public function getValidation()
 	{
 		return $this->validation;

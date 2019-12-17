@@ -48,6 +48,14 @@ h2
 p
 {
 	font-size: 0.9em;
+	color: #fff;
+}
+
+
+/*  mettre en noir uniquement les textes qui sont dans les blocs des "bonnes adressess" et "userView" */
+.noir p
+{
+	color: #000;
 }
 
 
@@ -92,11 +100,11 @@ p
 
 
 /* class utilisée sur tous les boutons de
- validation ou d'annulation présents dans les formulaires */
+ validation ou d'annulation des formulaires */
 .bouton_valid, a.bouton_valid
 {
 	font-size: 0.95em;
- 	color: white; 
+ 	color: #fff; 
 	background-color:  #777E31;
 	border: none;
 	border-radius: 5px;
@@ -299,6 +307,8 @@ nav a:hover
 	border-bottom: 1.5px solid #D46C00;
 }
 
+
+/* textes descriptifs en page d'accueil */
 #home .recipe .text_descriptif,
 #home .event .text_descriptif
 {
@@ -310,21 +320,25 @@ nav a:hover
 	height: 100%;
 }
 
+#home .recipe .text_descriptif p,
+#home .event .text_descriptif p
+{
+		width: 80%;
+		line-height: 2vw;
+		font-weight: 100;
+		font-size: 0.8em;
+		letter-spacing: 2px;
+		text-shadow: 3px 3px 5px black;
+		z-index: 3;
+}
+
 
 	/*----- HOME->INDEX : PART RECIPE ----*/
 
 	#home .recipe .text_descriptif p
 	{
-		width: 80%;
-		line-height: 2vw;
 		margin: 0 0 60px 0px;
-		color: #fff;
-		font-weight: 100;
-		font-size: 0.8em;
 		text-align: left;
-		letter-spacing: 2px;
-		text-shadow: 3px 3px 5px black;
-		z-index: 3;
 	}
 
 
@@ -332,16 +346,8 @@ nav a:hover
 
 	#home .event .text_descriptif p
 	{
-		width: 80%;
-		line-height: 2vw;
 		margin: 0 0 60px 90px;
-		color: #fff;
-		font-weight: 100;
-		font-size: 0.8em;
 		text-align: right;
-		letter-spacing: 2px;
-		text-shadow: 3px 3px 5px black;
-		z-index: 3;
 	}
 
 	#home .event .btnD3
@@ -368,7 +374,6 @@ nav a:hover
 		width: 80%;
 		line-height: 2vw;
 		margin: 0 90px 60px 20px;
-		color: #fff;
 		font-weight: 100;
 		font-size: 0.8em;
 		text-align: left;
@@ -417,6 +422,7 @@ nav a:hover
 	{
 		margin: 40px 0px 40px 0;
 	}
+
 
 
 
@@ -1363,7 +1369,7 @@ ADD + UPDATE RECIPE /ADD + UPDATE ADDRESS----------*/
 
 #tableau_bord #menu_profil a
 {
-	font-size: 1em;
+	font-size: 0.9em;
 }
 
 #tableau_bord #menu_profil img

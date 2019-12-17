@@ -39,7 +39,7 @@
 						{
 					?>
 				<div class="col-sm-6">
-					<div class="blogpost">
+					<div class="blogpost noir">
 						<div class="imgBx">
 							<img src="<?php echo WEBROOT."img/address/".$address->getImage() ?>" alt="partage de bonnes adresses culinaires <?php echo $address->getName() ?>" title="adresse culinaire <?php echo $address->getName() ?>" class="img-fluid">
 						</div>

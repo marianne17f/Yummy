@@ -169,16 +169,6 @@
 
 
 
-	#addEvent form,
-	#updateEvent form,
-	#addRecipe form,
-	#updateRecipe form,
-	#addAddress form,
-	#updateAddress form
-	{
-		width: 60%;
-	}
-
 	#addEvent label,
 	#updateEvent label,
 	#addRecipe label,

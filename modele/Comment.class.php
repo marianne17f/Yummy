@@ -1,30 +1,36 @@
-
 <?php
+//----------------- CLASS CREATION----------------//
 
+
+// Declaration of the Comment class with inheritance (copy / paste) from the abstract class AbstractEntity
 class Comment extends AbstractEntity
 {
-	// Déclaration des attributs
+	// Declaration of attributes
 	private $fk_user;
 	private $fk_event;
 	private $comment;
 	private $horodate;
 
 	
-	public function __construct($fk_user, $fk_event, $comment, $horodate)
+	// Declaration of the constructor with its arguments which refer to the attributes
+	public function __construct($fk_user, $fk_event, $comment)
 	{
+		// $this refers to the object instance (new Object ())
 		$this->fk_user = $fk_user;
 		$this->fk_event = $fk_event;
 		$this->comment = $comment;
-		$this->horodate = $horodate; 
 	}	
 
 
-  
+  	// Getter allows to read an attribute
+	// Declaration of the getter for the fk_user
 	public function getFk_user()
 	{
 		return $this->fk_user;
 	}
  
+ 	// Setter allows to write an attribute
+	// Declaration of the setter for the fk_user
 	public function setFk_user($fk_user)
 	{
 		$this->fk_user = $fk_user;

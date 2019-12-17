@@ -1,8 +1,11 @@
 <?php
+//----------------- CLASS CREATION----------------//
 
+
+// Declaration of the Address class with inheritance (copy / paste) from the abstract class AbstractEntity
 class Address extends AbstractEntity
 {
-	// Déclaration des attributs
+	// Declaration of attributes
 	private $name;
 	private $image;
 	private $description;
@@ -15,8 +18,11 @@ class Address extends AbstractEntity
 	private $offer_yummy;
 	private $fk_user;
 	
+
+	// Declaration of the constructor with its arguments which refer to the attributes
 	public function __construct($name, $image, $description, $address, $schedul, $phone, $email, $webSite, $category, $offer_yummy, $fk_user)
 	{
+		// $this refers to the object instance (new Object ())
 		$this->name = $name;
 		$this->image = $image;
 		$this->description = $description;
@@ -31,15 +37,21 @@ class Address extends AbstractEntity
 	}
 
 
+	// Getter allows to read an attribute
+	// Declaration of the getter for the name
 	public function getName()
 	{
 		return $this->name;
 	}
  
+ 	// Setter allows to write an attribute
+	// Declaration of the setter for the name
 	public function setName($name)
 	{
 		$this->name = $name;
 	}
+
+
 
 	public function getImage()
 	{
@@ -51,6 +63,8 @@ class Address extends AbstractEntity
 		$this->image = $image;
 	}
 
+
+
 	public function getDescription()
 	{
 		return $this->description;
@@ -60,6 +74,8 @@ class Address extends AbstractEntity
 	{
 		$this->description = $description;
 	}
+
+
 
 	public function getAddress()
 	{
@@ -71,6 +87,8 @@ class Address extends AbstractEntity
 		$this->address = $address;
 	}
 
+
+
 	public function getSchedul()
 	{
 		return $this->schedul;
@@ -81,6 +99,8 @@ class Address extends AbstractEntity
 		$this->schedul = $schedul;
 	}
 
+
+
 	public function getPhone()
 	{
 		return $this->phone;
@@ -90,7 +110,10 @@ class Address extends AbstractEntity
 	{
 		$this->phone = $phone;
 	}
-public function getEmail()
+
+
+
+	public function getEmail()
 	{
 		return $this->email;
 	}
@@ -99,6 +122,8 @@ public function getEmail()
 	{
 		$this->email = $email;
 	}
+
+
 
 	public function getWebSite()
 	{
@@ -110,6 +135,8 @@ public function getEmail()
 		$this->webSite = $webSite;
 	}
 
+
+
 	public function getCategory()
 	{
 		return $this->category;
@@ -119,6 +146,9 @@ public function getEmail()
 	{
 		$this->category = $category;
 	}
+
+
+
 	public function getOffer_yummy()
 	{
 		return $this->offer_yummy;
@@ -128,6 +158,8 @@ public function getEmail()
 	{
 		$this->offer_yummy = $offer_yummy;
 	}
+
+
 
 	public function getFk_user()
 	{

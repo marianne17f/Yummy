@@ -201,7 +201,7 @@
 					?>
 
 				<div class="col-sm-6">
-					<div class="blogpost">
+					<div class="blogpost noir">
 						<div class="imgBx">
 							<img src="<?php echo WEBROOT."img/address/".$address->getImage() ?>" alt="Rencontres culinaires et partage d'idées recettes healthy et gourmandes <?php echo $address->getName() ?>" title="adresses culinaires <?php echo $address->getName() ?>" class="img-fluid">
 						</div>

@@ -3,6 +3,7 @@
 
 class CtrlEvent extends Controller
 {
+	//Return all events in the page index (in the folder Event)
 	public function index()
 	{
 		$this->loadDao('Event');
@@ -15,6 +16,7 @@ class CtrlEvent extends Controller
 
 
 
+	// Return all events created by the connected user
 	public function myEvents()
 	{
 		$this->loadDao('Event');
@@ -28,6 +30,7 @@ class CtrlEvent extends Controller
 
 
 
+	// Return the page "pageAddEvent.php" (which contains form to create an Event)
 	public function pageAddEvent()
 	{	/* if the user is connected, allow him to access to the pageAddEvent.php */
 		if(isset($_SESSION['id']))
@@ -43,14 +46,24 @@ class CtrlEvent extends Controller
 
 
 
+
+	// Instance a new object "Event" and send it to the DaoEvent, method create()
 	public function addEvent()
 	{
+		// Load the Dao 'Event'
 		$this->loadDao('Event');
 
+		// Stores in the variable $dossier, the path we're going to store the profile picture
 		$dossier = ROOT.'img/event/';
+
+		// $fichier stores only the last component of the file path
+			//example : the file path is 'holidaysPhotos/ItalieHolidays/TreviFountain.jpg' => $fichier = 'TreviFountain.jpg'
 		$fichier = basename($this->files['image']['name']);
+
+		// Method move_uploaded_file() moves the name of the downloaded file (ex: 'TreviFountain.jpg') to ROOT.'img/profile'
 		move_uploaded_file($this->files['image']['tmp_name'], $dossier . $fichier);	
 
+		// Creates a new Event object and stores its in $event
 		$event = new Event($this->input['name'], $fichier,$this->input['address'],$this->input['availability'],$this->input['program'],$this->input['cost'],$this->input['dater'],$this->input['timer'],$this->input['fk_user']);
 		
 		$this->DaoEvent->create($event);
@@ -60,7 +73,8 @@ class CtrlEvent extends Controller
 	}
 
 
-	// admin valides event and puts it online
+
+	// Admin valides event and puts it online
 	public function validation($id)
 	{
 		$this->loadDao('Event');
@@ -71,20 +85,29 @@ class CtrlEvent extends Controller
 	}
 
 
-	// display the event's details
+
+	// Calls the Dao which will recovers data from the requested Event
 	public function detail($id)
 	{
 		$this->loadDao('Event');
 		$this->loadDao('User');
 
 		$d['event'] = $this->DaoEvent->read($id);
-		$d['user'] = $this->DaoUser->read($id);
-		$d['party'] = $this->DaoEvent->partyByEvent($id);
+		// $d['party'] = $this->DaoEvent->partyByEvent($id);
+		$comments = $this->DaoEvent->commentByEvent($id);
+		foreach ($comments as $key => $comment)
+		{
+			$comment->setFk_user($this->DaoUser->read($comment->getFk_user()));
+
+		}
 		
+		$d['comments'] = $comments;
 		$this->set($d);
 
 		$this->render('Event','detail',$id);
 	}
+
+
 
 	// display the search bar's results
 	public function resultSearch()
@@ -94,7 +117,7 @@ class CtrlEvent extends Controller
 
 
 
-
+	// Returns the page "pageUpdateEvent.php" (which contains form to update an Event)
 	public function pageUpdateEvent($id)
 	{
 		$this->loadDao('Event');
@@ -107,6 +130,7 @@ class CtrlEvent extends Controller
 
 
 
+	// Send modified user's data to Dao update() which will change this data in the Data Base
 	public function updateEvent()
 	{
 		$this->loadDao('Event');
@@ -170,24 +194,25 @@ class CtrlEvent extends Controller
 	}
 
 
-	//  create a comment
+
+	//  Calls the Dao which will create a Comment
 	public function comment()
 	{
 		$this->loadDao('Event');
 
-		$comment = new Comment($this->input['fk_user'],$this->input['fk_event'],$this->input['comment'],$this->input['horodate']);
+		$comment = new Comment($this->input['fk_user'],$this->input['fk_event'],$this->input['comment']);
 
 		$this->DaoEvent->comment($comment);
-		var_dump($comment);
 	
 		$d['comment'] = $comment;
 		$this->set($d);
 
-		// $this->details();
+		$this->detail($this->input['fk_event']);
 	}
 
 
 
+	// Calls the Dao which will archive Event
 	public function archive($id)
 	{
 		$this->loadDao('Event');
@@ -198,12 +223,13 @@ class CtrlEvent extends Controller
 
 
 
+	// Calls the Dao which will permanently delete Event
 	public function delete($id)
 	{
 		$this->loadDao('Event');
 		$this->DaoEvent->delete($id);
 
-		$this->myEvents();
+		$this->render('User','administrateur');
 	}
 }
 

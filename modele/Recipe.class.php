@@ -1,5 +1,8 @@
 <?php 
+//----------------- CLASS CREATION----------------//
 
+
+// Declaration of the Recipe class with inheritance (copy / paste) from the abstract class AbstractEntity
 class Recipe extends AbstractEntity
 {
 	private $name;
@@ -10,11 +13,12 @@ class Recipe extends AbstractEntity
 	private $level;
 	private $description;
 	private $fk_user;
-	// private $archive; // OBLIGE ????? ARCHIVE EST STOCKE DANS ABSTRACTENTITY 
+	
 
-
+	// Declaration of the constructor with its arguments which refer to the attributes
 	public function __construct($name, $image, $preparation_time, $cooking_time, $nb_people, $level, $description, $fk_user)
 	{
+		// $this refers to the object instance (new Object ())
 		$this->name = $name;
 		$this->image = $image;
 		$this->preparation_time = $preparation_time;
@@ -27,11 +31,15 @@ class Recipe extends AbstractEntity
 	}
 
 
+	// Getter allows to read an attribute
+	// Declaration of the getter for the name
 	public function getName()
 	{
 		return $this->name;
 	}
 
+	// Getter allows to read an attribute
+	// Declaration of the getter for the name
 	public function setName($name)
 	{
 		$this->name = $name;

@@ -1,75 +1,18 @@
-
-
 <?php 
 
-  
-  /*
-
-  session cookie reinforcement
-  v191104 - coded with devotion by jérémie / www.humanize.me
-  you are free to use this code but please leave this comment
-  bigup teamSète 2019 <3
-
-  */
-
-  $p = pathinfo($_SERVER["REQUEST_URI"]);
-  $lifetime = time()+(60*30); // 30 min
-  $path     = "/";
-  $domain   = filter_var($_SERVER["SERVER_NAME"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-  $secure   = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'); // true if already on SSL
-  $httponly = 1;
-  $samesite = "Strict"; // PHP > 7.3
-
-  if (PHP_VERSION_ID >= 70300)
-  {
-
-    session_set_cookie_params([
-      "lifetime" => $lifetime,
-      "path" => $path,
-      "domain" => $domain,
-      "secure" => $secure,
-      "httponly" => $httponly,
-      "samesite" => $samesite
-    ]);
-
-  }
-  else
- {
-
-    session_set_cookie_params($lifetime, $path, $domain, $secure, $httponly);
-
-  }
-
-  session_name("yummy");
-
-  /*
-
-  session start
-
-  */
-
-  session_start();
-  session_regenerate_id();
+	session_start();
 
 
-
-	// if (!isset($_SESSION['id']) && $_SERVER[\'HTTP_HOST\'] )
-	// {
-	// 	$this->render('Accueil','index');
-	// }
-
-
+	// WEBROOT => project folder from the server root
+	define('WEBROOT',str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));
+	// ROOT => project folder from the root of the hard drive
+	define('ROOT',str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<?php 
-		define('WEBROOT',str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));
-		define('ROOT',str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
-
-	 ?>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -141,13 +84,19 @@
 
 
 	<?php 
-	// ----------- INIT 1 : creation du routage ----------- //
-		// Charge le core de l'appli
+	// ----------- INIT 1 : creating routing ----------- //
+
+		// Load core files
 		require_once('core/bdd.php');
 		require_once('core/controller.php');
 		require_once('core/abstractEntity.php');
 
-		// Gestion du routage pour afficher la page par defaut
+
+
+
+		/* ROUTING */
+
+		// Routing management to display the default page
 		if (isset($_GET['p']))
 		{
 			if ($_GET['p'] == "")
@@ -155,7 +104,9 @@
 				$_GET['p'] = "Home/index";
 			}
 		}
-		else /* S'il n'y a pas de $GET['p'] ( si URL = localhost/Yummy2/ ) */
+
+		//If there is no $GET ['p'] (if URL = localhost/Yummy/)
+		else 
 		{
 			$_GET['p'] = "Home/index";
 		}
@@ -163,45 +114,64 @@
 		// Loading the controller
 		//$tabController is an array which contains the entities' names accepted by the website
 		$tabController = array('Home', 'Address', 'Contact', 'Event', 'Recipe', 'User');
+
+		// Assignment to the variable $param of the explode of $_GET['p'], allows to pass from the url 'Controller/action' to an array ['Controller','action']
 		$param = explode("/",$_GET['p']);
 
+
+		// If the controller name from the url is in the $tabController
 		if(in_array($param[0], $tabController))
 		{
+			// Assignment to $controller the name of the requested controller
 			$controller = $param[0];
 			
+			// If there is an action
 			if (isset($param[1]))
 			{
+				// Assignment to $action the name of the requested action
 				$action = $param[1];
 			}
 
 			else
 			{
+				// Assignment to $action 'index' by default
 				$action = 'index';
 			}
 
+
+			// Load controller
 			require_once('controlleur/'.$controller.'.ctrl.php');
+
+			// Name of the controller class
 			$controller = 'Ctrl'.$controller;
+
+			// Instantiation of the controller
 			$controller = new $controller();
 
-			// Execution de l'action du controleur avec les paramètres supplementaires si existant
-			// Si action non présente dans le controleur, alors page 404
+			
+			// If the $action method exists in the $controller object
 			if (method_exists($controller,$action))
 			{
+				// We remove the indices 0 and 1 from the $param array
 				unset($param[0]);
 				unset($param[1]);
+
+				// We execute the method $action of the object $controller with $param as parameter of the method
 				call_user_func_array(array($controller,$action), $param);
 			}
 
+			// if $action not present in $controller
 			else
 			{
+				//redirect page 404
 				header('Location: '.WEBROOT.'Home/p404');
 			}
 		}
 		
 		else
 		{
-			// redirige vers p404 si action inconnue
-			header('Location: '.WEBROOT.'Home/index');
+			// redirect Home/index if controller unknown
+			header('Location: '.WEBROOT.'Home/p404');
 		}
 
 	
@@ -224,30 +194,6 @@
 
 	
 	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-		
-	<script>
-		window.cookieconsent.initialise({
-		  "palette":
-		  {
-		    "popup":
-		    {
-		      "background": "#777E31"
-		    },
-		    "button":
-		    {
-		      "background": "#C83D00"
-		    }
-		  },
-		  "theme": "classic",
-		  "content":
-		  {
-		    "message": "Ce site utilise les cookies pour vous assurer une meilleure expérience sur notre site web",
-		    "dismiss": "J'accepte",
-		    "link": "En savoir plus",
-		    "href": "<?php echo WEBROOT ?>Home/cookies"
-		  }
-		});
-	</script>
 	
 	<script src="<?php echo WEBROOT ?>js/script.js"></script>
 	
@@ -284,12 +230,7 @@
 		{
 			$('.navbar').toggleClass('clicked');
 		});
-	</script>
-
-
-	
-	
-	
+	</script>	
 
 	 
 </body>

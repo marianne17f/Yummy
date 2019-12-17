@@ -1,6 +1,6 @@
 <main id="policy"> 
 
-    <h1 id="haut_donnees_perso">Protection de vos donnée personnelles <br>
+    <h1 id="haut_donnees_perso">Protection de vos données personnelles <br>
                  Yummy.com</h1>
 
         <p>La protection de vos données personnelles est importante pour vous, elle l’est également pour YUMMY, car nous souhaitons pouvoir répondre à vos attentes et vous prouver l’exemplarité de nos services.</p>

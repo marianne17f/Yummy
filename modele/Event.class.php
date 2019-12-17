@@ -1,9 +1,11 @@
-
 <?php
+//----------------- CLASS CREATION----------------//
 
+
+// Declaration of the Event class with inheritance (copy / paste) from the abstract class AbstractEntity
 class Event extends AbstractEntity
 {
-	// Déclaration des attributs
+	// Declaration of attributes
 	private $name;
 	private $image;
 	private $address;
@@ -15,8 +17,10 @@ class Event extends AbstractEntity
 	private $fk_user;
 
 	
+	// Declaration of the constructor with its arguments which refer to the attributes
 	public function __construct($name, $image, $address, $availability, $program, $cost, $dater, $timer, $fk_user)
 	{
+		// $this refers to the object instance (new Object ())
 		$this->name = $name;
 		$this->image = $image;
 		$this->address = $address;
@@ -29,12 +33,15 @@ class Event extends AbstractEntity
 	}	
 
 
-  
+  	// Getter allows to read an attribute
+	// Declaration of the getter for the name
 	public function getName()
 	{
 		return $this->name;
 	}
- 
+ 	
+ 	// Getter allows to read an attribute
+	// Declaration of the getter for the name
 	public function setName($name)
 	{
 		$this->name = $name;

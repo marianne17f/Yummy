@@ -2,6 +2,7 @@
 
 class CtrlContact extends Controller
 {	
+  // Returns the folder "contact" 's "index" page 
 	public function index()
 	{
 		$this->render('Contact','index');
@@ -10,9 +11,6 @@ class CtrlContact extends Controller
 
 	public function email()
   {
-
-
-
     $tab = '';
 
     /*boucle pour stocker tous les inputs du formulaire 'contact'

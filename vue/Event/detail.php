@@ -92,11 +92,9 @@
 						
 						<textarea name="comment" placeholder="Laissez un commentaire"></textarea>
 				
-							<input type="text" name="fk_user" value="<?php echo $_SESSION['id']?>">
+							<input type="hidden" name="fk_user" value="<?php echo $_SESSION['id']?>">
 							
-							<input type="text" name="fk_event" value="<?php echo $event->getId()?>">
-
-							<input type="time" name="horodate">
+							<input type="hidden" name="fk_event" value="<?php echo $event->getId()?>">
 
 						<?php
 							if(isset($_SESSION['id']) &&isset($event))
@@ -115,18 +113,26 @@
 		
 
 		<?php 
-			if (isset($comment))
+			if (isset($comments))
 			{
+				foreach ($comments as $key => $comment)
+				{
 		?>
-
-
+				<p><?php echo $comment->getFk_user()->getFirstname() ?></p>
+				<img src="<?php echo WEBROOT.'img/profile/'.$comment->getFk_user()->getPhoto() ?>">
+				<p><?php echo date("d/m/Y H\hi", strtotime($comment->getHorodate())) ?></p>
+				<p><?php echo $comment->getComment() ?></p>
 
 		<?php
+				}
 			}
 		?>
 
 
+
+
 		<?php
+		// end of 'if (isset($event))'
 			}
 		?>
 
@@ -147,6 +153,7 @@
 		</div>
 		
 		<?php
+
 			}
 		 ?>
 		
